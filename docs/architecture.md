@@ -3,13 +3,14 @@
 ## Layering
 
 ```text
-content        src/domain/{questions,concepts,misconceptions}
-grading         src/tutoring/grading
-student model   src/domain/student           (architecture only — Phase 0)
-selection policy src/tutoring/selection/{nonAdaptive,adaptive}
-feedback        src/tutoring/feedback
-research logging src/research/{events,logging}
-UI              src/app, src/components
+content            src/domain/{questions,concepts,misconceptions}
+curriculum          src/domain/curriculum   (difficulty framework, ordering, cycle/graph validation, queries)
+grading             src/tutoring/grading
+student model       src/domain/student      (architecture only — Phase 0)
+selection policy    src/tutoring/selection/{nonAdaptive,adaptive}
+feedback            src/tutoring/feedback
+research logging    src/research/{events,logging}
+UI                  src/app, src/components
 ```
 
 Each layer only depends on the ones above it in this list — `src/app`
@@ -74,33 +75,31 @@ conditions and so tests can assert the separation compiles. The adaptive
 condition's real mastery-driven logic is developed in a sibling repository
 that shares this same domain-model shape.
 
-## Concept graph (planned; not fully populated in Phase 0)
+## Concept graph and curriculum module (Phase 1)
 
-```text
-Identifying quadratic expressions
-        |
-        v
-   Expansion
-        |
-        v
-  Factorisation
-        |
-        +-------------------+
-        |                   |
-        v                   v
-Solving by factorisation   (quadratic graphs — future)
-        |
-        v
-(completing the square — future)
-        |
-        v
-  Quadratic formula
-        |
-        v
-Discriminant / nature of roots
-```
+`src/domain/concepts/data.ts` populates the full 35-concept quadratics
+graph across 9 strands — see [`docs/curriculum.md`](curriculum.md) for the
+complete list, the branching prerequisite graph, and the coverage matrix.
+`src/domain/curriculum/` holds the machinery that operates on that graph
+without belonging inside the plain data files:
 
-`src/domain/concepts/data.ts` currently populates the left-hand spine only
-(5 concepts) — enough to validate the schema and referential integrity.
-The full graph, including quadratic graphs and completing the square, is
-built in a later phase.
+- `difficultyFramework.ts` — what each `DifficultyLevel` (1-5) means,
+  independent of any one question (see
+  [`docs/difficulty-framework.md`](difficulty-framework.md))
+- `conceptDifficultyGuidance.ts` — which difficulty levels are appropriate
+  per concept, for Phase 2 question authors
+- `curriculumOrder.ts` — the recommended teaching sequence through the
+  concept graph, distinct from the prerequisite graph itself (a
+  prerequisite graph says what *can* precede what; this says what a
+  reasonable sequence actually does)
+- `queries.ts` — `getMisconceptionsForConcept`, `getConceptsByStrand`,
+  `getPrerequisites`, `getDependents`
+- `validateCurriculum.ts` — cycle detection over the prerequisite graph
+  (`findConceptGraphCycles`), plus validators for the difficulty framework
+  and the curriculum order, called from
+  [`validateDomainModel`](../src/domain/validateDomainModel.ts) and from
+  their own tests
+
+The production quadratics question bank (Phase 2) is authored against
+this concept and misconception taxonomy — see
+[`docs/question-authoring-guide.md`](question-authoring-guide.md).

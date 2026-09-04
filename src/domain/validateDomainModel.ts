@@ -1,6 +1,7 @@
 import type { Concept } from "@/domain/concepts/types";
 import type { Misconception } from "@/domain/misconceptions/types";
 import type { Question } from "@/domain/questions/types";
+import { findConceptGraphCycles } from "@/domain/curriculum/validateCurriculum";
 
 /**
  * Referential-integrity and shape checks across the question bank, concept
@@ -29,11 +30,31 @@ export function validateDomainModel(
     }
     seenConceptIds.add(concept.id);
 
+    if (!concept.name.trim()) {
+      errors.push(`Concept "${concept.id}" has an empty name`);
+    }
+    if (!concept.description.trim()) {
+      errors.push(`Concept "${concept.id}" has an empty description`);
+    }
+
+    if (concept.prerequisiteIds.includes(concept.id)) {
+      errors.push(`Concept "${concept.id}" lists itself as its own prerequisite`);
+    }
+
+    const seenPrereqIds = new Set<string>();
     for (const prereqId of concept.prerequisiteIds) {
       if (!conceptIds.has(prereqId)) {
         errors.push(`Concept "${concept.id}" has unknown prerequisiteId "${prereqId}"`);
       }
+      if (seenPrereqIds.has(prereqId)) {
+        errors.push(`Concept "${concept.id}" lists duplicate prerequisiteId "${prereqId}"`);
+      }
+      seenPrereqIds.add(prereqId);
     }
+  }
+
+  for (const cycle of findConceptGraphCycles(concepts)) {
+    errors.push(`Concept graph contains a cycle: ${cycle.join(" -> ")}`);
   }
 
   // --- Misconception integrity ---
@@ -44,10 +65,19 @@ export function validateDomainModel(
     }
     seenMisconceptionIds.add(misconception.id);
 
+    if (!misconception.description.trim()) {
+      errors.push(`Misconception "${misconception.id}" has an empty description`);
+    }
+
+    const seenConceptRefs = new Set<string>();
     for (const conceptId of misconception.conceptIds) {
       if (!conceptIds.has(conceptId)) {
         errors.push(`Misconception "${misconception.id}" references unknown conceptId "${conceptId}"`);
       }
+      if (seenConceptRefs.has(conceptId)) {
+        errors.push(`Misconception "${misconception.id}" lists duplicate conceptId "${conceptId}"`);
+      }
+      seenConceptRefs.add(conceptId);
     }
   }
 

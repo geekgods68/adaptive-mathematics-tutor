@@ -66,7 +66,7 @@ describe("q-discriminant-nature-01: 2x² − 4x + 5 = 0", () => {
     expect(discriminant < 0).toBe(true);
   });
 
-  it("the DISCRIMINANT_FORMULA_ERROR distractor value (b² + 4ac) is positive, explaining the wrong conclusion", () => {
+  it("the B2_PLUS_4AC distractor value (b² + 4ac) is positive, explaining the wrong conclusion", () => {
     const wrongDiscriminant = (-4) ** 2 + 4 * 2 * 5;
     expect(wrongDiscriminant).toBe(56);
     expect(wrongDiscriminant > 0).toBe(true);

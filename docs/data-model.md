@@ -57,17 +57,31 @@ type AnswerOption = {
 ## `Concept` — [`src/domain/concepts/types.ts`](../src/domain/concepts/types.ts)
 
 ```ts
+type ConceptStrand =
+  | "algebra_foundations" | "factorisation" | "solving" | "discriminant"
+  | "roots_coefficients" | "graphs" | "transformations" | "intersections" | "reasoning";
+
 type Concept = {
   id: string;
   name: string;
   description: string;
   prerequisiteIds: string[];
+  strand: ConceptStrand;
+  learningObjective?: string;
 };
 ```
 
-A node in the (future) quadratics concept graph. `prerequisiteIds` is
-architecture for later curriculum-ordering logic; Phase 0 only validates
-that every id referenced actually exists (`validateDomainModel`).
+A node in the quadratics concept graph (35 populated in Phase 1 — see
+[`docs/curriculum.md`](curriculum.md)). `prerequisiteIds` drives curriculum
+ordering; `strand` groups concepts for organisation and coverage
+reporting only, it does not gate anything. Validated for referential
+integrity, self-dependency, duplicate prerequisites, and cycles by
+[`validateDomainModel`](../src/domain/validateDomainModel.ts) (which calls
+[`findConceptGraphCycles`](../src/domain/curriculum/validateCurriculum.ts)).
+Per-concept supported difficulty ranges live separately, in
+[`CONCEPT_DIFFICULTY_GUIDANCE`](../src/domain/curriculum/conceptDifficultyGuidance.ts)
+— not on `Concept` itself, since it's Phase 2 authoring guidance, not a
+property of the concept.
 
 ## `Misconception` — [`src/domain/misconceptions/types.ts`](../src/domain/misconceptions/types.ts)
 
@@ -77,13 +91,22 @@ type Misconception = {
   label: string;
   description: string;
   conceptIds: string[];
+  errorPattern?: string;
+  exampleIncorrectReasoning?: string;
 };
 ```
 
-Stable-id taxonomy entries. `AnswerOption.misconceptionId` values must
-resolve to a `Misconception.id` here — enforced by
+Stable-id taxonomy entries (35 populated in Phase 1 — see
+[`docs/misconception-taxonomy.md`](misconception-taxonomy.md)).
+`AnswerOption.misconceptionId` values must resolve to a `Misconception.id`
+here — enforced by
 [`validateDomainModel`](../src/domain/validateDomainModel.ts) and covered
-by tests.
+by tests. `errorPattern` and `exampleIncorrectReasoning` are
+developer/research metadata describing the flawed procedure and a worked
+instance of it — never student-facing. A `misconceptionId` on a selected
+option is *evidence consistent with* that misconception, not proof of a
+persistent one — see "Evidence vs. persistent misconception" in
+[`docs/misconception-taxonomy.md`](misconception-taxonomy.md).
 
 ## `ExperimentalCondition` / `TutorSession` — [`src/domain/sessions/types.ts`](../src/domain/sessions/types.ts)
 

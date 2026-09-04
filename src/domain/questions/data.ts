@@ -1,9 +1,10 @@
 import type { Question } from "@/domain/questions/types";
 
 /**
- * Small placeholder question bank (5 items) sufficient to validate the
- * schema, grading, and selection architecture. The production quadratics
- * question bank is built in a later phase.
+ * Small seed question bank (5 items) sufficient to validate the schema,
+ * grading, and selection architecture against the full Phase 1 concept
+ * and misconception taxonomy. The production quadratics question bank
+ * (authored per docs/question-authoring-guide.md) is built in Phase 2.
  *
  * Every incorrect option's `misconceptionId`/`derivationNote` describes a
  * mathematically real, checkable line of reasoning — not an arbitrary
@@ -14,7 +15,7 @@ export const QUESTIONS: Question[] = [
   {
     id: "q-solve-factorisation-01",
     stem: "Solve the equation: x² − 5x + 6 = 0",
-    conceptIds: ["concept-solving-by-factorisation", "concept-factorisation"],
+    conceptIds: ["concept-solving-by-factorisation", "concept-factorising-monic-quadratics"],
     primaryConceptId: "concept-solving-by-factorisation",
     difficulty: 2,
     correctOptionId: "q-solve-factorisation-01-o1",
@@ -28,7 +29,7 @@ export const QUESTIONS: Question[] = [
         id: "q-solve-factorisation-01-o2",
         display: "x = −2 or x = −3",
         isCorrect: false,
-        misconceptionId: "SIGN_ERROR",
+        misconceptionId: "FACTOR_SIGN_ERROR",
         derivationNote:
           "After correctly factorising to (x − 2)(x − 3) = 0, the student copies the sign inside each bracket as the root itself, instead of negating it, giving −2 and −3.",
       },
@@ -36,7 +37,7 @@ export const QUESTIONS: Question[] = [
         id: "q-solve-factorisation-01-o3",
         display: "x = 2 or x = −3",
         isCorrect: false,
-        misconceptionId: "FACTOR_PAIR_ERROR",
+        misconceptionId: "FACTOR_SUM_PRODUCT_CONFUSION",
         derivationNote:
           "The student looks for two numbers that multiply to −6 and add to −5 instead of two numbers that multiply to +6 and add to −5, factorising (incorrectly) as (x − 2)(x + 3) = 0.",
       },
@@ -44,7 +45,7 @@ export const QUESTIONS: Question[] = [
         id: "q-solve-factorisation-01-o4",
         display: "x = −6",
         isCorrect: false,
-        misconceptionId: "ZERO_PRODUCT_ERROR",
+        misconceptionId: "CONSTANT_TREATED_AS_ROOT",
         derivationNote:
           "The student treats the constant term as if it were itself the root (x = −6), rather than factorising the expression and applying the zero-product property to two separate linear factors.",
       },
@@ -58,8 +59,8 @@ export const QUESTIONS: Question[] = [
   {
     id: "q-expand-brackets-01",
     stem: "Expand and simplify: (x + 3)(x − 4)",
-    conceptIds: ["concept-expansion"],
-    primaryConceptId: "concept-expansion",
+    conceptIds: ["concept-expanding-two-binomials"],
+    primaryConceptId: "concept-expanding-two-binomials",
     difficulty: 1,
     correctOptionId: "q-expand-brackets-01-o1",
     options: [
@@ -96,7 +97,7 @@ export const QUESTIONS: Question[] = [
         id: "q-expand-brackets-01-o5",
         display: "x² − 12",
         isCorrect: false,
-        misconceptionId: "DISTRIBUTION_ERROR",
+        misconceptionId: "FOIL_TERM_OMITTED",
         derivationNote:
           "The student multiplies only the first and last terms of each bracket (x·x and 3·−4), omitting both cross terms entirely.",
       },
@@ -109,7 +110,7 @@ export const QUESTIONS: Question[] = [
   {
     id: "q-quadratic-formula-01",
     stem: "Solve using the quadratic formula: x² + 4x − 1 = 0. Give exact (surd) answers.",
-    conceptIds: ["concept-quadratic-formula", "concept-quadratic-expressions"],
+    conceptIds: ["concept-quadratic-formula", "concept-identifying-abc"],
     primaryConceptId: "concept-quadratic-formula",
     difficulty: 3,
     correctOptionId: "q-quadratic-formula-01-o1",
@@ -123,7 +124,7 @@ export const QUESTIONS: Question[] = [
         id: "q-quadratic-formula-01-o2",
         display: "x = 2 + √5 or x = 2 − √5",
         isCorrect: false,
-        misconceptionId: "SIGN_ERROR",
+        misconceptionId: "NEGATIVE_B_DROPPED",
         derivationNote:
           "The student substitutes +b instead of −b into the numerator, using (4 ± √20) / 2 instead of (−4 ± √20) / 2, which flips the sign of the integer part of both roots.",
       },
@@ -131,7 +132,7 @@ export const QUESTIONS: Question[] = [
         id: "q-quadratic-formula-01-o3",
         display: "x = −2 + √3 or x = −2 − √3",
         isCorrect: false,
-        misconceptionId: "DISCRIMINANT_FORMULA_ERROR",
+        misconceptionId: "B2_PLUS_4AC",
         derivationNote:
           "The student computes the discriminant as b² + 4ac instead of b² − 4ac: 16 + (4 × 1 × −1) = 12 instead of 16 − (4 × 1 × −1) = 20, giving √3 in place of √5.",
       },
@@ -144,8 +145,8 @@ export const QUESTIONS: Question[] = [
   {
     id: "q-discriminant-nature-01",
     stem: "How many real roots does the equation 2x² − 4x + 5 = 0 have?",
-    conceptIds: ["concept-quadratic-formula"],
-    primaryConceptId: "concept-quadratic-formula",
+    conceptIds: ["concept-discriminant-nature-of-roots", "concept-computing-discriminant"],
+    primaryConceptId: "concept-discriminant-nature-of-roots",
     difficulty: 4,
     correctOptionId: "q-discriminant-nature-01-o1",
     options: [
@@ -158,7 +159,7 @@ export const QUESTIONS: Question[] = [
         id: "q-discriminant-nature-01-o2",
         display: "Two distinct real roots",
         isCorrect: false,
-        misconceptionId: "DISCRIMINANT_FORMULA_ERROR",
+        misconceptionId: "B2_PLUS_4AC",
         derivationNote:
           "The student computes the discriminant as b² + 4ac instead of b² − 4ac: 16 + 40 = 56 (positive), instead of the correct 16 − 40 = −24 (negative).",
       },
@@ -166,7 +167,7 @@ export const QUESTIONS: Question[] = [
         id: "q-discriminant-nature-01-o3",
         display: "x = 5/2 or x = −1",
         isCorrect: false,
-        misconceptionId: "FACTOR_PAIR_ERROR",
+        misconceptionId: "FACTOR_SUM_PRODUCT_CONFUSION",
         derivationNote:
           "The student assumes the expression must factorise over the integers and guesses (2x − 5)(x + 1) = 0 without checking the expansion — it actually expands to 2x² − 3x − 5, not 2x² − 4x + 5.",
       },
@@ -180,8 +181,8 @@ export const QUESTIONS: Question[] = [
   {
     id: "q-factorise-identify-01",
     stem: "Which of the following is the correct factorisation of x² + 2x − 15?",
-    conceptIds: ["concept-factorisation"],
-    primaryConceptId: "concept-factorisation",
+    conceptIds: ["concept-factorising-monic-quadratics"],
+    primaryConceptId: "concept-factorising-monic-quadratics",
     difficulty: 2,
     correctOptionId: "q-factorise-identify-01-o1",
     options: [
@@ -194,7 +195,7 @@ export const QUESTIONS: Question[] = [
         id: "q-factorise-identify-01-o2",
         display: "(x − 5)(x + 3)",
         isCorrect: false,
-        misconceptionId: "SIGN_ERROR",
+        misconceptionId: "FACTOR_SIGN_ERROR",
         derivationNote:
           "The student finds the correct factor magnitudes (5 and 3) but assigns the signs to the wrong factor, swapping which one is positive and which is negative.",
       },
@@ -202,7 +203,7 @@ export const QUESTIONS: Question[] = [
         id: "q-factorise-identify-01-o3",
         display: "(x + 15)(x − 1)",
         isCorrect: false,
-        misconceptionId: "FACTOR_PAIR_ERROR",
+        misconceptionId: "FACTOR_SUM_PRODUCT_CONFUSION",
         derivationNote:
           "The student picks the factor pair 15 and 1 (of 15) instead of 5 and 3, without checking that the pair must also produce the +2 middle-term coefficient.",
       },
@@ -210,7 +211,7 @@ export const QUESTIONS: Question[] = [
         id: "q-factorise-identify-01-o4",
         display: "(x − 3)(x − 5)",
         isCorrect: false,
-        misconceptionId: "SIGN_ERROR",
+        misconceptionId: "FACTOR_SIGN_ERROR",
         derivationNote:
           "The student assumes both factors must be negative because the constant term is negative, rather than checking which sign pattern reproduces the +2x middle term.",
       },

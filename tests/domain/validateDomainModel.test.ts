@@ -11,8 +11,8 @@ function makeValidQuestion(overrides: Partial<Question> = {}): Question {
   return {
     id: "q-fixture-01",
     stem: "1 + 1 = ?",
-    conceptIds: ["concept-quadratic-expressions"],
-    primaryConceptId: "concept-quadratic-expressions",
+    conceptIds: ["concept-recognising-quadratic-expressions"],
+    primaryConceptId: "concept-recognising-quadratic-expressions",
     difficulty: 1,
     correctOptionId: "q-fixture-01-o1",
     options: [
@@ -108,7 +108,7 @@ describe("diagnostic metadata", () => {
     const question = makeValidQuestion({
       options: [
         { id: "o1", display: "2", isCorrect: true },
-        { id: "o2", display: "3", isCorrect: false, misconceptionId: "SIGN_ERROR" },
+        { id: "o2", display: "3", isCorrect: false, misconceptionId: "FACTOR_SIGN_ERROR" },
       ],
       correctOptionId: "o1",
     });
@@ -131,8 +131,8 @@ describe("diagnostic metadata", () => {
 describe("concept integrity", () => {
   it("flags duplicate concept ids", () => {
     const concepts: Concept[] = [
-      { id: "c1", name: "A", description: "", prerequisiteIds: [] },
-      { id: "c1", name: "A again", description: "", prerequisiteIds: [] },
+      { id: "c1", name: "A", description: "d", prerequisiteIds: [], strand: "algebra_foundations" },
+      { id: "c1", name: "A again", description: "d", prerequisiteIds: [], strand: "algebra_foundations" },
     ];
     const errors = validateDomainModel([], concepts, []);
     expect(errors.some((e) => e.includes("Duplicate concept id"))).toBe(true);
@@ -140,17 +140,80 @@ describe("concept integrity", () => {
 
   it("flags a prerequisiteId that does not reference a real concept", () => {
     const concepts: Concept[] = [
-      { id: "c1", name: "A", description: "", prerequisiteIds: ["does-not-exist"] },
+      { id: "c1", name: "A", description: "d", prerequisiteIds: ["does-not-exist"], strand: "algebra_foundations" },
     ];
     const errors = validateDomainModel([], concepts, []);
     expect(errors.some((e) => e.includes("unknown prerequisiteId"))).toBe(true);
   });
 
+  it("flags an empty concept name or description", () => {
+    const concepts: Concept[] = [
+      { id: "c1", name: "", description: "d", prerequisiteIds: [], strand: "algebra_foundations" },
+      { id: "c2", name: "B", description: "", prerequisiteIds: [], strand: "algebra_foundations" },
+    ];
+    const errors = validateDomainModel([], concepts, []);
+    expect(errors.some((e) => e.includes('"c1" has an empty name'))).toBe(true);
+    expect(errors.some((e) => e.includes('"c2" has an empty description'))).toBe(true);
+  });
+
+  it("flags a concept listing itself as its own prerequisite", () => {
+    const concepts: Concept[] = [
+      { id: "c1", name: "A", description: "d", prerequisiteIds: ["c1"], strand: "algebra_foundations" },
+    ];
+    const errors = validateDomainModel([], concepts, []);
+    expect(errors.some((e) => e.includes("lists itself as its own prerequisite"))).toBe(true);
+  });
+
+  it("flags a duplicate prerequisiteId within one concept", () => {
+    const concepts: Concept[] = [
+      { id: "c1", name: "A", description: "d", prerequisiteIds: [], strand: "algebra_foundations" },
+      { id: "c2", name: "B", description: "d", prerequisiteIds: ["c1", "c1"], strand: "algebra_foundations" },
+    ];
+    const errors = validateDomainModel([], concepts, []);
+    expect(errors.some((e) => e.includes("duplicate prerequisiteId"))).toBe(true);
+  });
+
+  it("flags a cycle in the concept prerequisite graph", () => {
+    const concepts: Concept[] = [
+      { id: "c1", name: "A", description: "d", prerequisiteIds: ["c2"], strand: "algebra_foundations" },
+      { id: "c2", name: "B", description: "d", prerequisiteIds: ["c1"], strand: "algebra_foundations" },
+    ];
+    const errors = validateDomainModel([], concepts, []);
+    expect(errors.some((e) => e.includes("cycle"))).toBe(true);
+  });
+
+  it("does not flag a valid, acyclic prerequisite chain", () => {
+    const concepts: Concept[] = [
+      { id: "c1", name: "A", description: "d", prerequisiteIds: [], strand: "algebra_foundations" },
+      { id: "c2", name: "B", description: "d", prerequisiteIds: ["c1"], strand: "algebra_foundations" },
+      { id: "c3", name: "C", description: "d", prerequisiteIds: ["c1", "c2"], strand: "algebra_foundations" },
+    ];
+    const errors = validateDomainModel([], concepts, []);
+    expect(errors).toEqual([]);
+  });
+
   it("flags a misconception referencing an unknown concept", () => {
     const misconceptions: Misconception[] = [
-      { id: "M1", label: "x", description: "", conceptIds: ["does-not-exist"] },
+      { id: "M1", label: "x", description: "d", conceptIds: ["does-not-exist"] },
     ];
     const errors = validateDomainModel([], [], misconceptions);
     expect(errors.some((e) => e.includes("references unknown conceptId"))).toBe(true);
+  });
+
+  it("flags an empty misconception description", () => {
+    const misconceptions: Misconception[] = [{ id: "M1", label: "x", description: "", conceptIds: [] }];
+    const errors = validateDomainModel([], [], misconceptions);
+    expect(errors.some((e) => e.includes('"M1" has an empty description'))).toBe(true);
+  });
+
+  it("flags a duplicate conceptId within one misconception", () => {
+    const concepts: Concept[] = [
+      { id: "c1", name: "A", description: "d", prerequisiteIds: [], strand: "algebra_foundations" },
+    ];
+    const misconceptions: Misconception[] = [
+      { id: "M1", label: "x", description: "d", conceptIds: ["c1", "c1"] },
+    ];
+    const errors = validateDomainModel([], concepts, misconceptions);
+    expect(errors.some((e) => e.includes("duplicate conceptId"))).toBe(true);
   });
 });

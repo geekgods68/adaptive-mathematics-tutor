@@ -16,7 +16,11 @@ possible. Do not try to build the adaptive condition here.
 Full context: [`docs/research-design.md`](docs/research-design.md),
 [`docs/experimental-conditions.md`](docs/experimental-conditions.md),
 [`docs/architecture.md`](docs/architecture.md),
-[`docs/data-model.md`](docs/data-model.md).
+[`docs/data-model.md`](docs/data-model.md),
+[`docs/curriculum.md`](docs/curriculum.md),
+[`docs/difficulty-framework.md`](docs/difficulty-framework.md),
+[`docs/misconception-taxonomy.md`](docs/misconception-taxonomy.md),
+[`docs/question-authoring-guide.md`](docs/question-authoring-guide.md).
 
 ## Hard constraints — do not violate these
 
@@ -62,6 +66,21 @@ Full context: [`docs/research-design.md`](docs/research-design.md),
    reproducible. Avoid introducing hidden randomness into grading or
    sequencing.
 
+7. **A `misconceptionId` is evidence, not a diagnosis.** Never write or
+   generate text implying a selected distractor *proves* a student has a
+   given misconception — it means "this response is consistent with
+   misconception X." See "Evidence vs. persistent misconception" in
+   [`docs/misconception-taxonomy.md`](docs/misconception-taxonomy.md).
+
+8. **Concept graph stays acyclic and referentially sound.** New concepts
+   go through `validateDomainModel` (referential integrity, self-
+   dependency, duplicate prerequisites, cycle detection via
+   `findConceptGraphCycles`). If you add a concept, also add it to
+   `RECOMMENDED_CURRICULUM_ORDER`
+   (`src/domain/curriculum/curriculumOrder.ts`) in a position after all its
+   prerequisites — `validateCurriculumOrder` checks this and tests enforce
+   it.
+
 ## Shared infrastructure
 
 Adaptive and non-adaptive conditions are meant to share as much as
@@ -74,23 +93,30 @@ resist the urge to special-case UI or grading behavior on `condition`.
 
 ## Development workflow (phase-wise)
 
-- **Phase 0 (this state):** architecture, data schemas, deterministic
+- **Phase 0 (complete):** architecture, data schemas, deterministic
   grading, `QuestionSelectionPolicy` abstraction with a working
   `NonAdaptiveSelectionPolicy` and a skeletal `AdaptiveSelectionPolicy`,
   a small (5-question) seed dataset, research-event schema, tests, docs.
+- **Phase 1 (this state):** the curriculum model those Phase 0 schemas
+  support — a 35-concept quadratics taxonomy across 9 strands with a
+  validated, acyclic prerequisite graph and a recommended teaching order
+  (`src/domain/curriculum/`), a formal 5-level difficulty framework with
+  per-concept difficulty guidance, and a 35-entry misconception taxonomy
+  mapped to concepts. The Phase 0 seed questions were updated to this
+  taxonomy; the production question bank was NOT built (that's Phase 2).
 - **Later phases (not started):** the production quadratics question
-  bank, the full concept graph, the full misconception taxonomy, a
-  working `/tutor` UI loop for the non-adaptive condition, persistent
+  bank (authored per `docs/question-authoring-guide.md`), a working
+  `/tutor` UI loop for the non-adaptive condition, persistent
   research-event storage, session administration. None of this exists
   yet — don't assume it does.
 
 Things explicitly **not** to build in this repository: hundreds of
-questions, the complete concept graph, the final misconception taxonomy,
-adaptive mastery updates, adaptive sequencing, participant recruitment
-or consent flows, teacher/participant dashboards, a production database,
-LLM integration, authentication, polished visual design, analytics
-dashboards, pre/post testing, or full experiment administration. These
-are deliberately out of scope until a later, explicitly-requested phase.
+questions, adaptive mastery updates, adaptive sequencing, participant
+recruitment or consent flows, teacher/participant dashboards, a
+production database, LLM integration, authentication, polished visual
+design, analytics dashboards, pre/post testing, or full experiment
+administration. These are deliberately out of scope until a later,
+explicitly-requested phase.
 
 ## Commands
 
