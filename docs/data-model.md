@@ -18,6 +18,7 @@ type Question = {
   explanation?: string;
   tags?: string[];
   source?: string;
+  questionFamily?: string;
   version: number;
 };
 ```
@@ -27,12 +28,20 @@ type Question = {
   mutating an existing id's meaning.
 - `options` has no fixed length. Nothing in the codebase assumes 4 options
   — see [`architecture.md`](architecture.md) for how the UI is expected to
-  render an arbitrary-length list.
+  render an arbitrary-length list. The production bank (161 questions,
+  Phase 2) averages 3.1 options per question — see
+  [`docs/question-bank.md`](question-bank.md).
 - `correctOptionId` references an option `id`, never a position (`"A"`,
   `"B"`, ...). Option order can be shuffled per presentation without any
   change to how correctness is determined.
 - `conceptIds` may name several concepts a question exercises;
   `primaryConceptId` must be one of them.
+- `questionFamily` (Phase 2) optionally groups questions that share a
+  reasoning structure (e.g. a common misconception pattern applied to
+  different numbers) — for near-duplicate auditing and, later, for
+  spreading a session across families. Not currently populated on any
+  bank question; add it when authoring a new family rather than
+  speculatively.
 
 ## `AnswerOption` — [`src/domain/questions/types.ts`](../src/domain/questions/types.ts)
 

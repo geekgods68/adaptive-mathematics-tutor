@@ -1,6 +1,6 @@
 import { CONCEPTS } from "@/domain/concepts/data";
 import { MISCONCEPTIONS } from "@/domain/misconceptions/data";
-import { QUESTIONS } from "@/domain/questions/data";
+import { QUESTIONS } from "@/domain/questions";
 import { validateDomainModel } from "@/domain/validateDomainModel";
 import { NON_ADAPTIVE_CURRICULUM_SEQUENCE } from "@/tutoring/selection/nonAdaptive/curriculumSequence";
 

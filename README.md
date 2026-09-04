@@ -16,24 +16,24 @@ in this repository — read it before making changes.
 
 ## Current phase
 
-**Phase 1 — curriculum model.** Phase 0 established the domain model
-(questions, concepts, misconceptions), deterministic MCQ grading, the
-`QuestionSelectionPolicy` abstraction (with a working
-`NonAdaptiveSelectionPolicy` and a skeletal `AdaptiveSelectionPolicy`),
-and the research-event schema. Phase 1 builds the curriculum model those
-schemas support: a 35-concept quadratics taxonomy across 9 strands with a
-validated (acyclic) prerequisite graph and a recommended teaching order, a
-formal 5-level difficulty framework with per-concept difficulty guidance,
-and a 35-entry misconception taxonomy mapped to concepts — see
+**Phase 2 — production question bank.** Phase 0 established the domain
+model, deterministic MCQ grading, and the `QuestionSelectionPolicy`
+abstraction; Phase 1 built the curriculum model (35 concepts, a 5-level
+difficulty framework, 35 misconceptions — see
 [`docs/curriculum.md`](docs/curriculum.md),
-[`docs/difficulty-framework.md`](docs/difficulty-framework.md), and
-[`docs/misconception-taxonomy.md`](docs/misconception-taxonomy.md). The
-5-question seed dataset from Phase 0 has been updated to use this
-taxonomy; the production question bank itself is Phase 2 (see
-[`docs/question-authoring-guide.md`](docs/question-authoring-guide.md)
-for the rules it will follow). This still does not include a working
-tutoring UI loop or persistent research-data storage — see "Not yet
-built" below.
+[`docs/difficulty-framework.md`](docs/difficulty-framework.md),
+[`docs/misconception-taxonomy.md`](docs/misconception-taxonomy.md)).
+Phase 2 authors the production question bank those Phase 1 schemas
+support: **161 questions** across all 9 strands, every one of the 35
+concepts and 35 misconceptions represented, every answer and diagnostic
+distractor computationally verified — see
+[`docs/question-bank.md`](docs/question-bank.md),
+[`docs/question-bank-coverage.md`](docs/question-bank-coverage.md), and
+[`docs/question-bank-validation.md`](docs/question-bank-validation.md).
+A provisional 35-question `CANDIDATE_NON_ADAPTIVE_SEQUENCE` is included
+as a Phase 3 starting point (not a finished study design). This still
+does not include a working tutoring UI loop or persistent research-data
+storage — see "Not yet built" below.
 
 ## Installation
 
@@ -62,6 +62,7 @@ Then open <http://localhost:3000> for the research-project status page.
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm test` | Run the test suite once (Vitest) |
 | `npm run test:watch` | Run tests in watch mode |
+| `npm run audit:questions` | Live question-bank quality report (counts, coverage, integrity errors) |
 
 ## Project structure
 
@@ -69,7 +70,15 @@ Then open <http://localhost:3000> for the research-project status page.
 src/
   app/                Minimal research-status landing page
   domain/
-    questions/         Question, AnswerOption + seed data.ts
+    questions/
+      types.ts          Question, AnswerOption (+ questionFamily)
+      index.ts           Combined production QUESTIONS export (161 questions)
+      bank/               One file per curriculum strand (algebraFoundations.ts,
+                          factorisation.ts, solving.ts, discriminant.ts,
+                          rootsCoefficients.ts, graphs.ts, transformations.ts,
+                          intersections.ts, reasoning.ts)
+      validateQuestionBank.ts   Phase 2 production quality gates
+      bankStatistics.ts   Coverage stats + duplicate detection
     concepts/           Concept (+ strand) + 35-concept data.ts
     misconceptions/      Misconception (+ errorPattern) + 35-entry data.ts
     curriculum/          Difficulty framework, per-concept difficulty guidance,
@@ -81,7 +90,9 @@ src/
   tutoring/
     grading/            Deterministic MCQ grading (gradeAnswer)
     selection/           QuestionSelectionPolicy abstraction
-      nonAdaptive/        NonAdaptiveSelectionPolicy (implemented) + fixed sequence
+      nonAdaptive/        NonAdaptiveSelectionPolicy (implemented) + fixed
+                          5-question demo sequence + provisional 35-question
+                          CANDIDATE_NON_ADAPTIVE_SEQUENCE
       adaptive/            AdaptiveSelectionPolicy (skeleton only)
     feedback/            Feedback/explanation formatting
   research/
@@ -89,20 +100,26 @@ src/
     logging/             ResearchEventLogger (in-memory implementation)
   lib/                 Small shared helpers (id generation)
 
-tests/                 Vitest test suite (mirrors src/ structure)
+scripts/
+  audit-questions.ts    Human-readable question-bank quality report (npm run audit:questions)
+
+tests/
+  helpers/quadratics.ts Shared numeric verification helpers (substitution checks)
+  domain/questionBank/  Bank integrity, coverage, duplicate-detection, math-verification tests
+  ...                  (mirrors src/ structure elsewhere)
+
 docs/                  Research design, architecture, curriculum, difficulty,
-                       misconception taxonomy, and question-authoring docs
+                       misconception taxonomy, question-authoring, and
+                       question-bank docs
 ```
 
 ## Not yet built
 
-Deliberately out of scope for Phase 1 (see [`CLAUDE.md`](CLAUDE.md) for the
+Deliberately out of scope for Phase 2 (see [`CLAUDE.md`](CLAUDE.md) for the
 full list and why):
 
 - A working `/tutor` UI loop (question presentation, answer submission,
   feedback, session progression)
-- The production quadratics question bank (Phase 2 — the curriculum
-  framework it will be authored against is now in place)
 - Persistent research-event storage (a real database)
 - Adaptive mastery updates or adaptive sequencing (developed in the
   sibling `adaptive-math-tutor` repository)

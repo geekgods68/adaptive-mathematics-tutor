@@ -70,5 +70,14 @@ export type Question = {
 
   source?: string;
 
+  /**
+   * Groups questions that are genuinely distinct assessment items but share
+   * a reasoning structure (e.g. "quadratic-formula-sign-error-family").
+   * Used for near-duplicate auditing and, later, for spreading a session
+   * across families rather than repeating one reasoning pattern. Optional —
+   * most standalone items don't need one.
+   */
+  questionFamily?: string;
+
   version: number;
 };

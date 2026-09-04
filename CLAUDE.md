@@ -20,7 +20,10 @@ Full context: [`docs/research-design.md`](docs/research-design.md),
 [`docs/curriculum.md`](docs/curriculum.md),
 [`docs/difficulty-framework.md`](docs/difficulty-framework.md),
 [`docs/misconception-taxonomy.md`](docs/misconception-taxonomy.md),
-[`docs/question-authoring-guide.md`](docs/question-authoring-guide.md).
+[`docs/question-authoring-guide.md`](docs/question-authoring-guide.md),
+[`docs/question-bank.md`](docs/question-bank.md),
+[`docs/question-bank-coverage.md`](docs/question-bank-coverage.md),
+[`docs/question-bank-validation.md`](docs/question-bank-validation.md).
 
 ## Hard constraints — do not violate these
 
@@ -39,9 +42,11 @@ Full context: [`docs/research-design.md`](docs/research-design.md),
    `misconceptionId`/`derivationNote` must describe a real, checkable
    incorrect line of reasoning that actually produces that distractor's
    value — not a plausible-looking wrong number picked at random. When
-   adding a question, verify the arithmetic (see
-   `tests/domain/questionMath.test.ts` for the pattern: substitute and
-   check by computation, don't eyeball it).
+   adding a question, verify the arithmetic by computation before writing
+   it down (see `tests/helpers/quadratics.ts` and
+   `tests/domain/questionBank/mathVerification.test.ts` for the pattern,
+   or the simpler `tests/domain/questionMath.test.ts` from Phase 0/1) —
+   don't eyeball it.
 
 4. **The non-adaptive condition must never select questions using
    student-performance data** — not mastery, not misconception history,
@@ -81,6 +86,28 @@ Full context: [`docs/research-design.md`](docs/research-design.md),
    prerequisites — `validateCurriculumOrder` checks this and tests enforce
    it.
 
+9. **A production question bank now exists (161 questions,
+   `src/domain/questions/bank/`) — do not edit it casually.** Every
+   question and option id in it is a stable identifier a real study could
+   join research data on. Do not renumber or repurpose an existing
+   `Question.id` or `AnswerOption.id`; if a question needs substantive
+   revision, bump its `version` (see constraint 5). Do not delete a
+   question just because it seems redundant without checking
+   `docs/question-bank-coverage.md` first — it may be the sole
+   representative of a concept or misconception. After any edit to
+   `src/domain/questions/bank/`, `src/domain/concepts/data.ts`, or
+   `src/domain/misconceptions/data.ts`, run `npm test` and
+   `npm run audit:questions` — both must stay green (see
+   `docs/question-bank-validation.md` for what's checked and why).
+   `Misconception.id`s are equally stable — never rename one; retire it by
+   ceasing new use, don't rewrite its meaning in place.
+
+10. **Diagnostic distractors are research data, not just wrong answers.**
+    Every `derivationNote`/`errorPattern` you add must be independently
+    verified — computed, not eyeballed — before being written (see
+    "Authoring methodology" in `docs/question-bank.md`). This applies to
+    every future question, not only the existing 161.
+
 ## Shared infrastructure
 
 Adaptive and non-adaptive conditions are meant to share as much as
@@ -97,35 +124,48 @@ resist the urge to special-case UI or grading behavior on `condition`.
   grading, `QuestionSelectionPolicy` abstraction with a working
   `NonAdaptiveSelectionPolicy` and a skeletal `AdaptiveSelectionPolicy`,
   a small (5-question) seed dataset, research-event schema, tests, docs.
-- **Phase 1 (this state):** the curriculum model those Phase 0 schemas
+- **Phase 1 (complete):** the curriculum model those Phase 0 schemas
   support — a 35-concept quadratics taxonomy across 9 strands with a
   validated, acyclic prerequisite graph and a recommended teaching order
   (`src/domain/curriculum/`), a formal 5-level difficulty framework with
   per-concept difficulty guidance, and a 35-entry misconception taxonomy
   mapped to concepts. The Phase 0 seed questions were updated to this
-  taxonomy; the production question bank was NOT built (that's Phase 2).
-- **Later phases (not started):** the production quadratics question
-  bank (authored per `docs/question-authoring-guide.md`), a working
-  `/tutor` UI loop for the non-adaptive condition, persistent
-  research-event storage, session administration. None of this exists
-  yet — don't assume it does.
+  taxonomy; the production question bank was NOT built yet (that was
+  Phase 2).
+- **Phase 2 (this state):** the production question bank — 161 questions
+  across `src/domain/questions/bank/` (one file per strand), combined via
+  `src/domain/questions/index.ts`. Every misconception and concept has
+  real coverage (see `docs/question-bank-coverage.md`); quality gates
+  (`src/domain/questions/validateQuestionBank.ts`), bank statistics and
+  duplicate detection (`src/domain/questions/bankStatistics.ts`), and a
+  live audit report (`npm run audit:questions`) all exist. A
+  `CANDIDATE_NON_ADAPTIVE_SEQUENCE`
+  (`src/tutoring/selection/nonAdaptive/candidateSequence.ts`, 35
+  questions) is a **provisional** Phase 3 input — not a finished study
+  design — built the same performance-independent way as the Phase 0
+  `NON_ADAPTIVE_CURRICULUM_SEQUENCE`, which still exists unchanged
+  alongside it. Still NOT built: the `/tutor` UI loop, persistent
+  research-event storage, session administration.
+- **Later phases (not started):** a working `/tutor` UI loop for the
+  non-adaptive condition, persistent research-event storage, session
+  administration. None of this exists yet — don't assume it does.
 
-Things explicitly **not** to build in this repository: hundreds of
-questions, adaptive mastery updates, adaptive sequencing, participant
-recruitment or consent flows, teacher/participant dashboards, a
-production database, LLM integration, authentication, polished visual
-design, analytics dashboards, pre/post testing, or full experiment
-administration. These are deliberately out of scope until a later,
-explicitly-requested phase.
+Things explicitly **not** to build in this repository: adaptive mastery
+updates, adaptive sequencing, participant recruitment or consent flows,
+teacher/participant dashboards, a production database, LLM integration,
+authentication, polished visual design, analytics dashboards, pre/post
+testing, or full experiment administration. These are deliberately out of
+scope until a later, explicitly-requested phase.
 
 ## Commands
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
-npm test           # vitest run
+npm run dev              # http://localhost:3000
+npm test                 # vitest run
 npm run test:watch
 npm run lint
-npm run typecheck  # tsc --noEmit
+npm run typecheck        # tsc --noEmit
 npm run build
+npm run audit:questions  # live question-bank quality report
 ```

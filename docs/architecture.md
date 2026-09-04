@@ -100,6 +100,26 @@ without belonging inside the plain data files:
   [`validateDomainModel`](../src/domain/validateDomainModel.ts) and from
   their own tests
 
-The production quadratics question bank (Phase 2) is authored against
-this concept and misconception taxonomy — see
-[`docs/question-authoring-guide.md`](question-authoring-guide.md).
+## Production question bank (Phase 2)
+
+`src/domain/questions/bank/` holds the 161-question production bank, one
+file per strand, combined into a single `QUESTIONS` export by
+`src/domain/questions/index.ts` (no other module should import a bank
+file directly). Two more modules support it without belonging in the
+plain data files, mirroring the `curriculum/` split above:
+
+- `validateQuestionBank.ts` — Phase 2 quality gates beyond
+  `validateDomainModel`'s general schema checks (non-empty stem/worked
+  solution, no duplicate option text, every diagnostic distractor has a
+  derivation note, difficulty within the concept's guidance range)
+- `bankStatistics.ts` — coverage statistics and duplicate detection
+  (stems, option sets, worked solutions), backing both
+  `scripts/audit-questions.ts` (`npm run audit:questions`) and the test
+  suite
+
+Authored against the concept and misconception taxonomy per
+[`docs/question-authoring-guide.md`](question-authoring-guide.md); see
+[`docs/question-bank.md`](question-bank.md),
+[`docs/question-bank-coverage.md`](question-bank-coverage.md), and
+[`docs/question-bank-validation.md`](question-bank-validation.md) for the
+bank itself.

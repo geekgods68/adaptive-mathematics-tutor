@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CONCEPTS } from "@/domain/concepts/data";
 import { MISCONCEPTIONS } from "@/domain/misconceptions/data";
-import { QUESTIONS } from "@/domain/questions/data";
+import { QUESTIONS } from "@/domain/questions";
 import { validateDomainModel } from "@/domain/validateDomainModel";
 import type { Concept } from "@/domain/concepts/types";
 import type { Misconception } from "@/domain/misconceptions/types";

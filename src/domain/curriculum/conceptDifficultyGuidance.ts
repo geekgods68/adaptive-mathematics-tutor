@@ -29,9 +29,15 @@ export const CONCEPT_DIFFICULTY_GUIDANCE: ConceptDifficultyGuidance[] = [
   { conceptId: "concept-recognising-non-factorisable", minDifficulty: 2, maxDifficulty: 4 },
   { conceptId: "concept-factorisation-roots-link", minDifficulty: 1, maxDifficulty: 2 },
 
-  { conceptId: "concept-identifying-abc", minDifficulty: 1, maxDifficulty: 2 },
+  // Widened from 1-2 to 1-3 in Phase 2: q-identify-abc-004 combines
+  // rearranging an equation into standard form with identifying b,
+  // genuinely earning Difficulty 3.
+  { conceptId: "concept-identifying-abc", minDifficulty: 1, maxDifficulty: 3 },
   { conceptId: "concept-zero-product-principle", minDifficulty: 1, maxDifficulty: 2 },
-  { conceptId: "concept-solving-by-factorisation", minDifficulty: 1, maxDifficulty: 3 },
+  // Widened from 1-3 to 1-4 in Phase 2: q-solve-factorisation-006 (x(x-3)=18)
+  // has a reasoning trap — resisting the pull to apply the zero-product
+  // principle before rearranging — that genuinely earns Difficulty 4.
+  { conceptId: "concept-solving-by-factorisation", minDifficulty: 1, maxDifficulty: 4 },
   { conceptId: "concept-rearranging-to-standard-form-to-solve", minDifficulty: 2, maxDifficulty: 4 },
   { conceptId: "concept-completing-the-square", minDifficulty: 2, maxDifficulty: 4 },
   { conceptId: "concept-solving-by-completing-the-square", minDifficulty: 2, maxDifficulty: 4 },
@@ -39,12 +45,18 @@ export const CONCEPT_DIFFICULTY_GUIDANCE: ConceptDifficultyGuidance[] = [
   { conceptId: "concept-interpreting-plus-minus", minDifficulty: 2, maxDifficulty: 3 },
 
   { conceptId: "concept-computing-discriminant", minDifficulty: 1, maxDifficulty: 2 },
-  { conceptId: "concept-discriminant-nature-of-roots", minDifficulty: 2, maxDifficulty: 3 },
+  // Widened from 2-3 in Phase 1 to 2-4 in Phase 2: q-discriminant-nature-01
+  // (a "how many real roots" question with a plausible wrong-factorisation
+  // trap distractor) genuinely earns Difficulty 4 under the full framework.
+  { conceptId: "concept-discriminant-nature-of-roots", minDifficulty: 2, maxDifficulty: 4 },
   { conceptId: "concept-discriminant-reverse-reasoning", minDifficulty: 3, maxDifficulty: 4 },
   { conceptId: "concept-discriminant-parameter-reasoning", minDifficulty: 4, maxDifficulty: 5 },
 
   { conceptId: "concept-sum-and-product-of-roots", minDifficulty: 2, maxDifficulty: 3 },
-  { conceptId: "concept-constructing-quadratic-from-roots", minDifficulty: 3, maxDifficulty: 4 },
+  // Widened from 3-4 to 2-4 in Phase 2: q-construct-from-roots-004 gives
+  // the sum and product directly (no need to derive them from stated
+  // roots first), a genuinely simpler Difficulty 2 instance of this concept.
+  { conceptId: "concept-constructing-quadratic-from-roots", minDifficulty: 2, maxDifficulty: 4 },
   { conceptId: "concept-roots-coefficients-parameter-reasoning", minDifficulty: 4, maxDifficulty: 5 },
 
   { conceptId: "concept-parabola-shape-and-key-features", minDifficulty: 1, maxDifficulty: 2 },

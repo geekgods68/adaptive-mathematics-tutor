@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { gradeAnswer } from "@/tutoring/grading/grade";
-import { QUESTIONS } from "@/domain/questions/data";
+import { QUESTIONS } from "@/domain/questions";
 import type { Question } from "@/domain/questions/types";
 
 const sampleQuestion: Question = {
