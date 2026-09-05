@@ -123,3 +123,26 @@ Authored against the concept and misconception taxonomy per
 [`docs/question-bank-coverage.md`](question-bank-coverage.md), and
 [`docs/question-bank-validation.md`](question-bank-validation.md) for the
 bank itself.
+
+## Session service and student UI (Phase 3)
+
+`src/tutoring/session/` is where the running tutor's business rules
+live — `service.ts`'s exported functions
+(`startSession`/`getCurrentQuestion`/`submitAnswer`/`advanceSession`/
+`getStudentFacingSummary`/`getResearchSummary`/`exportSession`/
+`resetSession`) are the only way anything else in the application reads
+or changes session state. It composes existing pieces rather than
+reimplementing them: `NonAdaptiveSelectionPolicy` decides the next
+question, `gradeAnswer` grades it, `buildFeedback` builds the feedback
+text, and `ResearchEvent`s are logged through the existing
+`InMemoryResearchEventLogger`. `publicViews.ts` is the one-way boundary
+between this layer and the browser — see `docs/tutor-flow.md`, "What the
+client never receives."
+
+`src/app/tutor/` (the student UI) and `src/app/dev/session/` (a separate
+development-only diagnostic view) both depend on `tutoring/session/`, and
+`tutoring/session/` depends on `tutoring/selection`, `tutoring/grading`,
+`tutoring/feedback`, and `research/`, never the reverse — the same
+one-directional layering as the rest of the app (see "Layering" above).
+React components never call `gradeAnswer`, the selection policy, or the
+question bank directly.

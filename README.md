@@ -16,40 +16,41 @@ in this repository — read it before making changes.
 
 ## Current phase
 
-**Phase 2 — production question bank.** Phase 0 established the domain
-model, deterministic MCQ grading, and the `QuestionSelectionPolicy`
-abstraction; Phase 1 built the curriculum model (35 concepts, a 5-level
-difficulty framework, 35 misconceptions — see
-[`docs/curriculum.md`](docs/curriculum.md),
-[`docs/difficulty-framework.md`](docs/difficulty-framework.md),
-[`docs/misconception-taxonomy.md`](docs/misconception-taxonomy.md)).
-Phase 2 authors the production question bank those Phase 1 schemas
-support: **161 questions** across all 9 strands, every one of the 35
-concepts and 35 misconceptions represented, every answer and diagnostic
-distractor computationally verified — see
-[`docs/question-bank.md`](docs/question-bank.md),
-[`docs/question-bank-coverage.md`](docs/question-bank-coverage.md), and
-[`docs/question-bank-validation.md`](docs/question-bank-validation.md).
-A provisional 35-question `CANDIDATE_NON_ADAPTIVE_SEQUENCE` is included
-as a Phase 3 starting point (not a finished study design). This still
-does not include a working tutoring UI loop or persistent research-data
-storage — see "Not yet built" below.
+**Phase 3 — complete, usable non-adaptive tutor.** Phase 0 established the
+domain model and deterministic grading; Phase 1 built the curriculum
+model (35 concepts, 5-level difficulty framework, 35 misconceptions);
+Phase 2 authored the 161-question production bank. Phase 3 wires all of
+it into an actual student-facing tutoring session at
+[`/tutor`](http://localhost:3000/tutor): start → question → submit →
+deterministic grading → feedback → worked solution → Continue → repeat
+through a fixed 35-question sequence
+([`docs/non-adaptive-sequence.md`](docs/non-adaptive-sequence.md)) →
+completion summary. Every step is logged as a `ResearchEvent`
+([`docs/research-logging.md`](docs/research-logging.md)), sessions
+survive page refresh, and a full JSON export is available from the
+development-only [`/dev/session`](http://localhost:3000/dev/session)
+view ([`docs/session-data-schema.md`](docs/session-data-schema.md)). See
+[`docs/tutor-flow.md`](docs/tutor-flow.md) for exactly how the pieces fit
+together, start to finish.
 
-## Installation
+**The core experimental guarantee — the sequence of questions a student
+sees never depends on their performance — is enforced structurally (not
+just by convention) and demonstrated by an end-to-end test comparing an
+always-correct student against an always-incorrect student.** See
+[`docs/non-adaptive-sequence.md`](docs/non-adaptive-sequence.md#performance-independence--the-guarantee-precisely).
 
-Requires Node.js 20+.
+## Try it
 
 ```bash
 npm install
-```
-
-## Development
-
-```bash
 npm run dev
 ```
 
-Then open <http://localhost:3000> for the research-project status page.
+Open <http://localhost:3000/tutor> and complete a session (or stop partway
+— refresh to confirm it resumes where you left off). Open
+<http://localhost:3000/dev/session> in the same browser to see the raw
+session state, response log, event log, and a JSON export/reset — this is
+a development-only diagnostic view, not part of the student experience.
 
 ## Commands
 
@@ -63,65 +64,85 @@ Then open <http://localhost:3000> for the research-project status page.
 | `npm test` | Run the test suite once (Vitest) |
 | `npm run test:watch` | Run tests in watch mode |
 | `npm run audit:questions` | Live question-bank quality report (counts, coverage, integrity errors) |
+| `npm run audit:session` | Live study-sequence quality report (length, difficulty/strand composition, integrity errors) |
 
 ## Project structure
 
 ```text
 src/
-  app/                Minimal research-status landing page
+  app/
+    page.tsx              Research-status landing page (dev-facing counts, not the tutor)
+    tutor/                 The student-facing tutor
+      page.tsx              Thin Server Component
+      tutor-client.tsx       Client Component: all UI state (start/question/feedback/completion)
+      actions.ts             Server Actions (thin transport layer only)
+    dev/session/            Development-only diagnostic view (session state, event log, export, reset)
   domain/
     questions/
-      types.ts          Question, AnswerOption (+ questionFamily)
-      index.ts           Combined production QUESTIONS export (161 questions)
-      bank/               One file per curriculum strand (algebraFoundations.ts,
-                          factorisation.ts, solving.ts, discriminant.ts,
-                          rootsCoefficients.ts, graphs.ts, transformations.ts,
-                          intersections.ts, reasoning.ts)
-      validateQuestionBank.ts   Phase 2 production quality gates
-      bankStatistics.ts   Coverage stats + duplicate detection
-    concepts/           Concept (+ strand) + 35-concept data.ts
-    misconceptions/      Misconception (+ errorPattern) + 35-entry data.ts
-    curriculum/          Difficulty framework, per-concept difficulty guidance,
-                        recommended curriculum order, graph/curriculum queries
-                        and validators (cycle detection, etc.)
-    student/            StudentModel, ConceptMastery (architecture only)
-    sessions/            ExperimentalCondition, TutorSession
-    validateDomainModel.ts   Cross-entity referential-integrity checks
+      types.ts              Question, AnswerOption (+ questionFamily)
+      index.ts               Combined production QUESTIONS export (161 questions)
+      bank/                   One file per curriculum strand
+      validateQuestionBank.ts Phase 2 production quality gates
+      bankStatistics.ts      Coverage stats + duplicate detection
+    concepts/               Concept (+ strand) + 35-concept data.ts
+    misconceptions/          Misconception (+ errorPattern) + 35-entry data.ts
+    curriculum/              Difficulty framework, curriculum order, graph
+                            queries and validators
+    student/                StudentModel, ConceptMastery (architecture only)
+    sessions/                ExperimentalCondition, TutorSession
+    validateDomainModel.ts       Cross-entity referential-integrity checks
   tutoring/
-    grading/            Deterministic MCQ grading (gradeAnswer)
-    selection/           QuestionSelectionPolicy abstraction
-      nonAdaptive/        NonAdaptiveSelectionPolicy (implemented) + fixed
-                          5-question demo sequence + provisional 35-question
-                          CANDIDATE_NON_ADAPTIVE_SEQUENCE
-      adaptive/            AdaptiveSelectionPolicy (skeleton only)
-    feedback/            Feedback/explanation formatting
+    grading/                Deterministic MCQ grading (gradeAnswer)
+    selection/
+      nonAdaptive/            NonAdaptiveSelectionPolicy (implemented);
+                              NON_ADAPTIVE_STUDY_SEQUENCE (the 35-question
+                              sequence the running tutor uses);
+                              CANDIDATE_NON_ADAPTIVE_SEQUENCE (Phase 2
+                              coverage check, superseded); the original
+                              5-question Phase 0 demo sequence
+      adaptive/                AdaptiveSelectionPolicy (skeleton only)
+    feedback/                Feedback/explanation formatting
+    session/                 THE SESSION SERVICE — all business rules live here
+      types.ts                 ActiveTutorSession, TutorResponse
+      service.ts                startSession/getCurrentQuestion/submitAnswer/
+                                advanceSession/getStudentFacingSummary/
+                                getResearchSummary/exportSession/resetSession
+      store.ts                  In-memory session store + shared research-event logger
+      publicViews.ts            Strips research metadata before anything reaches the client
+      optionOrder.ts            Deterministic seeded option shuffle (see docs/tutor-flow.md)
+      summary.ts                Pure summary computation (student-facing + research)
+      errors.ts                 Typed errors for every invalid transition
   research/
-    events/              ResearchEvent discriminated union
-    logging/             ResearchEventLogger (in-memory implementation)
-  lib/                 Small shared helpers (id generation)
+    events/                  ResearchEvent discriminated union
+    logging/                 ResearchEventLogger (in-memory implementation)
+  lib/                     Small shared helpers (id generation)
 
 scripts/
-  audit-questions.ts    Human-readable question-bank quality report (npm run audit:questions)
+  audit-questions.ts        npm run audit:questions
+  audit-session.ts          npm run audit:session
 
 tests/
-  helpers/quadratics.ts Shared numeric verification helpers (substitution checks)
-  domain/questionBank/  Bank integrity, coverage, duplicate-detection, math-verification tests
-  ...                  (mirrors src/ structure elsewhere)
+  helpers/quadratics.ts     Shared numeric verification helpers
+  domain/questionBank/      Bank integrity, coverage, duplicate-detection, math-verification
+  tutoring/session/          Session lifecycle, performance-independence, logging,
+                            summary, study-sequence, option-order tests
+  app/tutor/                 Component tests for the tutor UI (mocked Server Actions)
 
-docs/                  Research design, architecture, curriculum, difficulty,
-                       misconception taxonomy, question-authoring, and
-                       question-bank docs
+docs/                      Research design, architecture, curriculum, difficulty,
+                           misconception taxonomy, question-bank, tutor-flow,
+                           non-adaptive-sequence, research-logging, and
+                           session-data-schema docs
 ```
 
 ## Not yet built
 
-Deliberately out of scope for Phase 2 (see [`CLAUDE.md`](CLAUDE.md) for the
-full list and why):
+Deliberately out of scope for this repository (see [`CLAUDE.md`](CLAUDE.md)
+for the full list and why):
 
-- A working `/tutor` UI loop (question presentation, answer submission,
-  feedback, session progression)
-- Persistent research-event storage (a real database)
+- Persistent research-event storage (a real database — see
+  [`docs/research-logging.md`](docs/research-logging.md), "Persistence")
 - Adaptive mastery updates or adaptive sequencing (developed in the
   sibling `adaptive-math-tutor` repository)
-- Authentication, participant recruitment/consent flows, dashboards,
-  pre/post testing
+- Authentication, participant recruitment/consent flows, teacher
+  dashboards, pre/post testing, production deployment, a statistical
+  analysis pipeline

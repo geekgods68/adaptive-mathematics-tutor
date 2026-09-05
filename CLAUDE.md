@@ -2,7 +2,19 @@
 
 Guidance for AI coding agents (and humans) working in this repository.
 Read this before making changes, especially to anything under
-`src/domain/`, `src/tutoring/`, or `src/research/`.
+`src/domain/`, `src/tutoring/`, `src/app/tutor/`, or `src/research/`.
+
+## The non-adaptive tutor is complete
+
+`/tutor` is a fully usable, locally runnable, end-to-end non-adaptive
+tutoring session: start → question → submit → deterministic grading →
+feedback → worked solution → Continue → repeat through a fixed
+35-question sequence → completion summary, with every step logged as a
+`ResearchEvent`. This was built and verified in a real browser (Playwright),
+not just via unit tests — see `docs/tutor-flow.md`. Treat it as working
+software, not a stub: don't rebuild pieces of it "to be safe," and don't
+add features to it without checking `docs/tutor-flow.md` and
+`docs/non-adaptive-sequence.md` first.
 
 ## This is a research experiment, not a product
 
@@ -23,7 +35,11 @@ Full context: [`docs/research-design.md`](docs/research-design.md),
 [`docs/question-authoring-guide.md`](docs/question-authoring-guide.md),
 [`docs/question-bank.md`](docs/question-bank.md),
 [`docs/question-bank-coverage.md`](docs/question-bank-coverage.md),
-[`docs/question-bank-validation.md`](docs/question-bank-validation.md).
+[`docs/question-bank-validation.md`](docs/question-bank-validation.md),
+[`docs/tutor-flow.md`](docs/tutor-flow.md),
+[`docs/non-adaptive-sequence.md`](docs/non-adaptive-sequence.md),
+[`docs/research-logging.md`](docs/research-logging.md),
+[`docs/session-data-schema.md`](docs/session-data-schema.md).
 
 ## Hard constraints — do not violate these
 
@@ -108,6 +124,29 @@ Full context: [`docs/research-design.md`](docs/research-design.md),
     "Authoring methodology" in `docs/question-bank.md`). This applies to
     every future question, not only the existing 161.
 
+11. **The client never receives research metadata — not even unrendered.**
+    `misconceptionId`, `derivationNote`, `difficulty`, `conceptIds`, and
+    which option is correct (before submission) must never appear in
+    anything sent to the browser, because anything sent is inspectable
+    regardless of what the UI chooses to render. This boundary is enforced
+    in `src/tutoring/session/publicViews.ts`
+    (`toPublicQuestionView`/`toPublicFeedbackView`) — route all
+    student-facing question/feedback data through those functions rather
+    than passing a `Question` or `GradingResult` to a Client Component
+    directly. Verified end-to-end in Phase 3 by scanning the live page
+    HTML for every misconception id across a full session — see
+    `docs/tutor-flow.md`.
+
+12. **All tests must pass after modifications.** Before considering any
+    change to this repository done, run `npm test`, `npm run typecheck`,
+    `npm run lint`, `npm run audit:questions`, and `npm run audit:session`
+    — all five must stay green. The 223+ tests span domain schemas, the
+    question bank, the curriculum model, and the full session
+    lifecycle (including the performance-independence test in
+    `tests/tutoring/session/performanceIndependence.test.ts`, the single
+    most important test in this repository) — don't weaken any of them to
+    make a change pass.
+
 ## Shared infrastructure
 
 Adaptive and non-adaptive conditions are meant to share as much as
@@ -132,40 +171,57 @@ resist the urge to special-case UI or grading behavior on `condition`.
   mapped to concepts. The Phase 0 seed questions were updated to this
   taxonomy; the production question bank was NOT built yet (that was
   Phase 2).
-- **Phase 2 (this state):** the production question bank — 161 questions
+- **Phase 2 (complete):** the production question bank — 161 questions
   across `src/domain/questions/bank/` (one file per strand), combined via
   `src/domain/questions/index.ts`. Every misconception and concept has
   real coverage (see `docs/question-bank-coverage.md`); quality gates
   (`src/domain/questions/validateQuestionBank.ts`), bank statistics and
   duplicate detection (`src/domain/questions/bankStatistics.ts`), and a
-  live audit report (`npm run audit:questions`) all exist. A
+  live audit report (`npm run audit:questions`) all exist. Produced a
   `CANDIDATE_NON_ADAPTIVE_SEQUENCE`
-  (`src/tutoring/selection/nonAdaptive/candidateSequence.ts`, 35
-  questions) is a **provisional** Phase 3 input — not a finished study
-  design — built the same performance-independent way as the Phase 0
-  `NON_ADAPTIVE_CURRICULUM_SEQUENCE`, which still exists unchanged
-  alongside it. Still NOT built: the `/tutor` UI loop, persistent
-  research-event storage, session administration.
-- **Later phases (not started):** a working `/tutor` UI loop for the
-  non-adaptive condition, persistent research-event storage, session
-  administration. None of this exists yet — don't assume it does.
+  (`src/tutoring/selection/nonAdaptive/candidateSequence.ts`) as a
+  provisional Phase 3 input — since superseded by `NON_ADAPTIVE_STUDY_SEQUENCE`
+  (below) as what the running tutor actually uses; both it and the
+  original Phase 0 `NON_ADAPTIVE_CURRICULUM_SEQUENCE` still exist,
+  unmodified, for their own purposes.
+- **Phase 3 (this state, complete):** the full non-adaptive tutoring
+  session. `NON_ADAPTIVE_STUDY_SEQUENCE`
+  (`src/tutoring/selection/nonAdaptive/studySequence.ts`, 35 questions,
+  all 9 strands, L1-L5) is the sequence the running tutor uses. The
+  session service (`src/tutoring/session/`) implements the full
+  lifecycle — start/present/submit/grade/feedback/advance/complete —
+  entirely through `NonAdaptiveSelectionPolicy` and the existing
+  deterministic `gradeAnswer`/`buildFeedback`. `/tutor`
+  (`src/app/tutor/`) is the student UI; `/dev/session`
+  (`src/app/dev/session/`) is a separate development-only diagnostic
+  view (session state, event log, JSON export, reset) never linked from
+  `/tutor`. A real, exploitable bug was found and fixed during Phase 3
+  end-to-end testing: every bank question had its correct option listed
+  first, making "always pick the first radio button" 100% accurate —
+  `src/tutoring/session/optionOrder.ts` now applies a deterministic,
+  question-id-seeded shuffle to the option *display* order only (grading
+  stays id-based, unaffected). Still NOT built: persistent research-event
+  storage, session administration, anything adaptive.
 
 Things explicitly **not** to build in this repository: adaptive mastery
-updates, adaptive sequencing, participant recruitment or consent flows,
-teacher/participant dashboards, a production database, LLM integration,
-authentication, polished visual design, analytics dashboards, pre/post
-testing, or full experiment administration. These are deliberately out of
-scope until a later, explicitly-requested phase.
+updates, adaptive sequencing, dynamic remediation, personalized
+difficulty, AI-generated questions, LLM feedback, participant
+recruitment or consent flows, teacher/participant dashboards, a
+production database, authentication, polished visual design, analytics
+dashboards, pre/post testing, production cloud deployment, or a
+statistical analysis pipeline. These are deliberately out of scope until
+a later, explicitly-requested phase.
 
 ## Commands
 
 ```bash
 npm install
-npm run dev              # http://localhost:3000
+npm run dev              # http://localhost:3000/tutor (student), /dev/session (diagnostics)
 npm test                 # vitest run
 npm run test:watch
 npm run lint
 npm run typecheck        # tsc --noEmit
 npm run build
 npm run audit:questions  # live question-bank quality report
+npm run audit:session    # live study-sequence quality report
 ```
