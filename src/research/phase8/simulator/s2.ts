@@ -122,9 +122,12 @@ export function s2Learn(
   for (const [conceptId, w] of weights) {
     if (w <= 0) continue;
     s2InitialL(id, conceptId, cfg, worldCacheKey, { L: nextL, opp: nextOpp });
+    // o_k increments unconditionally on every presentation (C4); the "counted
+    // opportunity" draw and the (conditional) transition draw both use the
+    // SAME pre-increment index.
     const index = nextOpp.get(conceptId) ?? 0;
-    if (!opportunityCounted(id, conceptId, w, index)) continue;
     nextOpp.set(conceptId, index + 1);
+    if (!opportunityCounted(id, conceptId, w, index)) continue;
     if (nextL.get(conceptId) === 0) {
       const { T } = s2ConceptParams(id, conceptId, cfg, worldCacheKey);
       const uLearn = uniformAt(id.masterSeed, opportunityKey(id, "learn", conceptId, index));

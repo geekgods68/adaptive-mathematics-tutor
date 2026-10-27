@@ -73,7 +73,7 @@ describe("S1 -- stationary logistic learners", () => {
     }
   });
 
-  it("opportunity counting advances only for concepts actually drawn as counted (deterministic draw function)", () => {
+  it("opportunity counting (o_k) advances on every presentation UNCONDITIONALLY, regardless of the \"counted\" draw's outcome (C4: o_k indexes RNG draws and must not depend on a prior draw's result)", () => {
     const id = learner(world("S1"), "L-opp");
     const state = createS1LatentState();
     const q = { id: "q1", level: 2, options: 4, conceptWeights: { "c-1": 1 } };
@@ -82,7 +82,7 @@ describe("S1 -- stationary logistic learners", () => {
     expect(next.opp.get("c-1")).toBe(1);
     const never = () => false;
     const stillState = s1Learn(id, q, cfg, next, never);
-    expect(stillState.opp.get("c-1")).toBe(1);
+    expect(stillState.opp.get("c-1")).toBe(2);
   });
 });
 
@@ -213,5 +213,31 @@ describe("S4 -- prerequisite-gated binary learners", () => {
     const truth = s4Truth("c-a", cfg, state, isTarget, id, {});
     expect([0, 1]).toContain(truth.m);
     expect(truth.mastered).toBe(truth.m === 1);
+  });
+});
+
+describe("o_k (opportunity-indexing counter) increments unconditionally across every family -- C4 regression check", () => {
+  it("S2: opp count advances even when the concept is already known (so the 'counted' coin flip is moot) and even across many presentations", () => {
+    const id = learner(world("S2", 20), "L-ok");
+    let state = createS2LatentState();
+    const key = {};
+    const q = { id: "q1", conceptWeights: { "c-1": 1 } };
+    for (let i = 1; i <= 10; i++) {
+      state = s2Learn(id, q, cfg, state, key);
+      expect(state.opp.get("c-1")).toBe(i);
+    }
+  });
+
+  it("S4: opp count advances on every presentation regardless of the counted draw's outcome", () => {
+    const id = world("S4", 21);
+    const concepts = [{ id: "c-a", curriculumLevel: 1, prerequisiteIds: [] }];
+    const graph = buildTrueGraph(id, concepts, 1.0);
+    const learnerId = learner(id, "L-ok");
+    let state = s4InitializeAll(learnerId, graph, cfg, 1.0, () => true, {});
+    const q = { id: "q1", level: 3, conceptWeights: { "c-a": 1 } };
+    for (let i = 1; i <= 10; i++) {
+      state = s4Learn(learnerId, q, cfg, state, graph, 1.0, () => true, {});
+      expect(state.opp.get("c-a")).toBe(i);
+    }
   });
 });

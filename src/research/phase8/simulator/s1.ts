@@ -97,10 +97,12 @@ export function s1Learn(
     if (w <= 0) continue;
     // Ensure theta exists for every touched concept before counting.
     s1Theta(id, conceptId, cfg, { theta: nextTheta, opp: nextOpp });
+    // o_k increments unconditionally on every presentation touching this concept
+    // (C4), independent of whether the "counted opportunity" coin flip below
+    // succeeds -- the index used for that draw is the PRE-increment value.
     const index = nextOpp.get(conceptId) ?? 0;
-    if (opportunityDrawProvider(conceptId, w, index)) {
-      nextOpp.set(conceptId, index + 1);
-    }
+    nextOpp.set(conceptId, index + 1);
+    opportunityDrawProvider(conceptId, w, index); // S1 has no transition, so the outcome itself is unused, but the draw must still be made at the correct index for cross-family RNG-stream consistency.
   }
   return { theta: nextTheta, opp: nextOpp };
 }

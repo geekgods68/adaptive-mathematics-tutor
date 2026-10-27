@@ -168,9 +168,12 @@ export function s4Learn(
   const nextOpp = new Map(state.opp);
   for (const [conceptId, w] of weights) {
     if (w <= 0) continue;
+    // o_k increments unconditionally on every presentation (C4); the "counted
+    // opportunity" draw and the (conditional) transition draw both use the
+    // SAME pre-increment index.
     const index = nextOpp.get(conceptId) ?? 0;
-    if (!opportunityCounted(id, conceptId, w, index)) continue;
     nextOpp.set(conceptId, index + 1);
+    if (!opportunityCounted(id, conceptId, w, index)) continue;
     if ((nextL.get(conceptId) ?? 0) === 0) {
       const { tauK } = s4ConceptParams(id, conceptId, cfg, isTargetConcept(conceptId), worldCacheKey);
       const kappa = gatingFactor(graph, conceptId, nextL, lambda);

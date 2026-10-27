@@ -143,9 +143,11 @@ export function s3Learn(
   for (const [conceptId, w] of weights) {
     if (w <= 0) continue;
     s3Theta0(id, conceptId, cfg, { theta0: nextTheta0, growth: nextGrowth, opp: nextOpp });
+    // o_k increments unconditionally on every presentation (C4); the "counted
+    // opportunity" draw uses the pre-increment index.
     const index = nextOpp.get(conceptId) ?? 0;
-    if (!opportunityCounted(id, conceptId, w, index)) continue;
     nextOpp.set(conceptId, index + 1);
+    if (!opportunityCounted(id, conceptId, w, index)) continue;
     const etaLk = s3EtaLk(id, conceptId, cfg, worldCacheKey);
     nextGrowth.set(conceptId, (nextGrowth.get(conceptId) ?? 0) + etaLk);
   }
