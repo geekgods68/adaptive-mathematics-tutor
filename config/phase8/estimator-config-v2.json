@@ -1,0 +1,38 @@
+{
+  "version": "phase8-est-v2",
+  "detA": "DEFAULT_MODEL_PARAMETERS",
+  "detB": "DEFAULT_MODEL_PARAMETERS_V2_INVERSE_DIFFICULTY",
+  "bktDefault": { "pL0": 0.5, "T": 0.1, "G": 0.25, "S": 0.1 },
+  "bktEm": {
+    "bounds": {
+      "pL0": [0.001, 0.999],
+      "T": [0.001, 0.999],
+      "G": [0.001, 0.499],
+      "S": [0.001, 0.499]
+    },
+    "coarse": {
+      "pL0": [0.1, 0.3, 0.5, 0.7, 0.9],
+      "T": [0.02, 0.05, 0.1, 0.2, 0.4],
+      "G": [0.10, 0.25, 0.40],
+      "S": [0.05, 0.15, 0.30]
+    },
+    "topStarts": 5,
+    "includeDefaultStart": true,
+    "relTol": 1e-9,
+    "tolStreak": 3,
+    "paramTol": 1e-7,
+    "maxIter": 300,
+    "boundFlagEps": 1e-3,
+    "multimodal": { "llGap": 1.0, "paramGap": 0.1 }
+  },
+  "runProp": { "prior": [1, 2] },
+  "ema": { "lambda": 0.11, "m0": 0.5 },
+  "baseRate": { "addOne": true },
+  "link": {
+    "clip": 1e-4,
+    "l2": 1e-4,
+    "newtonTol": 1e-10,
+    "maxIter": 100,
+    "referenceLevel": 3
+  }
+}

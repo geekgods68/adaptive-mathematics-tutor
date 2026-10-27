@@ -464,6 +464,15 @@ for the author to choose:
    freezing (would itself need to go through the amendment process the
    protocol describes, since it changes frozen-file wording).
 
+**Resolved (2026-10-27, author-authorized):** the author chose option 1.
+`git mv protocol/PHASE8A_PROTOCOL_v2.md protocol/phase8-protocol-v2.md`
+was run at the start of Phase 8B, before any other 8B file was created,
+on commit `7134287a5bf24b6751dacc969d7ce1542e7a95d1` (the baseline
+checkpoint, created for the same reason as the R-6 finding below). File
+contents were not touched by the rename. This finding and the
+two-options analysis above are left as written for the historical
+record of the pre-flight itself.
+
 **Configuration files that must eventually be hashed for `protocol/APPROVAL.md`**
 (per C0.3 and C3) — **none exist yet**, which is expected and correct at
 this stage (C1 pre-flight precedes C2/C3 in the specified execution
@@ -523,6 +532,15 @@ assumed git state and this repository's actual git state**, worth
 resolving (e.g., by committing a "Phase 7 complete" checkpoint) before
 C9.4's R-6 can be implemented as literally specified. I have not made
 any commit myself — that is a user action.
+
+**Resolved (2026-10-27, author-authorized):** commit
+`7134287a5bf24b6751dacc969d7ce1542e7a95d1` ("checkpoint: Phases 3-8 prep
+(pre-Phase-8B baseline)") was created at the start of Phase 8B,
+containing the full working tree as it stood immediately before any
+8B file was added — additive only, nothing discarded or overwritten.
+R-6 for all subsequent Phase 8B commits diffs against this commit as
+its reference, in place of the non-existent "Phase 7 commit" the
+protocol's wording assumes.
 
 ---
 

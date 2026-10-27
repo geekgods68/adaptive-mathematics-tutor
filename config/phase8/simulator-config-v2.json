@@ -1,0 +1,41 @@
+{
+  "version": "phase8-sim-v2",
+  "shared": {
+    "delta": 0.6,
+    "sigmaB": 0.5,
+    "muSd": 1.0,
+    "uSd": 0.6,
+    "cSd": 0.5,
+    "thetaOffset": -1.0,
+    "gammaSd": 0.05,
+    "guessClip": [0.05, 0.45],
+    "slip": [0.02, 0.12],
+    "probClip": [0.01, 0.99],
+    "masteredM": 0.8,
+    "reference": { "options": 4, "level": 3, "epsilon": 0 }
+  },
+  "S2": {
+    "pL0": [0.10, 0.50],
+    "T": [0.05, 0.25],
+    "G": [0.15, 0.30],
+    "S": [0.03, 0.15]
+  },
+  "S3": {
+    "eta": [0.05, 0.20],
+    "nuSd": 0.3
+  },
+  "S4": {
+    "piTarget": [0.05, 0.25],
+    "piOther": [0.40, 0.80],
+    "tau": [0.10, 0.30],
+    "G": [0.15, 0.30],
+    "S": [0.03, 0.15],
+    "zeta": 0.25,
+    "cells": {
+      "S4-ref": { "lambda": 0.30, "phi": 1.0 },
+      "S4-GF": { "lambda": 0.05, "phi": 1.0 },
+      "S4-N": { "lambda": 1.0, "phi": 1.0 },
+      "S4-GW": { "lambda": 0.05, "phi": 0.0 }
+    }
+  }
+}

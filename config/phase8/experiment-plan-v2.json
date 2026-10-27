@@ -1,0 +1,32 @@
+{
+  "version": "phase8-plan-v2",
+  "masterSeed": "RISE-PHASE8-v2",
+  "slices": 3,
+  "worlds": 20,
+  "worldsS1": 5,
+  "worldsCap": 60,
+  "trackA": {
+    "configs": ["S1", "S2", "S3", "S4-ref"],
+    "calLearners": 100,
+    "testLearners": 100,
+    "phase1PerX": 6,
+    "phase2PerT": 12,
+    "reviewEvery": 4
+  },
+  "trackB": {
+    "configs": ["S1", "S2", "S3", "S4-GF", "S4-N", "S4-GW"],
+    "learners": 50,
+    "budget": 60,
+    "policies": ["C0", "C1", "C2", "C3"],
+    "artifactSampleRate": 0.05,
+    "earlyTermFlag": 0.05
+  },
+  "margins": { "logloss": 0.010, "mae": 0.030 },
+  "alpha": 0.05,
+  "activationThreshold": 0.10,
+  "precision": { "trackAHalfWidthFraction": 0.5, "trackBHalfWidth": 0.02 },
+  "pilot": { "worlds": 5, "trackALearners": [100, 100], "trackBLearners": 50 },
+  "analysis": { "eceBins": 15, "bootstrap": 10000, "signFlipExact": true },
+  "bkt4": { "regretFlag": 0.005, "calLearnersIfFlag": 300 },
+  "bkt5": { "fits": 50, "llTolerance": 0.5, "passShare": 0.95 }
+}
