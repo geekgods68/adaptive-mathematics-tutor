@@ -1,0 +1,110 @@
+concept_id,concept_name,chapter_id,description,prerequisite_concept_ids,curriculum_level,curriculum_level_label,topological_rank
+ALG01,Arithmetic and order of operations,CH01,Signed arithmetic; grouping; powers; precedence; estimation and exact numerical evaluation.,[],1,foundation_secondary,1
+ALG02,"Fractions, decimals, percentages and ratio",CH01,Equivalent fractions; decimal conversion; percentage change; ratio; direct and inverse proportion.,"[""ALG01""]",1,foundation_secondary,2
+ALG03,Notation and symbolic simplification,CH01,Substitution; coefficients; like terms; associative and distributive notation.,"[""ALG01""]",1,foundation_secondary,3
+ALG04,Expansion and factorisation,CH01,Single and double brackets; common factors; difference of squares; algebraic identities.,"[""ALG03""]",2,upper_secondary,4
+ALG05,Linear equations and inequalities,CH01,Solve linear equations and inequalities; reverse inequality when multiplying or dividing by a negative.,"[""ALG02"",""ALG03""]",2,upper_secondary,5
+ALG06,Simultaneous equations,CH01,Elimination and substitution; linear-linear and linear-quadratic systems.,"[""ALG05""]",2,upper_secondary,6
+ALG07,Quadratic equations and inequalities,CH01,Factorisation and quadratic formula; real solution sets; sign intervals; repeated roots.,"[""ALG04"",""ALG05""]",2,upper_secondary,7
+ALG08,Completing the square,CH01,Rewrite quadratic expressions in vertex form; solve equations and identify extrema algebraically.,"[""ALG04"",""ALG05""]",2,upper_secondary,8
+ALG09,Discriminants and root structure,CH01,Use the discriminant and coefficient conditions to classify real roots and tangency.,"[""ALG07""]",2,upper_secondary,9
+ALG10,Polynomial arithmetic and identities,CH01,Polynomial division; remainder and factor theorems; coefficient identities and root relations.,"[""ALG04""]",3,pre_university,10
+ALG11,Algebraic fractions and decomposition,CH01,Rational expressions; exclusions; rational equations; partial-fraction decomposition as an algebraic technique.,"[""ALG04"",""ALG05""]",3,pre_university,11
+ALG12,Absolute-value equations and inequalities,CH01,Distance interpretation; cases; intervals; equations and inequalities involving absolute value.,"[""ALG05""]",2,upper_secondary,12
+FUN01,"Relations, function notation and evaluation",CH02,"Inputs and outputs; single-valued functions; evaluation from formulas, tables and relations.","[""ALG03""]",1,foundation_secondary,13
+FUN02,Domain and range,CH02,Allowed inputs and attainable outputs; square-root and rational restrictions; stated codomains.,"[""FUN01"",""ALG05""]",2,upper_secondary,14
+FUN03,Polynomial and rational function graphs,CH02,"Linear, quadratic, cubic and rational features; intercepts; asymptotes; holes; end behaviour.","[""FUN02"",""ALG07"",""ALG11""]",2,upper_secondary,15
+FUN04,Composite functions,CH02,"Composition order, evaluation and inherited domain restrictions.","[""FUN01""]",2,upper_secondary,16
+FUN05,Inverse functions,CH02,Inverse mapping; solving for input; domain restriction for an inverse function; inverse graph reflection.,"[""FUN02"",""ALG05""]",3,pre_university,17
+FUN06,Graph transformations and symmetry,CH02,Translations; stretches; reflections; even and odd symmetry; interpreting formula-described graphs.,"[""FUN02"",""ALG08""]",2,upper_secondary,18
+FUN07,Injectivity and surjectivity,CH02,One-to-one and onto relative to declared domain and codomain; bijections and inverse existence.,"[""FUN02""]",3,pre_university,19
+FUN08,Piecewise functions and intersections,CH02,Cases and boundary values; graphical and algebraic intersections; interpret a graph from exact mathematical data.,"[""FUN02"",""ALG06""]",3,pre_university,20
+EXP01,Laws of integer indices,CH03,"Products, quotients, powers and zero index; base restrictions for divisions.","[""ALG01"",""ALG03""]",1,foundation_secondary,21
+EXP02,Negative and fractional powers,CH03,Reciprocals; roots; rational exponents; real-valued conventions and positivity restrictions.,"[""EXP01"",""ALG02""]",2,upper_secondary,22
+EXP03,Exponential equations and expressions,CH03,Common-base equations; substitutions; exact simplification; not general logarithmic solving.,"[""EXP02"",""ALG05""]",2,upper_secondary,23
+EXP04,Exponential functions and graphs,CH03,Positive-base exponential functions; monotonicity; asymptotes; transformations.,"[""EXP02"",""FUN02""]",2,upper_secondary,24
+EXP05,"Growth, decay and exponential modelling",CH03,Multiplicative rate; half-life; doubling time; time-unit conversion; model assumptions.,"[""EXP04"",""ALG02""]",3,pre_university,25
+LOG01,Logarithms as inverse exponents,CH04,Definition; base restrictions; common and natural logarithms; inverse relationships.,"[""EXP03"",""EXP04""]",2,upper_secondary,26
+LOG02,Logarithmic laws and change of base,CH04,"Product, quotient and power laws with domain conditions; change of base.","[""LOG01""]",2,upper_secondary,27
+LOG03,Logarithmic equations and domains,CH04,Solve equations; reject extraneous candidates; require positive logarithm arguments.,"[""LOG02"",""ALG07"",""ALG11""]",3,pre_university,28
+LOG04,Logarithmic graphs and transformations,CH04,"Domain, range, asymptotes and translations of real logarithmic graphs.","[""LOG01"",""FUN06""]",3,pre_university,29
+LOG05,Exponential-logarithmic modelling,CH04,Solve general exponential equations; continuous rate and elapsed time; linearise an exponential relationship.,"[""LOG02"",""EXP05""]",3,pre_university,30
+DIF01,Limits and introductory continuity,CH05,Finite and one-sided limits; removable discontinuities; continuity at a point.,"[""FUN08"",""ALG11""]",3,pre_university,31
+DIF02,Derivatives from first principles,CH05,Difference quotients; tangent gradient as a limit; differentiability versus continuity.,"[""DIF01"",""ALG04""]",3,pre_university,32
+DIF03,Standard differentiation rules,CH05,Polynomial and real power derivatives; constants; sum and constant-multiple rules.,"[""DIF02"",""EXP02""]",3,pre_university,33
+DIF04,"Product, quotient and chain rules",CH05,"Differentiate products, quotients and compositions; preserve domains.","[""DIF03"",""FUN04""]",3,pre_university,34
+DIF05,"Trigonometric, exponential and log derivatives",CH05,"Standard transcendental derivatives in radians, including chain-rule applications.","[""DIF04"",""TRI03"",""LOG01""]",3,pre_university,42
+DIF06,"Implicit differentiation, tangents and normals",CH05,Dependent-variable derivatives; tangent lines; normal gradients; vertical and horizontal cases.,"[""DIF04"",""GEO05""]",3,pre_university,44
+DIF07,Stationary points and optimisation,CH05,Critical points; endpoint checks; constrained and global extrema; unfamiliar optimisation reasoning.,"[""DIF03"",""FUN08""]",3,pre_university,45
+DIF08,Monotonicity and higher derivatives,CH05,Increasing/decreasing intervals; second and higher derivatives; curvature and inflection conditions.,"[""DIF03"",""FUN08""]",3,pre_university,46
+DIF09,Related rates,CH05,Differentiate changing quantities with respect to time; units and instantaneous conditions.,"[""DIF04"",""DIF06"",""GEO08""]",4,advanced_pre_university,48
+DIF10,Curve sketching and differential applications,CH05,"Combine derivative signs, intercepts, asymptotes and domain information; interpret rate models.","[""DIF07"",""DIF08"",""FUN03""]",4,advanced_pre_university,49
+INT01,Indefinite integration and standard antiderivatives,CH06,"General antiderivative families; constants; powers, trigonometric, exponential and logarithmic forms.","[""DIF03"",""DIF05""]",3,pre_university,50
+INT02,Definite integrals and the FTC,CH06,Signed accumulation; fundamental theorem of calculus; upper-minus-lower evaluation; variable limits.,"[""INT01"",""DIF01""]",3,pre_university,51
+INT03,Integration by substitution,CH06,"Change variable, differential and bounds consistently; definite and indefinite substitution.","[""INT02"",""DIF04""]",3,pre_university,52
+INT04,Integration by parts,CH06,Reverse product rule; choice of factors; definite and indefinite integration by parts.,"[""INT01"",""DIF04""]",4,advanced_pre_university,53
+INT05,Integration using partial fractions,CH06,Use algebraic decomposition to integrate rational functions on intervals avoiding poles.,"[""INT02"",""ALG11""]",4,advanced_pre_university,54
+INT06,Areas under and between curves,CH06,Geometric area versus signed integral; intersections and split intervals.,"[""INT02"",""FUN08""]",3,pre_university,55
+INT07,Volumes of revolution,CH06,Disks and washers about specified axes; square radii; bounds and units.,"[""INT02"",""GEO08""]",4,advanced_pre_university,56
+INT08,Accumulation and integration applications,CH06,"Net change, total distance, average value and basic separable rate models with initial data.","[""INT02"",""INT06""]",4,advanced_pre_university,57
+GEO01,"Angles, lines and polygons",CH07,Parallel-line angle facts; triangle and polygon angle sums; interior and exterior angles.,"[""ALG01""]",1,foundation_secondary,37
+GEO02,"Triangles, congruence and similarity",CH07,Triangle properties; congruence criteria; proportional sides; similarity and associated reasoning.,"[""GEO01"",""ALG02""]",2,upper_secondary,38
+GEO03,Pythagorean theorem,CH07,Right-triangle lengths; converse and three-dimensional distance applications.,"[""ALG01"",""EXP02""]",1,foundation_secondary,35
+GEO04,Circle geometry,CH07,Angles at centre and circumference; cyclic quadrilaterals; tangents and chords.,"[""GEO01"",""GEO02""]",2,upper_secondary,39
+GEO05,"Coordinate distance, midpoint and gradient",CH07,Distance and midpoint formulas; gradient; parallel and perpendicular lines; undefined slopes.,"[""ALG05"",""GEO03""]",2,upper_secondary,43
+GEO06,Equations of lines and circles,CH07,Point-gradient and implicit lines; circle centre and radius; intersections and tangency.,"[""GEO05"",""ALG08""]",2,upper_secondary,58
+GEO07,Geometric constructions,CH07,Compass-and-straightedge constructions; bisectors; perpendiculars; loci; justify construction steps in text.,"[""GEO02"",""GEO04""]",2,upper_secondary,59
+GEO08,"Areas, surface areas and volumes",CH07,"Plane area; solids; dimensionally correct units; linear, area and volume scale factors.","[""ALG02"",""GEO02"",""GEO03""]",2,upper_secondary,47
+GEO09,Geometric reasoning and synthesis,CH07,Justified chains of geometric deductions; counterexamples to false geometric claims.,"[""GEO02"",""GEO04"",""GEO05"",""PRF05""]",3,pre_university,63
+TRI01,Right-triangle trigonometric ratios,CH08,"Sine, cosine, tangent; choosing sides; bearings, elevations and applications.","[""GEO03"",""ALG02""]",2,upper_secondary,36
+TRI02,"Radians, degrees and circular measure",CH08,Angle conversion; arc length; sector area; radian convention in calculus.,"[""GEO04"",""ALG02""]",2,upper_secondary,40
+TRI03,Unit circle and basic identities,CH08,Signs and exact values; periodicity; sine-cosine identity; tangent quotient.,"[""TRI01"",""TRI02""]",2,upper_secondary,41
+TRI04,Sine and cosine rules,CH08,Non-right triangles; ambiguous sine-rule cases; triangle area using an included angle.,"[""TRI01"",""GEO02""]",3,pre_university,64
+TRI05,Compound and double angles,CH08,"Angle-sum, difference and double-angle identities; equivalent forms and derivations.","[""TRI03"",""ALG04""]",3,pre_university,65
+TRI06,Trigonometric equations,CH08,Complete solutions on specified intervals; factoring; avoiding lost roots and extraneous roots.,"[""TRI03"",""TRI05"",""ALG07""]",3,pre_university,66
+TRI07,Trigonometric graphs and modelling,CH08,"Amplitude, period, phase and vertical shift; sinusoidal models; domain-specific interpretation.","[""TRI03"",""FUN06""]",3,pre_university,67
+TRI08,Inverse trigonometric functions,CH08,Principal-value branches; domains and ranges; distinguish reciprocal from inverse.,"[""TRI03"",""FUN05""]",3,pre_university,68
+VEC01,"Vector representation, arithmetic and position",CH09,Directed displacement; basis and component notation; vector addition; scalar multiplication; position vectors.,"[""ALG03"",""GEO05""]",2,upper_secondary,69
+VEC02,"Magnitude, direction and 3D vectors",CH09,Euclidean magnitude; unit vectors; directions and coordinates in two and three dimensions.,"[""VEC01"",""GEO03""]",2,upper_secondary,70
+VEC03,Scalar product and angles,CH09,Dot product; angle formula; perpendicularity and projections.,"[""VEC02"",""TRI03""]",3,pre_university,71
+VEC04,Vector product,CH09,Three-dimensional cross product; orientation; perpendicular direction; parallelogram area.,"[""VEC02""]",4,advanced_pre_university,72
+VEC05,Vector equations of lines,CH09,Position plus parameter times direction; parallel directions; coordinate forms.,"[""VEC01"",""ALG05""]",3,pre_university,73
+VEC06,"Parallelism, perpendicularity and intersections",CH09,"Intersecting, parallel and skew lines; parameter consistency across all coordinates.","[""VEC03"",""VEC05"",""ALG06""]",3,pre_university,74
+VEC07,Vector geometric applications,CH09,Point-to-line distance; geometric area; collinearity and vector geometry reasoning.,"[""VEC03"",""VEC04"",""VEC05""]",4,advanced_pre_university,75
+PRO01,"Sample spaces, events and probability laws",CH10,Events and complements; equally likely elementary outcomes; unions and inclusion-exclusion.,"[""ALG02""]",1,foundation_secondary,76
+PRO02,Conditional probability and tree diagrams,CH10,Conditioning changes the reference set; branch products and path sums; without replacement.,"[""PRO01""]",2,upper_secondary,77
+PRO03,Independence and dependence,CH10,Distinguish independence from disjointness; test product and conditional criteria.,"[""PRO02""]",2,upper_secondary,78
+PRO04,Bayes theorem and total probability,CH10,Reverse conditional probabilities with base rates; partition the sample space.,"[""PRO02""]",3,pre_university,79
+PRO05,Discrete random variables and distributions,CH10,Probability mass functions; support; normalisation; counting-based probability.,"[""PRO01"",""CNT01""]",3,pre_university,81
+PRO06,Expectation and variance,CH10,Weighted averages; second moment; linear transformations; distinguish spread from location.,"[""PRO05""]",3,pre_university,82
+PRO07,Binomial distribution,CH10,Fixed independent trials; number of successes; combinations; model conditions and probabilities.,"[""PRO03"",""PRO05"",""CNT03""]",3,pre_university,85
+PRO08,Normal distribution and probability models,CH10,Continuous distributions; standardisation; normal probabilities; modelling assumptions and supplied probability tables.,"[""PRO01"",""EXP02""]",3,pre_university,86
+STA01,"Data types, sampling and bias",CH11,"Categorical and numerical data; random, stratified and convenience sampling; population versus sample; bias.","[""ALG02""]",1,foundation_secondary,87
+STA02,Central tendency and data visualisation,CH11,"Mean, median, mode; weighted mean; tables; histograms and box plots represented by exact data.","[""STA01""]",2,upper_secondary,88
+STA03,"Dispersion, variance and standard deviation",CH11,"Range, IQR, population and sample variance; standard deviation; effect of transformations.","[""STA02"",""EXP02""]",2,upper_secondary,89
+STA04,Correlation and regression,CH11,Correlation versus causation; least-squares interpretation; residuals; extrapolation and prediction.,"[""STA03"",""GEO05""]",3,pre_university,90
+STA05,Sampling distributions and standard error,CH11,Sample means; standard error; central limit theorem conditions; independent sampling.,"[""STA03"",""PRO06"",""PRO08""]",3,pre_university,91
+STA06,Estimation and confidence intervals,CH11,Point and interval estimation; known-variance z intervals; introductory t and proportion intervals with conditions.,"[""STA05""]",3,pre_university,92
+STA07,Introductory hypothesis testing,CH11,"Null and alternative hypotheses; tail choice; p-values; significance, type I and II errors.","[""STA05"",""PRO07""]",4,advanced_pre_university,93
+STA08,Interpretation and statistical study critique,CH11,Statistical versus practical significance; uncertainty; assumptions; limitations of inference and causality.,"[""STA04"",""STA06"",""STA07""]",4,advanced_pre_university,94
+PRF01,Statements and logical connectives,CH12,"Truth-valued statements; negation, conjunction, disjunction; truth tables.",[],1,foundation_secondary,60
+PRF02,Implication and necessary/sufficient conditions,CH12,"Implication; equivalence; converse, inverse, contrapositive; necessary and sufficient conditions.","[""PRF01""]",2,upper_secondary,61
+PRF03,Quantifiers and negation,CH12,Universal and existential quantification; order of quantifiers; correct negation.,"[""PRF01""]",2,upper_secondary,95
+PRF04,Counterexamples and logical validity,CH12,Refute universal claims; distinguish examples from proof; invalid inferences.,"[""PRF02"",""PRF03""]",2,upper_secondary,96
+PRF05,Direct proof and divisibility,CH12,Definitions of parity and divisibility; integer algebra; direct chains of deductions.,"[""PRF02"",""ALG03""]",2,upper_secondary,62
+PRF06,Contradiction and contrapositive proofs,CH12,Negate the target correctly; derive contradiction; prove contrapositive; irrationality reasoning.,"[""PRF03"",""PRF05""]",3,pre_university,97
+PRF07,Mathematical induction,CH12,Base case; quantified inductive hypothesis; valid successor step; sums and divisibility.,"[""PRF02"",""PRF05""]",3,pre_university,98
+PRF08,Number-theoretic proof synthesis,CH12,Modular residues; divisibility; Diophantine constraints; audit multi-stage mathematical arguments.,"[""PRF04"",""PRF06"",""PRF07""]",4,advanced_pre_university,99
+CNT01,Fundamental counting principle,CH13,"Multiplicative choices, additive disjoint cases; count equally likely outcomes without overcounting.","[""ALG01""]",1,foundation_secondary,80
+CNT02,Factorials and permutations,CH13,Factorials; ordered selections; arrangements of distinct objects.,"[""CNT01""]",2,upper_secondary,83
+CNT03,Combinations and binomial coefficients,CH13,Unordered selection; symmetry; Pascal identity; counting subsets.,"[""CNT02""]",2,upper_secondary,84
+CNT04,"Repeated, circular and restricted arrangements",CH13,Multisets; circular rotations; blocks; gap methods; fixed versus indistinguishable positions.,"[""CNT02"",""CNT03""]",3,pre_university,100
+CNT05,Binomial theorem,CH13,Finite expansion for nonnegative integer powers; coefficient extraction and identities.,"[""CNT03"",""ALG04"",""EXP01""]",3,pre_university,101
+CNT06,Counting and probability applications,CH13,Use suitable counting ratios; restrictions and complements; avoid assuming unequal outcomes are equiprobable.,"[""CNT04"",""PRO01""]",3,pre_university,102
+CPX01,Imaginary unit and complex arithmetic,CH14,Algebraic form; powers of i; real and imaginary parts; addition and multiplication.,"[""ALG04""]",2,upper_secondary,103
+CPX02,Conjugates and complex division,CH14,Conjugation; modulus squared; rationalise a complex denominator.,"[""CPX01"",""ALG11""]",2,upper_secondary,104
+CPX03,"Modulus, argument and Argand representation",CH14,"Distance and angle; quadrant; principal argument in (-pi,pi]; geometry without required raster assets.","[""CPX01"",""GEO05"",""TRI03""]",3,pre_university,105
+CPX04,Polar form and Euler representation,CH14,Convert forms; Euler identity for real angles as a stated representation; multiplication and division of polar forms.,"[""CPX03"",""EXP04""]",3,pre_university,106
+CPX05,De Moivre theorem and powers,CH14,Integer powers; multiply arguments; principal argument reduction.,"[""CPX04"",""EXP01""]",3,pre_university,107
+CPX06,Roots of complex numbers,CH14,All n distinct roots of nonzero numbers; argument families; root modulus and regular polygons.,"[""CPX05""]",4,advanced_pre_university,108
+CPX07,Complex polynomial roots and geometry,CH14,Conjugate-pair roots for real polynomials; factors; loci and geometric interpretations.,"[""CPX02"",""CPX06"",""ALG10""]",4,advanced_pre_university,109

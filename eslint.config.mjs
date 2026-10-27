@@ -20,6 +20,12 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Historical/audit source material from the external RISE generation
+    // pipeline (see data/question-bank/README.md) -- not application code,
+    // not written to this repo's lint conventions, kept only as a
+    // provenance record for research-data/'s own non-canonical copies.
+    "research-data/**",
+    "docs/perp_files/**",
   ]),
 ]);
 

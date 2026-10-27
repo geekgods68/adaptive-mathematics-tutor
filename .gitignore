@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# External RISE generation pipeline's raw checkpoint history (~51MB,
+# mostly redundant cumulative snapshots -- see data/question-bank/README.md
+# for the deduplicated canonical extract actually used by the app). Kept on
+# disk as a historical/audit record per the integration task's explicit
+# "do not delete" instruction, just not committed to git.
+/research-data/
+
+# Phase 6 generated experiment-run artifacts, exports, and manifests
+# (src/research/artifact/) -- reproducible from the experiment engine
+# given the same config/scenario/response sequence, so not committed,
+# the same reasoning already applied to /research-data/ above (see
+# docs/research-decisions.md RD-0007).
+/research-output/

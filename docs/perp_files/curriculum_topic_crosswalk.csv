@@ -1,0 +1,144 @@
+chapter_id,requested_topic,concept_ids,coverage_status
+CH01,Arithmetic operations and order of operations,"[""ALG01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,"Fractions, decimals, percentages, ratios and proportions","[""ALG02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Algebraic notation and simplification,"[""ALG03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Expanding and factorising expressions,"[""ALG04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Linear equations and inequalities,"[""ALG05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Simultaneous equations,"[""ALG06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Quadratic equations and inequalities,"[""ALG07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Completing the square,"[""ALG08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Discriminants and nature of roots,"[""ALG09""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Polynomials and polynomial identities,"[""ALG10""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Algebraic fractions,"[""ALG11""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH01,Absolute-value equations and inequalities,"[""ALG12""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,Relations and functions,"[""FUN01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,Domain and range,"[""FUN02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,Function notation and evaluation,"[""FUN01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,"Linear, quadratic, cubic and rational functions","[""FUN03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,Composite functions,"[""FUN04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,Inverse functions,"[""FUN05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,Graph transformations,"[""FUN06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,"Symmetry, injectivity and surjectivity","[""FUN06"", ""FUN07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,Piecewise-defined functions,"[""FUN08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH02,Intersections and graphical solutions,"[""FUN08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH03,Laws of indices,"[""EXP01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH03,Negative and fractional powers,"[""EXP02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH03,Simplifying exponential expressions,"[""EXP01"", ""EXP02"", ""EXP03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH03,Exponential equations,"[""EXP03"", ""LOG05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH03,Exponential functions and graphs,"[""EXP04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH03,Exponential growth and decay,"[""EXP05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH03,Modelling with exponentials,"[""EXP05"", ""LOG05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH04,Definition of logarithms,"[""LOG01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH04,Logarithmic laws,"[""LOG02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH04,Natural and common logarithms,"[""LOG01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH04,Solving logarithmic equations,"[""LOG03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH04,Domain restrictions,"[""LOG03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH04,Logarithmic functions and transformations,"[""LOG04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH04,Exponential-logarithmic relationships,"[""LOG01"", ""LOG05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Limits and introductory continuity,"[""DIF01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Derivatives from first principles,"[""DIF02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Standard differentiation rules,"[""DIF03"", ""DIF05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,"Product, quotient and chain rules","[""DIF04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Implicit differentiation,"[""DIF06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Tangents and normals,"[""DIF06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Stationary points and optimisation,"[""DIF07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Increasing and decreasing functions,"[""DIF08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Related rates,"[""DIF09""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Higher derivatives,"[""DIF08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH05,Curve sketching and applications,"[""DIF10""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Indefinite integration,"[""INT01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Standard antiderivatives,"[""INT01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Definite integrals,"[""INT02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Fundamental theorem of calculus,"[""INT02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Substitution,"[""INT03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Integration by parts,"[""INT04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Partial fractions,"[""ALG11"", ""INT05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Area under and between curves,"[""INT06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Volumes of revolution,"[""INT07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH06,Applications of integration,"[""INT08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,"Angles, lines and polygons","[""GEO01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,Triangle properties,"[""GEO02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,Similarity and congruence,"[""GEO02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,Pythagorean theorem,"[""GEO03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,Circle geometry,"[""GEO04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,Coordinate geometry,"[""GEO05"", ""GEO06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,"Distance, midpoint and gradient","[""GEO05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,Equations of lines and circles,"[""GEO06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,Geometric constructions,"[""GEO07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,"Areas, surface areas and volumes","[""GEO08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH07,Geometric reasoning,"[""GEO09""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Trigonometric ratios,"[""TRI01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Radians and degrees,"[""TRI02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Unit circle,"[""TRI03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Trigonometric identities,"[""TRI03"", ""TRI05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Sine and cosine rules,"[""TRI04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Trigonometric equations,"[""TRI06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Trigonometric graphs and transformations,"[""TRI07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Compound-angle and double-angle identities,"[""TRI05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Inverse trigonometric functions,"[""TRI08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH08,Applications and trigonometric modelling,"[""TRI01"", ""TRI04"", ""TRI07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Vector notation and representation,"[""VEC01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Magnitude and direction,"[""VEC02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Vector arithmetic,"[""VEC01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Position vectors,"[""VEC01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Scalar and vector products,"[""VEC03"", ""VEC04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Angles between vectors,"[""VEC03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Vector equations of lines,"[""VEC05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Three-dimensional vectors,"[""VEC02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,"Parallelism, perpendicularity and intersections","[""VEC06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH09,Geometric applications,"[""VEC07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Sample spaces and events,"[""PRO01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Basic probability laws,"[""PRO01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Conditional probability,"[""PRO02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Independence,"[""PRO03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Tree diagrams,"[""PRO02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Bayes theorem,"[""PRO04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Discrete random variables,"[""PRO05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Expected value and variance,"[""PRO06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Binomial distribution,"[""PRO07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Normal distribution,"[""PRO08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH10,Applications and modelling,"[""PRO04"", ""PRO07"", ""PRO08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Types of data and sampling,"[""STA01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Descriptive statistics,"[""STA02"", ""STA03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Measures of central tendency,"[""STA02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Measures of dispersion,"[""STA03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Data visualisation,"[""STA02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Correlation and regression,"[""STA04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Standard deviation and variance,"[""STA03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Sampling distributions,"[""STA05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Estimation and confidence intervals,"[""STA06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Introductory hypothesis testing,"[""STA07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH11,Interpretation of statistical results,"[""STA08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Mathematical statements and propositions,"[""PRF01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Necessary and sufficient conditions,"[""PRF02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Implication and equivalence,"[""PRF02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,"Converse, inverse and contrapositive","[""PRF02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Logical connectives,"[""PRF01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Quantifiers,"[""PRF03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Direct proof,"[""PRF05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Proof by contradiction,"[""PRF06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Proof by contrapositive,"[""PRF06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Mathematical induction,"[""PRF07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Counterexamples,"[""PRF04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH12,Divisibility and number-theoretic reasoning,"[""PRF05"", ""PRF08""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Fundamental counting principle,"[""CNT01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Factorials,"[""CNT02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Permutations,"[""CNT02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Combinations,"[""CNT03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Arrangements with repetition,"[""CNT04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Circular arrangements,"[""CNT04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Restricted arrangements,"[""CNT04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Binomial coefficients,"[""CNT03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Binomial theorem,"[""CNT05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH13,Counting and probability applications,"[""CNT06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Imaginary unit and algebraic form,"[""CPX01""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Complex arithmetic,"[""CPX01"", ""CPX02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Conjugates,"[""CPX02""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Modulus and argument,"[""CPX03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Argand diagrams,"[""CPX03""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Polar representation,"[""CPX04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Euler formula,"[""CPX04""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,De Moivre theorem,"[""CPX05""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Roots of complex numbers,"[""CPX06""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Polynomial equations involving complex roots,"[""CPX07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive
+CH14,Geometric interpretations,"[""CPX03"", ""CPX07""]",taxonomy_and_generation_plan_complete; pilot_not_comprehensive

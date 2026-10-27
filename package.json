@@ -11,9 +11,12 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "audit:questions": "tsx scripts/audit-questions.ts",
-    "audit:session": "tsx scripts/audit-session.ts"
+    "audit:session": "tsx scripts/audit-session.ts",
+    "research:cli": "tsx scripts/research-cli.ts"
   },
   "dependencies": {
+    "@types/katex": "^0.16.8",
+    "katex": "^0.19.0",
     "next": "16.3.4",
     "react": "19.2.8",
     "react-dom": "19.2.8"

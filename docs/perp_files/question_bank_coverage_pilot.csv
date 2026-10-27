@@ -1,0 +1,504 @@
+release_stage,dimension,key,generated_count,planned_full_bank_count,definition
+pilot,total,all,25,1840,Actual generated question count
+pilot,chapter,CH01,2,150,Actual generated question count
+pilot,chapter,CH02,2,140,Actual generated question count
+pilot,chapter,CH03,1,100,Actual generated question count
+pilot,chapter,CH04,2,100,Actual generated question count
+pilot,chapter,CH05,3,150,Actual generated question count
+pilot,chapter,CH06,2,140,Actual generated question count
+pilot,chapter,CH07,2,150,Actual generated question count
+pilot,chapter,CH08,2,150,Actual generated question count
+pilot,chapter,CH09,2,120,Actual generated question count
+pilot,chapter,CH10,2,140,Actual generated question count
+pilot,chapter,CH11,2,140,Actual generated question count
+pilot,chapter,CH12,1,130,Actual generated question count
+pilot,chapter,CH13,1,100,Actual generated question count
+pilot,chapter,CH14,1,130,Actual generated question count
+pilot,concept_primary,ALG01,1,12,Actual generated question count
+pilot,concept_assessed,ALG01,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG01,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG02,0,16,Actual generated question count
+pilot,concept_assessed,ALG02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG02,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG03,0,12,Actual generated question count
+pilot,concept_assessed,ALG03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG03,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG04,0,15,Actual generated question count
+pilot,concept_assessed,ALG04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG04,3,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG05,0,16,Actual generated question count
+pilot,concept_assessed,ALG05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG05,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG06,0,10,Actual generated question count
+pilot,concept_assessed,ALG06,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG07,1,16,Actual generated question count
+pilot,concept_assessed,ALG07,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG07,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG08,0,10,Actual generated question count
+pilot,concept_assessed,ALG08,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG08,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG09,0,10,Actual generated question count
+pilot,concept_assessed,ALG09,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG09,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG10,0,12,Actual generated question count
+pilot,concept_assessed,ALG10,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG10,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG11,0,11,Actual generated question count
+pilot,concept_assessed,ALG11,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG11,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,ALG12,0,10,Actual generated question count
+pilot,concept_assessed,ALG12,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,ALG12,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,FUN01,0,15,Actual generated question count
+pilot,concept_assessed,FUN01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,FUN01,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,FUN02,0,20,Actual generated question count
+pilot,concept_assessed,FUN02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,FUN02,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,FUN03,0,20,Actual generated question count
+pilot,concept_assessed,FUN03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,FUN03,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,FUN04,1,18,Actual generated question count
+pilot,concept_assessed,FUN04,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,FUN04,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,FUN05,0,18,Actual generated question count
+pilot,concept_assessed,FUN05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,FUN05,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,FUN06,1,18,Actual generated question count
+pilot,concept_assessed,FUN06,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,FUN06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,FUN07,0,15,Actual generated question count
+pilot,concept_assessed,FUN07,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,FUN07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,FUN08,0,16,Actual generated question count
+pilot,concept_assessed,FUN08,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,FUN08,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,EXP01,0,20,Actual generated question count
+pilot,concept_assessed,EXP01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,EXP01,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,EXP02,1,20,Actual generated question count
+pilot,concept_assessed,EXP02,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,EXP02,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,EXP03,0,20,Actual generated question count
+pilot,concept_assessed,EXP03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,EXP03,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,EXP04,0,20,Actual generated question count
+pilot,concept_assessed,EXP04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,EXP04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,EXP05,0,20,Actual generated question count
+pilot,concept_assessed,EXP05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,EXP05,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,LOG01,0,20,Actual generated question count
+pilot,concept_assessed,LOG01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,LOG01,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,LOG02,1,20,Actual generated question count
+pilot,concept_assessed,LOG02,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,LOG02,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,LOG03,1,20,Actual generated question count
+pilot,concept_assessed,LOG03,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,LOG03,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,LOG04,0,20,Actual generated question count
+pilot,concept_assessed,LOG04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,LOG04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,LOG05,0,20,Actual generated question count
+pilot,concept_assessed,LOG05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,LOG05,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF01,0,14,Actual generated question count
+pilot,concept_assessed,DIF01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF02,0,12,Actual generated question count
+pilot,concept_assessed,DIF02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF02,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF03,0,16,Actual generated question count
+pilot,concept_assessed,DIF03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF03,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF04,1,20,Actual generated question count
+pilot,concept_assessed,DIF04,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF04,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF05,0,18,Actual generated question count
+pilot,concept_assessed,DIF05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF05,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF06,1,16,Actual generated question count
+pilot,concept_assessed,DIF06,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF07,1,20,Actual generated question count
+pilot,concept_assessed,DIF07,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF08,0,12,Actual generated question count
+pilot,concept_assessed,DIF08,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF08,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF09,0,10,Actual generated question count
+pilot,concept_assessed,DIF09,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF09,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,DIF10,0,12,Actual generated question count
+pilot,concept_assessed,DIF10,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,DIF10,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,INT01,0,20,Actual generated question count
+pilot,concept_assessed,INT01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,INT01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,INT02,0,20,Actual generated question count
+pilot,concept_assessed,INT02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,INT02,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,INT03,1,20,Actual generated question count
+pilot,concept_assessed,INT03,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,INT03,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,INT04,0,18,Actual generated question count
+pilot,concept_assessed,INT04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,INT04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,INT05,1,18,Actual generated question count
+pilot,concept_assessed,INT05,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,INT05,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,INT06,0,18,Actual generated question count
+pilot,concept_assessed,INT06,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,INT06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,INT07,0,14,Actual generated question count
+pilot,concept_assessed,INT07,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,INT07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,INT08,0,12,Actual generated question count
+pilot,concept_assessed,INT08,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,INT08,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO01,1,18,Actual generated question count
+pilot,concept_assessed,GEO01,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO02,0,20,Actual generated question count
+pilot,concept_assessed,GEO02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO02,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO03,0,16,Actual generated question count
+pilot,concept_assessed,GEO03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO03,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO04,0,18,Actual generated question count
+pilot,concept_assessed,GEO04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO05,0,20,Actual generated question count
+pilot,concept_assessed,GEO05,2,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO05,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO06,1,18,Actual generated question count
+pilot,concept_assessed,GEO06,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO07,0,10,Actual generated question count
+pilot,concept_assessed,GEO07,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO08,0,20,Actual generated question count
+pilot,concept_assessed,GEO08,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO08,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,GEO09,0,10,Actual generated question count
+pilot,concept_assessed,GEO09,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,GEO09,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,TRI01,0,20,Actual generated question count
+pilot,concept_assessed,TRI01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,TRI01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,TRI02,0,16,Actual generated question count
+pilot,concept_assessed,TRI02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,TRI02,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,TRI03,0,20,Actual generated question count
+pilot,concept_assessed,TRI03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,TRI03,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,TRI04,0,20,Actual generated question count
+pilot,concept_assessed,TRI04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,TRI04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,TRI05,1,20,Actual generated question count
+pilot,concept_assessed,TRI05,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,TRI05,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,TRI06,1,20,Actual generated question count
+pilot,concept_assessed,TRI06,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,TRI06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,TRI07,0,20,Actual generated question count
+pilot,concept_assessed,TRI07,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,TRI07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,TRI08,0,14,Actual generated question count
+pilot,concept_assessed,TRI08,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,TRI08,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,VEC01,0,18,Actual generated question count
+pilot,concept_assessed,VEC01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,VEC01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,VEC02,0,18,Actual generated question count
+pilot,concept_assessed,VEC02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,VEC02,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,VEC03,0,20,Actual generated question count
+pilot,concept_assessed,VEC03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,VEC03,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,VEC04,1,14,Actual generated question count
+pilot,concept_assessed,VEC04,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,VEC04,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,VEC05,0,18,Actual generated question count
+pilot,concept_assessed,VEC05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,VEC05,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,VEC06,0,20,Actual generated question count
+pilot,concept_assessed,VEC06,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,VEC06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,VEC07,1,12,Actual generated question count
+pilot,concept_assessed,VEC07,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,VEC07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRO01,0,18,Actual generated question count
+pilot,concept_assessed,PRO01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRO01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRO02,0,20,Actual generated question count
+pilot,concept_assessed,PRO02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRO02,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRO03,0,16,Actual generated question count
+pilot,concept_assessed,PRO03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRO03,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRO04,1,18,Actual generated question count
+pilot,concept_assessed,PRO04,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRO04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRO05,0,18,Actual generated question count
+pilot,concept_assessed,PRO05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRO05,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRO06,0,18,Actual generated question count
+pilot,concept_assessed,PRO06,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRO06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRO07,1,18,Actual generated question count
+pilot,concept_assessed,PRO07,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRO07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRO08,0,14,Actual generated question count
+pilot,concept_assessed,PRO08,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRO08,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,STA01,0,16,Actual generated question count
+pilot,concept_assessed,STA01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,STA01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,STA02,0,18,Actual generated question count
+pilot,concept_assessed,STA02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,STA02,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,STA03,0,20,Actual generated question count
+pilot,concept_assessed,STA03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,STA03,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,STA04,0,18,Actual generated question count
+pilot,concept_assessed,STA04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,STA04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,STA05,0,18,Actual generated question count
+pilot,concept_assessed,STA05,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,STA05,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,STA06,2,20,Actual generated question count
+pilot,concept_assessed,STA06,2,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,STA06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,STA07,0,18,Actual generated question count
+pilot,concept_assessed,STA07,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,STA07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,STA08,0,12,Actual generated question count
+pilot,concept_assessed,STA08,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,STA08,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRF01,0,14,Actual generated question count
+pilot,concept_assessed,PRF01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRF01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRF02,0,20,Actual generated question count
+pilot,concept_assessed,PRF02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRF02,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRF03,0,18,Actual generated question count
+pilot,concept_assessed,PRF03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRF03,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRF04,0,14,Actual generated question count
+pilot,concept_assessed,PRF04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRF04,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRF05,0,20,Actual generated question count
+pilot,concept_assessed,PRF05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRF05,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRF06,0,16,Actual generated question count
+pilot,concept_assessed,PRF06,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRF06,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRF07,0,18,Actual generated question count
+pilot,concept_assessed,PRF07,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRF07,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,PRF08,1,10,Actual generated question count
+pilot,concept_assessed,PRF08,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,PRF08,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CNT01,0,16,Actual generated question count
+pilot,concept_assessed,CNT01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CNT01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CNT02,0,16,Actual generated question count
+pilot,concept_assessed,CNT02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CNT02,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CNT03,0,20,Actual generated question count
+pilot,concept_assessed,CNT03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CNT03,2,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CNT04,1,20,Actual generated question count
+pilot,concept_assessed,CNT04,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CNT04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CNT05,0,16,Actual generated question count
+pilot,concept_assessed,CNT05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CNT05,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CNT06,0,12,Actual generated question count
+pilot,concept_assessed,CNT06,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CNT06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CPX01,0,20,Actual generated question count
+pilot,concept_assessed,CPX01,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CPX01,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CPX02,0,18,Actual generated question count
+pilot,concept_assessed,CPX02,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CPX02,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CPX03,0,20,Actual generated question count
+pilot,concept_assessed,CPX03,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CPX03,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CPX04,0,20,Actual generated question count
+pilot,concept_assessed,CPX04,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CPX04,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CPX05,0,18,Actual generated question count
+pilot,concept_assessed,CPX05,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CPX05,1,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CPX06,1,20,Actual generated question count
+pilot,concept_assessed,CPX06,1,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CPX06,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,concept_primary,CPX07,0,14,Actual generated question count
+pilot,concept_assessed,CPX07,0,null,Multi-concept items count in every directly assessed concept; do not sum to bank size.
+pilot,concept_prerequisite_assumed,CPX07,0,null,Item-level prerequisite assumption only; not mastery evidence.
+pilot,difficulty,1,4,283,Actual generated question count
+pilot,difficulty,2,6,448,Actual generated question count
+pilot,difficulty,3,8,548,Actual generated question count
+pilot,difficulty,4,5,373,Actual generated question count
+pilot,difficulty,5,2,188,Actual generated question count
+pilot,option_count,4,24,null,Actual generated question count
+pilot,option_count,5,1,null,Actual generated question count
+pilot,option_count,6,0,null,Actual generated question count
+pilot,option_count,7,0,null,Actual generated question count
+pilot,option_count,8,0,null,Actual generated question count
+pilot,misconception_questions,M001,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M001,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M002,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M002,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M003,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M003,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M004,4,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M004,5,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M005,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M005,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M006,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M006,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M007,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M007,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M008,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M008,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M009,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M009,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M010,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M010,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M011,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M011,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M012,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M012,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M013,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M013,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M014,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M014,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M015,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M015,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M016,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M016,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M017,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M017,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M018,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M018,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M019,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M019,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M020,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M020,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M021,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M021,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M022,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M022,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M023,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M023,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M024,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M024,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M025,2,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M025,4,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M026,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M026,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M027,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M027,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M028,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M028,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M029,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M029,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M030,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M030,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M031,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M031,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M032,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M032,4,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M033,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M033,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M034,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M034,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M035,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M035,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M036,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M036,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M037,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M037,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M038,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M038,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M039,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M039,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M040,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M040,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M041,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M041,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M042,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M042,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M043,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M043,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M044,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M044,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M045,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M045,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M046,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M046,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M047,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M047,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M048,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M048,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M049,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M049,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M050,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M050,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M051,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M051,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M052,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M052,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M053,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M053,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M054,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M054,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M055,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M055,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M056,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M056,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M057,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M057,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M058,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M058,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M059,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M059,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M060,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M060,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M061,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M061,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M062,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M062,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M063,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M063,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M064,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M064,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M065,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M065,3,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M066,0,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M066,0,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M067,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M067,1,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,misconception_questions,M068,1,null,Number of questions with at least one distractor mapped to the category.
+pilot,misconception_distractors,M068,2,null,Number of distractor options mapped to the category; categories can overlap.
+pilot,question_type,computational,20,null,Actual generated question count
+pilot,question_type,conceptual,1,null,Actual generated question count
+pilot,question_type,graphical_interpretation,1,null,Actual generated question count
+pilot,question_type,error_diagnosis,1,null,Actual generated question count
+pilot,question_type,mathematical_reasoning,2,null,Actual generated question count
+pilot,validation_status,author_reviewed_math_not_automatically_verified,1,null,Actual generated question count
+pilot,validation_status,auto_checked_pending_independent_review,24,null,Actual generated question count
+pilot,correct_option_position,A,6,null,Audit key positions; pilot is not position-balanced and not an empirical guessing model.
+pilot,correct_option_position,B,5,null,Audit key positions; pilot is not position-balanced and not an empirical guessing model.
+pilot,correct_option_position,C,6,null,Audit key positions; pilot is not position-balanced and not an empirical guessing model.
+pilot,correct_option_position,D,8,null,Audit key positions; pilot is not position-balanced and not an empirical guessing model.
+pilot,correct_option_position,E,0,null,Audit key positions; pilot is not position-balanced and not an empirical guessing model.
+pilot,correct_option_position,F,0,null,Audit key positions; pilot is not position-balanced and not an empirical guessing model.
+pilot,correct_option_position,G,0,null,Audit key positions; pilot is not position-balanced and not an empirical guessing model.
+pilot,correct_option_position,H,0,null,Audit key positions; pilot is not position-balanced and not an empirical guessing model.

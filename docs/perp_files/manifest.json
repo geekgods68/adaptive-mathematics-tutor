@@ -1,0 +1,131 @@
+{
+  "release_id": "1.0.0-pilot",
+  "generation_date": "2026-10-20",
+  "stages_completed": [
+    "A",
+    "B"
+  ],
+  "full_generation_approved": false,
+  "actual_question_count": 25,
+  "proposed_full_question_count": 1840,
+  "concept_count": 109,
+  "misconception_count": 68,
+  "prerequisite_edge_count": 204,
+  "difficulty_counts": {
+    "1": 4,
+    "2": 6,
+    "3": 8,
+    "4": 5,
+    "5": 2
+  },
+  "correct_option_counts": {
+    "A": 6,
+    "B": 5,
+    "C": 6,
+    "D": 8
+  },
+  "csv_jsonl_complete_record_equality": true,
+  "automatically_mathematically_checked": 24,
+  "author_semantic_only": 1,
+  "independent_human_reviews": 0,
+  "empirical_student_trials": 0,
+  "all_items_require_independent_review": true,
+  "encoding": "UTF-8",
+  "files": [
+    {
+      "filename": "README.md",
+      "bytes": 23299,
+      "sha256": "4aacaf0eca2df36a62690a84e687ac9926104f0cb91bfc792bb945c79bfeeecf"
+    },
+    {
+      "filename": "chapter_structure.csv",
+      "bytes": 3013,
+      "sha256": "f1cbae275baed332092556bd544f3500dcc9e4f55883980fb7a0ed37d19bc6ee"
+    },
+    {
+      "filename": "concept_taxonomy.csv",
+      "bytes": 19855,
+      "sha256": "06f168bd59c2336e6411f96defd72ad43448e9d71912ee4af10f477492cf9d11"
+    },
+    {
+      "filename": "curriculum_topic_crosswalk.csv",
+      "bytes": 15962,
+      "sha256": "cbbc35c7a34bf75ef14f1fd075bc5b707273c361bcdb13fb56eea7ad401bc853"
+    },
+    {
+      "filename": "mathematics_question_bank_pilot.csv",
+      "bytes": 42369,
+      "sha256": "79d62d5e7176a463bf9fa73a122667bf9a14d5a0cb84ce3585a41adf2546b3e8"
+    },
+    {
+      "filename": "mathematics_question_bank_pilot.jsonl",
+      "bytes": 57618,
+      "sha256": "0820b4a525d8cfe58c0210845c495fd140287dcf8067c7b77c2e2215d2c2a42e"
+    },
+    {
+      "filename": "misconception_taxonomy.csv",
+      "bytes": 26302,
+      "sha256": "c408ad0a81f2248bf8636e8093f4627bf845c864a1251001f7d731a3b714f4d4"
+    },
+    {
+      "filename": "near_duplicate_audit_pilot.csv",
+      "bytes": 40769,
+      "sha256": "3033160c9910db5407cd44aafacf3f355b64fd9321e22300e0ba3c9e3d5e3d69"
+    },
+    {
+      "filename": "pilot_question_review.md",
+      "bytes": 32449,
+      "sha256": "b7ecc301568c039443372721d58696c787ef60b41beffbcbf35f0e4fdb8b6c51"
+    },
+    {
+      "filename": "prerequisite_edges.csv",
+      "bytes": 35585,
+      "sha256": "9e2d4d76e564329b44d504fe97704497f93b85417314e85d7033729227345bbf"
+    },
+    {
+      "filename": "prerequisite_graph.json",
+      "bytes": 116181,
+      "sha256": "198e3181d809a067a568bfcc140f17dafe37083ea48ef296d4dc94c8c2fa3f6b"
+    },
+    {
+      "filename": "question_bank_coverage_pilot.csv",
+      "bytes": 52286,
+      "sha256": "c0c96146710bd413f6f7bbf8d5820aade90ffe9b4f625d910b8995a88565cb0d"
+    },
+    {
+      "filename": "question_bank_schema.json",
+      "bytes": 16714,
+      "sha256": "4e51203a12460c838c5e130f18a323a923fa1bb8f2a66dd4c939cd254129855e"
+    },
+    {
+      "filename": "question_bank_validation_pilot.csv",
+      "bytes": 14485,
+      "sha256": "06ea47a74892f5f868bdb47c64883340d59c40e8998bfe89e5d4189c075baae3"
+    },
+    {
+      "filename": "question_distribution_plan.csv",
+      "bytes": 5513,
+      "sha256": "af437fa5348ba6b0cb09434268d2b3405667d2b8fa9a826e4a6c5a080b5c4efd"
+    },
+    {
+      "filename": "question_type_distribution_plan.csv",
+      "bytes": 3252,
+      "sha256": "187bf0f2ae50d16ec5942773dbd8004db606de29809f303a83769d818c0cd9ed"
+    },
+    {
+      "filename": "stage_a_b_design_report.md",
+      "bytes": 14372,
+      "sha256": "4c52552b95b37a54ec8276d8d9a3d24f61bb468e21044151f79abcc6484aa30a"
+    },
+    {
+      "filename": "validate_pilot.py",
+      "bytes": 15099,
+      "sha256": "e930d0c56c5838de452c2b17397928fe8b24c382bd6ae3b28fef1cb73a24f3a9"
+    },
+    {
+      "filename": "validation_evidence_pilot.json",
+      "bytes": 29447,
+      "sha256": "b1cc3a4a6669083700fe112c2149d5c82c815b9cae5bc4bf99433240ee59546c"
+    }
+  ]
+}

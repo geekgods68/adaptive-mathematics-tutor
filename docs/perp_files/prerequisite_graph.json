@@ -1,0 +1,2949 @@
+{
+  "schema_version": "1.0.0",
+  "nodes": [
+    {
+      "concept_id": "ALG01",
+      "concept_name": "Arithmetic and order of operations",
+      "chapter_id": "CH01",
+      "description": "Signed arithmetic; grouping; powers; precedence; estimation and exact numerical evaluation.",
+      "prerequisite_concept_ids": [],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 1
+    },
+    {
+      "concept_id": "ALG02",
+      "concept_name": "Fractions, decimals, percentages and ratio",
+      "chapter_id": "CH01",
+      "description": "Equivalent fractions; decimal conversion; percentage change; ratio; direct and inverse proportion.",
+      "prerequisite_concept_ids": [
+        "ALG01"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 2
+    },
+    {
+      "concept_id": "ALG03",
+      "concept_name": "Notation and symbolic simplification",
+      "chapter_id": "CH01",
+      "description": "Substitution; coefficients; like terms; associative and distributive notation.",
+      "prerequisite_concept_ids": [
+        "ALG01"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 3
+    },
+    {
+      "concept_id": "ALG04",
+      "concept_name": "Expansion and factorisation",
+      "chapter_id": "CH01",
+      "description": "Single and double brackets; common factors; difference of squares; algebraic identities.",
+      "prerequisite_concept_ids": [
+        "ALG03"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 4
+    },
+    {
+      "concept_id": "ALG05",
+      "concept_name": "Linear equations and inequalities",
+      "chapter_id": "CH01",
+      "description": "Solve linear equations and inequalities; reverse inequality when multiplying or dividing by a negative.",
+      "prerequisite_concept_ids": [
+        "ALG02",
+        "ALG03"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 5
+    },
+    {
+      "concept_id": "ALG06",
+      "concept_name": "Simultaneous equations",
+      "chapter_id": "CH01",
+      "description": "Elimination and substitution; linear-linear and linear-quadratic systems.",
+      "prerequisite_concept_ids": [
+        "ALG05"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 6
+    },
+    {
+      "concept_id": "ALG07",
+      "concept_name": "Quadratic equations and inequalities",
+      "chapter_id": "CH01",
+      "description": "Factorisation and quadratic formula; real solution sets; sign intervals; repeated roots.",
+      "prerequisite_concept_ids": [
+        "ALG04",
+        "ALG05"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 7
+    },
+    {
+      "concept_id": "ALG08",
+      "concept_name": "Completing the square",
+      "chapter_id": "CH01",
+      "description": "Rewrite quadratic expressions in vertex form; solve equations and identify extrema algebraically.",
+      "prerequisite_concept_ids": [
+        "ALG04",
+        "ALG05"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 8
+    },
+    {
+      "concept_id": "ALG09",
+      "concept_name": "Discriminants and root structure",
+      "chapter_id": "CH01",
+      "description": "Use the discriminant and coefficient conditions to classify real roots and tangency.",
+      "prerequisite_concept_ids": [
+        "ALG07"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 9
+    },
+    {
+      "concept_id": "ALG10",
+      "concept_name": "Polynomial arithmetic and identities",
+      "chapter_id": "CH01",
+      "description": "Polynomial division; remainder and factor theorems; coefficient identities and root relations.",
+      "prerequisite_concept_ids": [
+        "ALG04"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 10
+    },
+    {
+      "concept_id": "ALG11",
+      "concept_name": "Algebraic fractions and decomposition",
+      "chapter_id": "CH01",
+      "description": "Rational expressions; exclusions; rational equations; partial-fraction decomposition as an algebraic technique.",
+      "prerequisite_concept_ids": [
+        "ALG04",
+        "ALG05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 11
+    },
+    {
+      "concept_id": "ALG12",
+      "concept_name": "Absolute-value equations and inequalities",
+      "chapter_id": "CH01",
+      "description": "Distance interpretation; cases; intervals; equations and inequalities involving absolute value.",
+      "prerequisite_concept_ids": [
+        "ALG05"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 12
+    },
+    {
+      "concept_id": "FUN01",
+      "concept_name": "Relations, function notation and evaluation",
+      "chapter_id": "CH02",
+      "description": "Inputs and outputs; single-valued functions; evaluation from formulas, tables and relations.",
+      "prerequisite_concept_ids": [
+        "ALG03"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 13
+    },
+    {
+      "concept_id": "FUN02",
+      "concept_name": "Domain and range",
+      "chapter_id": "CH02",
+      "description": "Allowed inputs and attainable outputs; square-root and rational restrictions; stated codomains.",
+      "prerequisite_concept_ids": [
+        "FUN01",
+        "ALG05"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 14
+    },
+    {
+      "concept_id": "FUN03",
+      "concept_name": "Polynomial and rational function graphs",
+      "chapter_id": "CH02",
+      "description": "Linear, quadratic, cubic and rational features; intercepts; asymptotes; holes; end behaviour.",
+      "prerequisite_concept_ids": [
+        "FUN02",
+        "ALG07",
+        "ALG11"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 15
+    },
+    {
+      "concept_id": "FUN04",
+      "concept_name": "Composite functions",
+      "chapter_id": "CH02",
+      "description": "Composition order, evaluation and inherited domain restrictions.",
+      "prerequisite_concept_ids": [
+        "FUN01"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 16
+    },
+    {
+      "concept_id": "FUN05",
+      "concept_name": "Inverse functions",
+      "chapter_id": "CH02",
+      "description": "Inverse mapping; solving for input; domain restriction for an inverse function; inverse graph reflection.",
+      "prerequisite_concept_ids": [
+        "FUN02",
+        "ALG05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 17
+    },
+    {
+      "concept_id": "FUN06",
+      "concept_name": "Graph transformations and symmetry",
+      "chapter_id": "CH02",
+      "description": "Translations; stretches; reflections; even and odd symmetry; interpreting formula-described graphs.",
+      "prerequisite_concept_ids": [
+        "FUN02",
+        "ALG08"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 18
+    },
+    {
+      "concept_id": "FUN07",
+      "concept_name": "Injectivity and surjectivity",
+      "chapter_id": "CH02",
+      "description": "One-to-one and onto relative to declared domain and codomain; bijections and inverse existence.",
+      "prerequisite_concept_ids": [
+        "FUN02"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 19
+    },
+    {
+      "concept_id": "FUN08",
+      "concept_name": "Piecewise functions and intersections",
+      "chapter_id": "CH02",
+      "description": "Cases and boundary values; graphical and algebraic intersections; interpret a graph from exact mathematical data.",
+      "prerequisite_concept_ids": [
+        "FUN02",
+        "ALG06"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 20
+    },
+    {
+      "concept_id": "EXP01",
+      "concept_name": "Laws of integer indices",
+      "chapter_id": "CH03",
+      "description": "Products, quotients, powers and zero index; base restrictions for divisions.",
+      "prerequisite_concept_ids": [
+        "ALG01",
+        "ALG03"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 21
+    },
+    {
+      "concept_id": "EXP02",
+      "concept_name": "Negative and fractional powers",
+      "chapter_id": "CH03",
+      "description": "Reciprocals; roots; rational exponents; real-valued conventions and positivity restrictions.",
+      "prerequisite_concept_ids": [
+        "EXP01",
+        "ALG02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 22
+    },
+    {
+      "concept_id": "EXP03",
+      "concept_name": "Exponential equations and expressions",
+      "chapter_id": "CH03",
+      "description": "Common-base equations; substitutions; exact simplification; not general logarithmic solving.",
+      "prerequisite_concept_ids": [
+        "EXP02",
+        "ALG05"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 23
+    },
+    {
+      "concept_id": "EXP04",
+      "concept_name": "Exponential functions and graphs",
+      "chapter_id": "CH03",
+      "description": "Positive-base exponential functions; monotonicity; asymptotes; transformations.",
+      "prerequisite_concept_ids": [
+        "EXP02",
+        "FUN02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 24
+    },
+    {
+      "concept_id": "EXP05",
+      "concept_name": "Growth, decay and exponential modelling",
+      "chapter_id": "CH03",
+      "description": "Multiplicative rate; half-life; doubling time; time-unit conversion; model assumptions.",
+      "prerequisite_concept_ids": [
+        "EXP04",
+        "ALG02"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 25
+    },
+    {
+      "concept_id": "LOG01",
+      "concept_name": "Logarithms as inverse exponents",
+      "chapter_id": "CH04",
+      "description": "Definition; base restrictions; common and natural logarithms; inverse relationships.",
+      "prerequisite_concept_ids": [
+        "EXP03",
+        "EXP04"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 26
+    },
+    {
+      "concept_id": "LOG02",
+      "concept_name": "Logarithmic laws and change of base",
+      "chapter_id": "CH04",
+      "description": "Product, quotient and power laws with domain conditions; change of base.",
+      "prerequisite_concept_ids": [
+        "LOG01"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 27
+    },
+    {
+      "concept_id": "LOG03",
+      "concept_name": "Logarithmic equations and domains",
+      "chapter_id": "CH04",
+      "description": "Solve equations; reject extraneous candidates; require positive logarithm arguments.",
+      "prerequisite_concept_ids": [
+        "LOG02",
+        "ALG07",
+        "ALG11"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 28
+    },
+    {
+      "concept_id": "LOG04",
+      "concept_name": "Logarithmic graphs and transformations",
+      "chapter_id": "CH04",
+      "description": "Domain, range, asymptotes and translations of real logarithmic graphs.",
+      "prerequisite_concept_ids": [
+        "LOG01",
+        "FUN06"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 29
+    },
+    {
+      "concept_id": "LOG05",
+      "concept_name": "Exponential-logarithmic modelling",
+      "chapter_id": "CH04",
+      "description": "Solve general exponential equations; continuous rate and elapsed time; linearise an exponential relationship.",
+      "prerequisite_concept_ids": [
+        "LOG02",
+        "EXP05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 30
+    },
+    {
+      "concept_id": "DIF01",
+      "concept_name": "Limits and introductory continuity",
+      "chapter_id": "CH05",
+      "description": "Finite and one-sided limits; removable discontinuities; continuity at a point.",
+      "prerequisite_concept_ids": [
+        "FUN08",
+        "ALG11"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 31
+    },
+    {
+      "concept_id": "DIF02",
+      "concept_name": "Derivatives from first principles",
+      "chapter_id": "CH05",
+      "description": "Difference quotients; tangent gradient as a limit; differentiability versus continuity.",
+      "prerequisite_concept_ids": [
+        "DIF01",
+        "ALG04"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 32
+    },
+    {
+      "concept_id": "DIF03",
+      "concept_name": "Standard differentiation rules",
+      "chapter_id": "CH05",
+      "description": "Polynomial and real power derivatives; constants; sum and constant-multiple rules.",
+      "prerequisite_concept_ids": [
+        "DIF02",
+        "EXP02"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 33
+    },
+    {
+      "concept_id": "DIF04",
+      "concept_name": "Product, quotient and chain rules",
+      "chapter_id": "CH05",
+      "description": "Differentiate products, quotients and compositions; preserve domains.",
+      "prerequisite_concept_ids": [
+        "DIF03",
+        "FUN04"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 34
+    },
+    {
+      "concept_id": "DIF05",
+      "concept_name": "Trigonometric, exponential and log derivatives",
+      "chapter_id": "CH05",
+      "description": "Standard transcendental derivatives in radians, including chain-rule applications.",
+      "prerequisite_concept_ids": [
+        "DIF04",
+        "TRI03",
+        "LOG01"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 42
+    },
+    {
+      "concept_id": "DIF06",
+      "concept_name": "Implicit differentiation, tangents and normals",
+      "chapter_id": "CH05",
+      "description": "Dependent-variable derivatives; tangent lines; normal gradients; vertical and horizontal cases.",
+      "prerequisite_concept_ids": [
+        "DIF04",
+        "GEO05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 44
+    },
+    {
+      "concept_id": "DIF07",
+      "concept_name": "Stationary points and optimisation",
+      "chapter_id": "CH05",
+      "description": "Critical points; endpoint checks; constrained and global extrema; unfamiliar optimisation reasoning.",
+      "prerequisite_concept_ids": [
+        "DIF03",
+        "FUN08"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 45
+    },
+    {
+      "concept_id": "DIF08",
+      "concept_name": "Monotonicity and higher derivatives",
+      "chapter_id": "CH05",
+      "description": "Increasing/decreasing intervals; second and higher derivatives; curvature and inflection conditions.",
+      "prerequisite_concept_ids": [
+        "DIF03",
+        "FUN08"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 46
+    },
+    {
+      "concept_id": "DIF09",
+      "concept_name": "Related rates",
+      "chapter_id": "CH05",
+      "description": "Differentiate changing quantities with respect to time; units and instantaneous conditions.",
+      "prerequisite_concept_ids": [
+        "DIF04",
+        "DIF06",
+        "GEO08"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 48
+    },
+    {
+      "concept_id": "DIF10",
+      "concept_name": "Curve sketching and differential applications",
+      "chapter_id": "CH05",
+      "description": "Combine derivative signs, intercepts, asymptotes and domain information; interpret rate models.",
+      "prerequisite_concept_ids": [
+        "DIF07",
+        "DIF08",
+        "FUN03"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 49
+    },
+    {
+      "concept_id": "INT01",
+      "concept_name": "Indefinite integration and standard antiderivatives",
+      "chapter_id": "CH06",
+      "description": "General antiderivative families; constants; powers, trigonometric, exponential and logarithmic forms.",
+      "prerequisite_concept_ids": [
+        "DIF03",
+        "DIF05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 50
+    },
+    {
+      "concept_id": "INT02",
+      "concept_name": "Definite integrals and the FTC",
+      "chapter_id": "CH06",
+      "description": "Signed accumulation; fundamental theorem of calculus; upper-minus-lower evaluation; variable limits.",
+      "prerequisite_concept_ids": [
+        "INT01",
+        "DIF01"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 51
+    },
+    {
+      "concept_id": "INT03",
+      "concept_name": "Integration by substitution",
+      "chapter_id": "CH06",
+      "description": "Change variable, differential and bounds consistently; definite and indefinite substitution.",
+      "prerequisite_concept_ids": [
+        "INT02",
+        "DIF04"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 52
+    },
+    {
+      "concept_id": "INT04",
+      "concept_name": "Integration by parts",
+      "chapter_id": "CH06",
+      "description": "Reverse product rule; choice of factors; definite and indefinite integration by parts.",
+      "prerequisite_concept_ids": [
+        "INT01",
+        "DIF04"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 53
+    },
+    {
+      "concept_id": "INT05",
+      "concept_name": "Integration using partial fractions",
+      "chapter_id": "CH06",
+      "description": "Use algebraic decomposition to integrate rational functions on intervals avoiding poles.",
+      "prerequisite_concept_ids": [
+        "INT02",
+        "ALG11"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 54
+    },
+    {
+      "concept_id": "INT06",
+      "concept_name": "Areas under and between curves",
+      "chapter_id": "CH06",
+      "description": "Geometric area versus signed integral; intersections and split intervals.",
+      "prerequisite_concept_ids": [
+        "INT02",
+        "FUN08"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 55
+    },
+    {
+      "concept_id": "INT07",
+      "concept_name": "Volumes of revolution",
+      "chapter_id": "CH06",
+      "description": "Disks and washers about specified axes; square radii; bounds and units.",
+      "prerequisite_concept_ids": [
+        "INT02",
+        "GEO08"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 56
+    },
+    {
+      "concept_id": "INT08",
+      "concept_name": "Accumulation and integration applications",
+      "chapter_id": "CH06",
+      "description": "Net change, total distance, average value and basic separable rate models with initial data.",
+      "prerequisite_concept_ids": [
+        "INT02",
+        "INT06"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 57
+    },
+    {
+      "concept_id": "GEO01",
+      "concept_name": "Angles, lines and polygons",
+      "chapter_id": "CH07",
+      "description": "Parallel-line angle facts; triangle and polygon angle sums; interior and exterior angles.",
+      "prerequisite_concept_ids": [
+        "ALG01"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 37
+    },
+    {
+      "concept_id": "GEO02",
+      "concept_name": "Triangles, congruence and similarity",
+      "chapter_id": "CH07",
+      "description": "Triangle properties; congruence criteria; proportional sides; similarity and associated reasoning.",
+      "prerequisite_concept_ids": [
+        "GEO01",
+        "ALG02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 38
+    },
+    {
+      "concept_id": "GEO03",
+      "concept_name": "Pythagorean theorem",
+      "chapter_id": "CH07",
+      "description": "Right-triangle lengths; converse and three-dimensional distance applications.",
+      "prerequisite_concept_ids": [
+        "ALG01",
+        "EXP02"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 35
+    },
+    {
+      "concept_id": "GEO04",
+      "concept_name": "Circle geometry",
+      "chapter_id": "CH07",
+      "description": "Angles at centre and circumference; cyclic quadrilaterals; tangents and chords.",
+      "prerequisite_concept_ids": [
+        "GEO01",
+        "GEO02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 39
+    },
+    {
+      "concept_id": "GEO05",
+      "concept_name": "Coordinate distance, midpoint and gradient",
+      "chapter_id": "CH07",
+      "description": "Distance and midpoint formulas; gradient; parallel and perpendicular lines; undefined slopes.",
+      "prerequisite_concept_ids": [
+        "ALG05",
+        "GEO03"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 43
+    },
+    {
+      "concept_id": "GEO06",
+      "concept_name": "Equations of lines and circles",
+      "chapter_id": "CH07",
+      "description": "Point-gradient and implicit lines; circle centre and radius; intersections and tangency.",
+      "prerequisite_concept_ids": [
+        "GEO05",
+        "ALG08"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 58
+    },
+    {
+      "concept_id": "GEO07",
+      "concept_name": "Geometric constructions",
+      "chapter_id": "CH07",
+      "description": "Compass-and-straightedge constructions; bisectors; perpendiculars; loci; justify construction steps in text.",
+      "prerequisite_concept_ids": [
+        "GEO02",
+        "GEO04"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 59
+    },
+    {
+      "concept_id": "GEO08",
+      "concept_name": "Areas, surface areas and volumes",
+      "chapter_id": "CH07",
+      "description": "Plane area; solids; dimensionally correct units; linear, area and volume scale factors.",
+      "prerequisite_concept_ids": [
+        "ALG02",
+        "GEO02",
+        "GEO03"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 47
+    },
+    {
+      "concept_id": "GEO09",
+      "concept_name": "Geometric reasoning and synthesis",
+      "chapter_id": "CH07",
+      "description": "Justified chains of geometric deductions; counterexamples to false geometric claims.",
+      "prerequisite_concept_ids": [
+        "GEO02",
+        "GEO04",
+        "GEO05",
+        "PRF05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 63
+    },
+    {
+      "concept_id": "TRI01",
+      "concept_name": "Right-triangle trigonometric ratios",
+      "chapter_id": "CH08",
+      "description": "Sine, cosine, tangent; choosing sides; bearings, elevations and applications.",
+      "prerequisite_concept_ids": [
+        "GEO03",
+        "ALG02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 36
+    },
+    {
+      "concept_id": "TRI02",
+      "concept_name": "Radians, degrees and circular measure",
+      "chapter_id": "CH08",
+      "description": "Angle conversion; arc length; sector area; radian convention in calculus.",
+      "prerequisite_concept_ids": [
+        "GEO04",
+        "ALG02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 40
+    },
+    {
+      "concept_id": "TRI03",
+      "concept_name": "Unit circle and basic identities",
+      "chapter_id": "CH08",
+      "description": "Signs and exact values; periodicity; sine-cosine identity; tangent quotient.",
+      "prerequisite_concept_ids": [
+        "TRI01",
+        "TRI02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 41
+    },
+    {
+      "concept_id": "TRI04",
+      "concept_name": "Sine and cosine rules",
+      "chapter_id": "CH08",
+      "description": "Non-right triangles; ambiguous sine-rule cases; triangle area using an included angle.",
+      "prerequisite_concept_ids": [
+        "TRI01",
+        "GEO02"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 64
+    },
+    {
+      "concept_id": "TRI05",
+      "concept_name": "Compound and double angles",
+      "chapter_id": "CH08",
+      "description": "Angle-sum, difference and double-angle identities; equivalent forms and derivations.",
+      "prerequisite_concept_ids": [
+        "TRI03",
+        "ALG04"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 65
+    },
+    {
+      "concept_id": "TRI06",
+      "concept_name": "Trigonometric equations",
+      "chapter_id": "CH08",
+      "description": "Complete solutions on specified intervals; factoring; avoiding lost roots and extraneous roots.",
+      "prerequisite_concept_ids": [
+        "TRI03",
+        "TRI05",
+        "ALG07"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 66
+    },
+    {
+      "concept_id": "TRI07",
+      "concept_name": "Trigonometric graphs and modelling",
+      "chapter_id": "CH08",
+      "description": "Amplitude, period, phase and vertical shift; sinusoidal models; domain-specific interpretation.",
+      "prerequisite_concept_ids": [
+        "TRI03",
+        "FUN06"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 67
+    },
+    {
+      "concept_id": "TRI08",
+      "concept_name": "Inverse trigonometric functions",
+      "chapter_id": "CH08",
+      "description": "Principal-value branches; domains and ranges; distinguish reciprocal from inverse.",
+      "prerequisite_concept_ids": [
+        "TRI03",
+        "FUN05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 68
+    },
+    {
+      "concept_id": "VEC01",
+      "concept_name": "Vector representation, arithmetic and position",
+      "chapter_id": "CH09",
+      "description": "Directed displacement; basis and component notation; vector addition; scalar multiplication; position vectors.",
+      "prerequisite_concept_ids": [
+        "ALG03",
+        "GEO05"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 69
+    },
+    {
+      "concept_id": "VEC02",
+      "concept_name": "Magnitude, direction and 3D vectors",
+      "chapter_id": "CH09",
+      "description": "Euclidean magnitude; unit vectors; directions and coordinates in two and three dimensions.",
+      "prerequisite_concept_ids": [
+        "VEC01",
+        "GEO03"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 70
+    },
+    {
+      "concept_id": "VEC03",
+      "concept_name": "Scalar product and angles",
+      "chapter_id": "CH09",
+      "description": "Dot product; angle formula; perpendicularity and projections.",
+      "prerequisite_concept_ids": [
+        "VEC02",
+        "TRI03"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 71
+    },
+    {
+      "concept_id": "VEC04",
+      "concept_name": "Vector product",
+      "chapter_id": "CH09",
+      "description": "Three-dimensional cross product; orientation; perpendicular direction; parallelogram area.",
+      "prerequisite_concept_ids": [
+        "VEC02"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 72
+    },
+    {
+      "concept_id": "VEC05",
+      "concept_name": "Vector equations of lines",
+      "chapter_id": "CH09",
+      "description": "Position plus parameter times direction; parallel directions; coordinate forms.",
+      "prerequisite_concept_ids": [
+        "VEC01",
+        "ALG05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 73
+    },
+    {
+      "concept_id": "VEC06",
+      "concept_name": "Parallelism, perpendicularity and intersections",
+      "chapter_id": "CH09",
+      "description": "Intersecting, parallel and skew lines; parameter consistency across all coordinates.",
+      "prerequisite_concept_ids": [
+        "VEC03",
+        "VEC05",
+        "ALG06"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 74
+    },
+    {
+      "concept_id": "VEC07",
+      "concept_name": "Vector geometric applications",
+      "chapter_id": "CH09",
+      "description": "Point-to-line distance; geometric area; collinearity and vector geometry reasoning.",
+      "prerequisite_concept_ids": [
+        "VEC03",
+        "VEC04",
+        "VEC05"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 75
+    },
+    {
+      "concept_id": "PRO01",
+      "concept_name": "Sample spaces, events and probability laws",
+      "chapter_id": "CH10",
+      "description": "Events and complements; equally likely elementary outcomes; unions and inclusion-exclusion.",
+      "prerequisite_concept_ids": [
+        "ALG02"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 76
+    },
+    {
+      "concept_id": "PRO02",
+      "concept_name": "Conditional probability and tree diagrams",
+      "chapter_id": "CH10",
+      "description": "Conditioning changes the reference set; branch products and path sums; without replacement.",
+      "prerequisite_concept_ids": [
+        "PRO01"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 77
+    },
+    {
+      "concept_id": "PRO03",
+      "concept_name": "Independence and dependence",
+      "chapter_id": "CH10",
+      "description": "Distinguish independence from disjointness; test product and conditional criteria.",
+      "prerequisite_concept_ids": [
+        "PRO02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 78
+    },
+    {
+      "concept_id": "PRO04",
+      "concept_name": "Bayes theorem and total probability",
+      "chapter_id": "CH10",
+      "description": "Reverse conditional probabilities with base rates; partition the sample space.",
+      "prerequisite_concept_ids": [
+        "PRO02"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 79
+    },
+    {
+      "concept_id": "PRO05",
+      "concept_name": "Discrete random variables and distributions",
+      "chapter_id": "CH10",
+      "description": "Probability mass functions; support; normalisation; counting-based probability.",
+      "prerequisite_concept_ids": [
+        "PRO01",
+        "CNT01"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 81
+    },
+    {
+      "concept_id": "PRO06",
+      "concept_name": "Expectation and variance",
+      "chapter_id": "CH10",
+      "description": "Weighted averages; second moment; linear transformations; distinguish spread from location.",
+      "prerequisite_concept_ids": [
+        "PRO05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 82
+    },
+    {
+      "concept_id": "PRO07",
+      "concept_name": "Binomial distribution",
+      "chapter_id": "CH10",
+      "description": "Fixed independent trials; number of successes; combinations; model conditions and probabilities.",
+      "prerequisite_concept_ids": [
+        "PRO03",
+        "PRO05",
+        "CNT03"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 85
+    },
+    {
+      "concept_id": "PRO08",
+      "concept_name": "Normal distribution and probability models",
+      "chapter_id": "CH10",
+      "description": "Continuous distributions; standardisation; normal probabilities; modelling assumptions and supplied probability tables.",
+      "prerequisite_concept_ids": [
+        "PRO01",
+        "EXP02"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 86
+    },
+    {
+      "concept_id": "STA01",
+      "concept_name": "Data types, sampling and bias",
+      "chapter_id": "CH11",
+      "description": "Categorical and numerical data; random, stratified and convenience sampling; population versus sample; bias.",
+      "prerequisite_concept_ids": [
+        "ALG02"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 87
+    },
+    {
+      "concept_id": "STA02",
+      "concept_name": "Central tendency and data visualisation",
+      "chapter_id": "CH11",
+      "description": "Mean, median, mode; weighted mean; tables; histograms and box plots represented by exact data.",
+      "prerequisite_concept_ids": [
+        "STA01"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 88
+    },
+    {
+      "concept_id": "STA03",
+      "concept_name": "Dispersion, variance and standard deviation",
+      "chapter_id": "CH11",
+      "description": "Range, IQR, population and sample variance; standard deviation; effect of transformations.",
+      "prerequisite_concept_ids": [
+        "STA02",
+        "EXP02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 89
+    },
+    {
+      "concept_id": "STA04",
+      "concept_name": "Correlation and regression",
+      "chapter_id": "CH11",
+      "description": "Correlation versus causation; least-squares interpretation; residuals; extrapolation and prediction.",
+      "prerequisite_concept_ids": [
+        "STA03",
+        "GEO05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 90
+    },
+    {
+      "concept_id": "STA05",
+      "concept_name": "Sampling distributions and standard error",
+      "chapter_id": "CH11",
+      "description": "Sample means; standard error; central limit theorem conditions; independent sampling.",
+      "prerequisite_concept_ids": [
+        "STA03",
+        "PRO06",
+        "PRO08"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 91
+    },
+    {
+      "concept_id": "STA06",
+      "concept_name": "Estimation and confidence intervals",
+      "chapter_id": "CH11",
+      "description": "Point and interval estimation; known-variance z intervals; introductory t and proportion intervals with conditions.",
+      "prerequisite_concept_ids": [
+        "STA05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 92
+    },
+    {
+      "concept_id": "STA07",
+      "concept_name": "Introductory hypothesis testing",
+      "chapter_id": "CH11",
+      "description": "Null and alternative hypotheses; tail choice; p-values; significance, type I and II errors.",
+      "prerequisite_concept_ids": [
+        "STA05",
+        "PRO07"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 93
+    },
+    {
+      "concept_id": "STA08",
+      "concept_name": "Interpretation and statistical study critique",
+      "chapter_id": "CH11",
+      "description": "Statistical versus practical significance; uncertainty; assumptions; limitations of inference and causality.",
+      "prerequisite_concept_ids": [
+        "STA04",
+        "STA06",
+        "STA07"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 94
+    },
+    {
+      "concept_id": "PRF01",
+      "concept_name": "Statements and logical connectives",
+      "chapter_id": "CH12",
+      "description": "Truth-valued statements; negation, conjunction, disjunction; truth tables.",
+      "prerequisite_concept_ids": [],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 60
+    },
+    {
+      "concept_id": "PRF02",
+      "concept_name": "Implication and necessary/sufficient conditions",
+      "chapter_id": "CH12",
+      "description": "Implication; equivalence; converse, inverse, contrapositive; necessary and sufficient conditions.",
+      "prerequisite_concept_ids": [
+        "PRF01"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 61
+    },
+    {
+      "concept_id": "PRF03",
+      "concept_name": "Quantifiers and negation",
+      "chapter_id": "CH12",
+      "description": "Universal and existential quantification; order of quantifiers; correct negation.",
+      "prerequisite_concept_ids": [
+        "PRF01"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 95
+    },
+    {
+      "concept_id": "PRF04",
+      "concept_name": "Counterexamples and logical validity",
+      "chapter_id": "CH12",
+      "description": "Refute universal claims; distinguish examples from proof; invalid inferences.",
+      "prerequisite_concept_ids": [
+        "PRF02",
+        "PRF03"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 96
+    },
+    {
+      "concept_id": "PRF05",
+      "concept_name": "Direct proof and divisibility",
+      "chapter_id": "CH12",
+      "description": "Definitions of parity and divisibility; integer algebra; direct chains of deductions.",
+      "prerequisite_concept_ids": [
+        "PRF02",
+        "ALG03"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 62
+    },
+    {
+      "concept_id": "PRF06",
+      "concept_name": "Contradiction and contrapositive proofs",
+      "chapter_id": "CH12",
+      "description": "Negate the target correctly; derive contradiction; prove contrapositive; irrationality reasoning.",
+      "prerequisite_concept_ids": [
+        "PRF03",
+        "PRF05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 97
+    },
+    {
+      "concept_id": "PRF07",
+      "concept_name": "Mathematical induction",
+      "chapter_id": "CH12",
+      "description": "Base case; quantified inductive hypothesis; valid successor step; sums and divisibility.",
+      "prerequisite_concept_ids": [
+        "PRF02",
+        "PRF05"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 98
+    },
+    {
+      "concept_id": "PRF08",
+      "concept_name": "Number-theoretic proof synthesis",
+      "chapter_id": "CH12",
+      "description": "Modular residues; divisibility; Diophantine constraints; audit multi-stage mathematical arguments.",
+      "prerequisite_concept_ids": [
+        "PRF04",
+        "PRF06",
+        "PRF07"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 99
+    },
+    {
+      "concept_id": "CNT01",
+      "concept_name": "Fundamental counting principle",
+      "chapter_id": "CH13",
+      "description": "Multiplicative choices, additive disjoint cases; count equally likely outcomes without overcounting.",
+      "prerequisite_concept_ids": [
+        "ALG01"
+      ],
+      "curriculum_level": 1,
+      "curriculum_level_label": "foundation_secondary",
+      "topological_rank": 80
+    },
+    {
+      "concept_id": "CNT02",
+      "concept_name": "Factorials and permutations",
+      "chapter_id": "CH13",
+      "description": "Factorials; ordered selections; arrangements of distinct objects.",
+      "prerequisite_concept_ids": [
+        "CNT01"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 83
+    },
+    {
+      "concept_id": "CNT03",
+      "concept_name": "Combinations and binomial coefficients",
+      "chapter_id": "CH13",
+      "description": "Unordered selection; symmetry; Pascal identity; counting subsets.",
+      "prerequisite_concept_ids": [
+        "CNT02"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 84
+    },
+    {
+      "concept_id": "CNT04",
+      "concept_name": "Repeated, circular and restricted arrangements",
+      "chapter_id": "CH13",
+      "description": "Multisets; circular rotations; blocks; gap methods; fixed versus indistinguishable positions.",
+      "prerequisite_concept_ids": [
+        "CNT02",
+        "CNT03"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 100
+    },
+    {
+      "concept_id": "CNT05",
+      "concept_name": "Binomial theorem",
+      "chapter_id": "CH13",
+      "description": "Finite expansion for nonnegative integer powers; coefficient extraction and identities.",
+      "prerequisite_concept_ids": [
+        "CNT03",
+        "ALG04",
+        "EXP01"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 101
+    },
+    {
+      "concept_id": "CNT06",
+      "concept_name": "Counting and probability applications",
+      "chapter_id": "CH13",
+      "description": "Use suitable counting ratios; restrictions and complements; avoid assuming unequal outcomes are equiprobable.",
+      "prerequisite_concept_ids": [
+        "CNT04",
+        "PRO01"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 102
+    },
+    {
+      "concept_id": "CPX01",
+      "concept_name": "Imaginary unit and complex arithmetic",
+      "chapter_id": "CH14",
+      "description": "Algebraic form; powers of i; real and imaginary parts; addition and multiplication.",
+      "prerequisite_concept_ids": [
+        "ALG04"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 103
+    },
+    {
+      "concept_id": "CPX02",
+      "concept_name": "Conjugates and complex division",
+      "chapter_id": "CH14",
+      "description": "Conjugation; modulus squared; rationalise a complex denominator.",
+      "prerequisite_concept_ids": [
+        "CPX01",
+        "ALG11"
+      ],
+      "curriculum_level": 2,
+      "curriculum_level_label": "upper_secondary",
+      "topological_rank": 104
+    },
+    {
+      "concept_id": "CPX03",
+      "concept_name": "Modulus, argument and Argand representation",
+      "chapter_id": "CH14",
+      "description": "Distance and angle; quadrant; principal argument in (-pi,pi]; geometry without required raster assets.",
+      "prerequisite_concept_ids": [
+        "CPX01",
+        "GEO05",
+        "TRI03"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 105
+    },
+    {
+      "concept_id": "CPX04",
+      "concept_name": "Polar form and Euler representation",
+      "chapter_id": "CH14",
+      "description": "Convert forms; Euler identity for real angles as a stated representation; multiplication and division of polar forms.",
+      "prerequisite_concept_ids": [
+        "CPX03",
+        "EXP04"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 106
+    },
+    {
+      "concept_id": "CPX05",
+      "concept_name": "De Moivre theorem and powers",
+      "chapter_id": "CH14",
+      "description": "Integer powers; multiply arguments; principal argument reduction.",
+      "prerequisite_concept_ids": [
+        "CPX04",
+        "EXP01"
+      ],
+      "curriculum_level": 3,
+      "curriculum_level_label": "pre_university",
+      "topological_rank": 107
+    },
+    {
+      "concept_id": "CPX06",
+      "concept_name": "Roots of complex numbers",
+      "chapter_id": "CH14",
+      "description": "All n distinct roots of nonzero numbers; argument families; root modulus and regular polygons.",
+      "prerequisite_concept_ids": [
+        "CPX05"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 108
+    },
+    {
+      "concept_id": "CPX07",
+      "concept_name": "Complex polynomial roots and geometry",
+      "chapter_id": "CH14",
+      "description": "Conjugate-pair roots for real polynomials; factors; loci and geometric interpretations.",
+      "prerequisite_concept_ids": [
+        "CPX02",
+        "CPX06",
+        "ALG10"
+      ],
+      "curriculum_level": 4,
+      "curriculum_level_label": "advanced_pre_university",
+      "topological_rank": 109
+    }
+  ],
+  "edges": [
+    {
+      "prerequisite_concept_id": "ALG01",
+      "dependent_concept_id": "ALG02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG01",
+      "dependent_concept_id": "ALG03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG03",
+      "dependent_concept_id": "ALG04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "ALG05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG03",
+      "dependent_concept_id": "ALG05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "ALG06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG04",
+      "dependent_concept_id": "ALG07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "ALG07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG04",
+      "dependent_concept_id": "ALG08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "ALG08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG07",
+      "dependent_concept_id": "ALG09",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG04",
+      "dependent_concept_id": "ALG10",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG04",
+      "dependent_concept_id": "ALG11",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "ALG11",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "ALG12",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG03",
+      "dependent_concept_id": "FUN01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN01",
+      "dependent_concept_id": "FUN02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "FUN02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN02",
+      "dependent_concept_id": "FUN03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG07",
+      "dependent_concept_id": "FUN03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG11",
+      "dependent_concept_id": "FUN03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN01",
+      "dependent_concept_id": "FUN04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN02",
+      "dependent_concept_id": "FUN05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "FUN05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN02",
+      "dependent_concept_id": "FUN06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG08",
+      "dependent_concept_id": "FUN06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN02",
+      "dependent_concept_id": "FUN07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN02",
+      "dependent_concept_id": "FUN08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG06",
+      "dependent_concept_id": "FUN08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG01",
+      "dependent_concept_id": "EXP01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG03",
+      "dependent_concept_id": "EXP01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP01",
+      "dependent_concept_id": "EXP02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "EXP02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP02",
+      "dependent_concept_id": "EXP03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "EXP03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP02",
+      "dependent_concept_id": "EXP04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN02",
+      "dependent_concept_id": "EXP04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP04",
+      "dependent_concept_id": "EXP05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "EXP05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP03",
+      "dependent_concept_id": "LOG01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP04",
+      "dependent_concept_id": "LOG01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "LOG01",
+      "dependent_concept_id": "LOG02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "LOG02",
+      "dependent_concept_id": "LOG03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG07",
+      "dependent_concept_id": "LOG03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG11",
+      "dependent_concept_id": "LOG03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "LOG01",
+      "dependent_concept_id": "LOG04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN06",
+      "dependent_concept_id": "LOG04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "LOG02",
+      "dependent_concept_id": "LOG05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP05",
+      "dependent_concept_id": "LOG05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN08",
+      "dependent_concept_id": "DIF01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG11",
+      "dependent_concept_id": "DIF01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF01",
+      "dependent_concept_id": "DIF02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG04",
+      "dependent_concept_id": "DIF02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF02",
+      "dependent_concept_id": "DIF03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP02",
+      "dependent_concept_id": "DIF03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF03",
+      "dependent_concept_id": "DIF04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN04",
+      "dependent_concept_id": "DIF04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF04",
+      "dependent_concept_id": "DIF05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI03",
+      "dependent_concept_id": "DIF05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "LOG01",
+      "dependent_concept_id": "DIF05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF04",
+      "dependent_concept_id": "DIF06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO05",
+      "dependent_concept_id": "DIF06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF03",
+      "dependent_concept_id": "DIF07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN08",
+      "dependent_concept_id": "DIF07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF03",
+      "dependent_concept_id": "DIF08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN08",
+      "dependent_concept_id": "DIF08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF04",
+      "dependent_concept_id": "DIF09",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF06",
+      "dependent_concept_id": "DIF09",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO08",
+      "dependent_concept_id": "DIF09",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF07",
+      "dependent_concept_id": "DIF10",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF08",
+      "dependent_concept_id": "DIF10",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN03",
+      "dependent_concept_id": "DIF10",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF03",
+      "dependent_concept_id": "INT01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF05",
+      "dependent_concept_id": "INT01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "INT01",
+      "dependent_concept_id": "INT02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF01",
+      "dependent_concept_id": "INT02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "INT02",
+      "dependent_concept_id": "INT03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF04",
+      "dependent_concept_id": "INT03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "INT01",
+      "dependent_concept_id": "INT04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "DIF04",
+      "dependent_concept_id": "INT04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "INT02",
+      "dependent_concept_id": "INT05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG11",
+      "dependent_concept_id": "INT05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "INT02",
+      "dependent_concept_id": "INT06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN08",
+      "dependent_concept_id": "INT06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "INT02",
+      "dependent_concept_id": "INT07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO08",
+      "dependent_concept_id": "INT07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "INT02",
+      "dependent_concept_id": "INT08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "INT06",
+      "dependent_concept_id": "INT08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG01",
+      "dependent_concept_id": "GEO01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO01",
+      "dependent_concept_id": "GEO02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "GEO02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG01",
+      "dependent_concept_id": "GEO03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP02",
+      "dependent_concept_id": "GEO03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO01",
+      "dependent_concept_id": "GEO04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO02",
+      "dependent_concept_id": "GEO04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "GEO05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO03",
+      "dependent_concept_id": "GEO05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO05",
+      "dependent_concept_id": "GEO06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG08",
+      "dependent_concept_id": "GEO06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO02",
+      "dependent_concept_id": "GEO07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO04",
+      "dependent_concept_id": "GEO07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "GEO08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO02",
+      "dependent_concept_id": "GEO08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO03",
+      "dependent_concept_id": "GEO08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO02",
+      "dependent_concept_id": "GEO09",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO04",
+      "dependent_concept_id": "GEO09",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO05",
+      "dependent_concept_id": "GEO09",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF05",
+      "dependent_concept_id": "GEO09",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO03",
+      "dependent_concept_id": "TRI01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "TRI01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO04",
+      "dependent_concept_id": "TRI02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "TRI02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI01",
+      "dependent_concept_id": "TRI03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI02",
+      "dependent_concept_id": "TRI03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI01",
+      "dependent_concept_id": "TRI04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO02",
+      "dependent_concept_id": "TRI04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI03",
+      "dependent_concept_id": "TRI05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG04",
+      "dependent_concept_id": "TRI05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI03",
+      "dependent_concept_id": "TRI06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI05",
+      "dependent_concept_id": "TRI06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG07",
+      "dependent_concept_id": "TRI06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI03",
+      "dependent_concept_id": "TRI07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN06",
+      "dependent_concept_id": "TRI07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI03",
+      "dependent_concept_id": "TRI08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "FUN05",
+      "dependent_concept_id": "TRI08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG03",
+      "dependent_concept_id": "VEC01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO05",
+      "dependent_concept_id": "VEC01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC01",
+      "dependent_concept_id": "VEC02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO03",
+      "dependent_concept_id": "VEC02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC02",
+      "dependent_concept_id": "VEC03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI03",
+      "dependent_concept_id": "VEC03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC02",
+      "dependent_concept_id": "VEC04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC01",
+      "dependent_concept_id": "VEC05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG05",
+      "dependent_concept_id": "VEC05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC03",
+      "dependent_concept_id": "VEC06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC05",
+      "dependent_concept_id": "VEC06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG06",
+      "dependent_concept_id": "VEC06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC03",
+      "dependent_concept_id": "VEC07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC04",
+      "dependent_concept_id": "VEC07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "VEC05",
+      "dependent_concept_id": "VEC07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "PRO01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO01",
+      "dependent_concept_id": "PRO02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO02",
+      "dependent_concept_id": "PRO03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO02",
+      "dependent_concept_id": "PRO04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO01",
+      "dependent_concept_id": "PRO05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CNT01",
+      "dependent_concept_id": "PRO05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO05",
+      "dependent_concept_id": "PRO06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO03",
+      "dependent_concept_id": "PRO07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO05",
+      "dependent_concept_id": "PRO07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CNT03",
+      "dependent_concept_id": "PRO07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO01",
+      "dependent_concept_id": "PRO08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP02",
+      "dependent_concept_id": "PRO08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG02",
+      "dependent_concept_id": "STA01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA01",
+      "dependent_concept_id": "STA02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA02",
+      "dependent_concept_id": "STA03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP02",
+      "dependent_concept_id": "STA03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA03",
+      "dependent_concept_id": "STA04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO05",
+      "dependent_concept_id": "STA04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA03",
+      "dependent_concept_id": "STA05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO06",
+      "dependent_concept_id": "STA05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO08",
+      "dependent_concept_id": "STA05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA05",
+      "dependent_concept_id": "STA06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA05",
+      "dependent_concept_id": "STA07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO07",
+      "dependent_concept_id": "STA07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA04",
+      "dependent_concept_id": "STA08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA06",
+      "dependent_concept_id": "STA08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "STA07",
+      "dependent_concept_id": "STA08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF01",
+      "dependent_concept_id": "PRF02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF01",
+      "dependent_concept_id": "PRF03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF02",
+      "dependent_concept_id": "PRF04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF03",
+      "dependent_concept_id": "PRF04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF02",
+      "dependent_concept_id": "PRF05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG03",
+      "dependent_concept_id": "PRF05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF03",
+      "dependent_concept_id": "PRF06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF05",
+      "dependent_concept_id": "PRF06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF02",
+      "dependent_concept_id": "PRF07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF05",
+      "dependent_concept_id": "PRF07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF04",
+      "dependent_concept_id": "PRF08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF06",
+      "dependent_concept_id": "PRF08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRF07",
+      "dependent_concept_id": "PRF08",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG01",
+      "dependent_concept_id": "CNT01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CNT01",
+      "dependent_concept_id": "CNT02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CNT02",
+      "dependent_concept_id": "CNT03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CNT02",
+      "dependent_concept_id": "CNT04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CNT03",
+      "dependent_concept_id": "CNT04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CNT03",
+      "dependent_concept_id": "CNT05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG04",
+      "dependent_concept_id": "CNT05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP01",
+      "dependent_concept_id": "CNT05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CNT04",
+      "dependent_concept_id": "CNT06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "PRO01",
+      "dependent_concept_id": "CNT06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG04",
+      "dependent_concept_id": "CPX01",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CPX01",
+      "dependent_concept_id": "CPX02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG11",
+      "dependent_concept_id": "CPX02",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CPX01",
+      "dependent_concept_id": "CPX03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "GEO05",
+      "dependent_concept_id": "CPX03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "TRI03",
+      "dependent_concept_id": "CPX03",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CPX03",
+      "dependent_concept_id": "CPX04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP04",
+      "dependent_concept_id": "CPX04",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CPX04",
+      "dependent_concept_id": "CPX05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "EXP01",
+      "dependent_concept_id": "CPX05",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CPX05",
+      "dependent_concept_id": "CPX06",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CPX02",
+      "dependent_concept_id": "CPX07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "CPX06",
+      "dependent_concept_id": "CPX07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    },
+    {
+      "prerequisite_concept_id": "ALG10",
+      "dependent_concept_id": "CPX07",
+      "dependency_type": "curricular_foundation",
+      "edge_status": "author_assigned_not_empirically_estimated",
+      "interpretation": "Direct conjunctive foundation for the concept as scoped; item-level assumptions may be a subset."
+    }
+  ],
+  "topological_order": [
+    "ALG01",
+    "ALG02",
+    "ALG03",
+    "ALG04",
+    "ALG05",
+    "ALG06",
+    "ALG07",
+    "ALG08",
+    "ALG09",
+    "ALG10",
+    "ALG11",
+    "ALG12",
+    "FUN01",
+    "FUN02",
+    "FUN03",
+    "FUN04",
+    "FUN05",
+    "FUN06",
+    "FUN07",
+    "FUN08",
+    "EXP01",
+    "EXP02",
+    "EXP03",
+    "EXP04",
+    "EXP05",
+    "LOG01",
+    "LOG02",
+    "LOG03",
+    "LOG04",
+    "LOG05",
+    "DIF01",
+    "DIF02",
+    "DIF03",
+    "DIF04",
+    "GEO03",
+    "TRI01",
+    "GEO01",
+    "GEO02",
+    "GEO04",
+    "TRI02",
+    "TRI03",
+    "DIF05",
+    "GEO05",
+    "DIF06",
+    "DIF07",
+    "DIF08",
+    "GEO08",
+    "DIF09",
+    "DIF10",
+    "INT01",
+    "INT02",
+    "INT03",
+    "INT04",
+    "INT05",
+    "INT06",
+    "INT07",
+    "INT08",
+    "GEO06",
+    "GEO07",
+    "PRF01",
+    "PRF02",
+    "PRF05",
+    "GEO09",
+    "TRI04",
+    "TRI05",
+    "TRI06",
+    "TRI07",
+    "TRI08",
+    "VEC01",
+    "VEC02",
+    "VEC03",
+    "VEC04",
+    "VEC05",
+    "VEC06",
+    "VEC07",
+    "PRO01",
+    "PRO02",
+    "PRO03",
+    "PRO04",
+    "CNT01",
+    "PRO05",
+    "PRO06",
+    "CNT02",
+    "CNT03",
+    "PRO07",
+    "PRO08",
+    "STA01",
+    "STA02",
+    "STA03",
+    "STA04",
+    "STA05",
+    "STA06",
+    "STA07",
+    "STA08",
+    "PRF03",
+    "PRF04",
+    "PRF06",
+    "PRF07",
+    "PRF08",
+    "CNT04",
+    "CNT05",
+    "CNT06",
+    "CPX01",
+    "CPX02",
+    "CPX03",
+    "CPX04",
+    "CPX05",
+    "CPX06",
+    "CPX07"
+  ],
+  "edge_direction": "prerequisite_to_dependent",
+  "acyclic": true
+}

@@ -86,15 +86,27 @@ describe("experimental condition separation", () => {
     expect(events.map((e) => e.condition).sort()).toEqual(["adaptive", "non_adaptive"]);
   });
 
-  it("AdaptiveSelectionPolicy is an explicit skeleton — architecture only, not implemented here", () => {
+  it("AdaptiveSelectionPolicy is implemented (Phase 4) and returns a structured result rather than throwing", () => {
+    // As of the Phase 4 adaptive selection engine (see
+    // docs/research-decisions.md RD-0005), this is no longer a throwing
+    // skeleton. An empty context (no curriculum, no questions) is a
+    // legitimate edge case, not an error — it must return null plus an
+    // explanation, per B6's "every selection must either return an
+    // eligible question or a structured explanation of why no question
+    // can be selected."
     const adaptive = new AdaptiveSelectionPolicy();
-    expect(() =>
-      adaptive.selectNextQuestion({
-        participantId: "p1",
-        availableQuestions: [],
-        studentModel: { participantId: "p1", conceptMastery: {} },
-        answeredQuestionIds: [],
-      }),
-    ).toThrow();
+    const result = adaptive.selectNextQuestion({
+      learnerId: "l1",
+      sessionId: "s1",
+      sequenceIndex: 0,
+      availableQuestions: [],
+      concepts: [],
+      curriculumOrder: [],
+      conceptMasteryStates: {},
+      misconceptionTallies: {},
+      presentedQuestionIds: [],
+    });
+    expect(result.questionId).toBeNull();
+    expect(typeof result.rationale).toBe("string");
   });
 });

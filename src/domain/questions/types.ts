@@ -80,4 +80,29 @@ export type Question = {
   questionFamily?: string;
 
   version: number;
+
+  /**
+   * RISE-import-only fields (see src/domain/rise/). Absent on the original
+   * 161-question bank. Present on every imported RISE question.
+   */
+
+  /** "CH01".."CH14" — the chapter this question belongs to, from a curriculum far broader than the original 9 quadratics strands. */
+  chapterId?: string;
+
+  /**
+   * Relative emphasis across `conceptIds` when a question draws on more
+   * than one (positive, sums to 1). A single-concept question's only entry
+   * is `{ [primaryConceptId]: 1 }`.
+   */
+  conceptWeights?: Record<string, number>;
+
+  /**
+   * Concepts this question assumes as background but does not itself
+   * assess (distinct from `conceptIds`, which lists only directly-assessed
+   * concepts).
+   */
+  prerequisiteConceptIds?: string[];
+
+  /** e.g. "computational" | "conceptual" | "graphical_interpretation" | "error_diagnosis" | "mathematical_reasoning" — the question's leading cognitive demand, not a fixed enum here since this is RISE-import-specific metadata. */
+  questionType?: string;
 };

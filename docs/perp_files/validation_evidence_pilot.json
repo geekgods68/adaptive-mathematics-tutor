@@ -1,0 +1,1085 @@
+{
+  "release_stage": "pilot",
+  "questions": 25,
+  "concepts": 109,
+  "misconceptions": 68,
+  "planned_not_generated": 1840,
+  "prerequisite_edges": 204,
+  "graph_acyclic": true,
+  "graph_topological_order_checked": true,
+  "csv_jsonl_full_record_equality": true,
+  "math_executable_checks": 24,
+  "semantic_only_checks": 1,
+  "independent_human_reviews": 0,
+  "student_trials": 0,
+  "all_questions_require_independent_review": true,
+  "katex_version": "0.16.22",
+  "katex_segments": 360,
+  "katex_errors": 0,
+  "python_version": "3.12.8",
+  "sympy_version": "1.14.0",
+  "jsonschema_version": "4.23.0",
+  "near_duplicate_pairs_screened": 300,
+  "near_duplicate_flags": 0,
+  "checks": [
+    {
+      "question_id": "MATH-CH01-0001",
+      "method": "exact_integer_arithmetic",
+      "computed_answer": "-1",
+      "option_semantics": [
+        "-1",
+        "17",
+        "1",
+        "0"
+      ],
+      "option_correctness": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Python integer precedence; compare all displayed scalar values.",
+      "error_transform_checks": [
+        {
+          "option_id": "B",
+          "derived_error_value": "17",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "1",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "D",
+          "derived_error_value": "0",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH01-0002",
+      "method": "symbolic_real_solution_set",
+      "computed_answer": "{2, 3}",
+      "option_semantics": [
+        "{3}",
+        "{-3, -2}",
+        "{1, 6}",
+        "{2, 3}"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "solveset of original quadratic over reals.",
+      "error_transform_checks": [
+        {
+          "option_id": "B",
+          "derived_error_value": "{-3, -2}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "{3}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "{1, 6}",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH02-0001",
+      "method": "exact_function_composition",
+      "computed_answer": "7",
+      "option_semantics": [
+        "5",
+        "7",
+        "2",
+        "13"
+      ],
+      "option_correctness": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Compute g(2), then f of that value.",
+      "error_transform_checks": [
+        {
+          "option_id": "C",
+          "derived_error_value": "2",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "5",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "D",
+          "derived_error_value": "13",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH02-0002",
+      "method": "symbolic_vertex",
+      "computed_answer": "(2, -6)",
+      "option_semantics": [
+        "(2, -2)",
+        "(2, -6)",
+        "(2, 14)",
+        "(4, -6)"
+      ],
+      "option_correctness": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Differentiate the transformed polynomial and evaluate at its unique critical point.",
+      "error_transform_checks": [
+        {
+          "option_id": "D",
+          "derived_error_value": "(4, -6)",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "(2, 14)",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "(2, -2)",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 1
+    },
+    {
+      "question_id": "MATH-CH03-0001",
+      "method": "exact_real_power",
+      "computed_answer": "1/8",
+      "option_semantics": [
+        "8",
+        "-1/8",
+        "1/6",
+        "1/8"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Positive-base rational power evaluated exactly.",
+      "error_transform_checks": [
+        {
+          "option_id": "B",
+          "derived_error_value": "-1/8",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "8",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "1/6",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH04-0001",
+      "method": "symbolic_logarithms",
+      "computed_answer": "5",
+      "option_semantics": [
+        "5",
+        "1",
+        "6",
+        "log(3)/log(2) + 2"
+      ],
+      "option_correctness": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Exact logarithm definitions and product law.",
+      "error_transform_checks": [
+        {
+          "option_id": "D",
+          "derived_error_value": "log(3)/log(2) + 2",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "6",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "1",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH04-0002",
+      "method": "symbolic_with_domain_filter",
+      "computed_answer": "{5}",
+      "option_semantics": [
+        "{-1}",
+        "{5}",
+        "{-1, 5}",
+        "{6}"
+      ],
+      "option_correctness": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "x>3 derived from both log arguments; candidate roots checked in original equation.",
+      "error_transform_checks": [
+        {
+          "option_id": "C",
+          "derived_error_value": "{-1, 5}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "D",
+          "derived_error_value": "{6}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "{-1}",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 1
+    },
+    {
+      "question_id": "MATH-CH05-0001",
+      "method": "symbolic_derivative_equivalence",
+      "computed_answer": "24*x*(3*x**2 + 1)**3",
+      "option_semantics": [
+        "24*x*(3*x**2 + 1)**4",
+        "12*x*(3*x**2 + 1)**3",
+        "24*x*(3*x**2 + 1)**3",
+        "4*(3*x**2 + 1)**3"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Differentiate original expression; simplify every option difference as a function.",
+      "error_transform_checks": [
+        {
+          "option_id": "D",
+          "derived_error_value": "4*(3*x**2 + 1)**3",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "24*x*(3*x**2 + 1)**4",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "12*x*(3*x**2 + 1)**3",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH05-0002",
+      "method": "symbolic_implicit_gradient",
+      "computed_answer": "5/4",
+      "option_semantics": [
+        "5/4",
+        "4/5",
+        "-4/5",
+        "-5/4"
+      ],
+      "option_correctness": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Implicit gradient -F_x/F_y; normal is negative reciprocal. Options all pass through (1,2).",
+      "error_transform_checks": [
+        {
+          "option_id": "C",
+          "derived_error_value": "-4/5",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "D",
+          "derived_error_value": "-5/4",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "4/5",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 2
+    },
+    {
+      "question_id": "MATH-CH05-0003",
+      "method": "symbolic_minimax_bound",
+      "computed_answer": "1/2",
+      "option_semantics": [
+        "0",
+        "1",
+        "2/3",
+        "1/2",
+        "1/3"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Derivative is affine in x^2 in [0,1]. Max endpoint distances has lower bound 1/2 by triangle inequality; equal endpoint distances gives unique a=1/2.",
+      "error_transform_checks": [
+        {
+          "option_id": "A",
+          "derived_error_value": "0",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "E",
+          "derived_error_value": "1/3",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "1",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "2/3",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 7
+    },
+    {
+      "question_id": "MATH-CH06-0001",
+      "method": "symbolic_definite_integral",
+      "computed_answer": "15/4",
+      "option_semantics": [
+        "15/4",
+        "4",
+        "15/2",
+        "15/8"
+      ],
+      "option_correctness": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Integrate the original polynomial directly, independently of the substitution explanation.",
+      "error_transform_checks": [
+        {
+          "option_id": "D",
+          "derived_error_value": "15/8",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "15/2",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "4",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 1
+    },
+    {
+      "question_id": "MATH-CH06-0002",
+      "method": "symbolic_partial_fraction_and_integral",
+      "computed_answer": "log(4/3)",
+      "option_semantics": [
+        "log(3)",
+        "log(3/2)",
+        "log(3/4)",
+        "log(4/3)"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "apart verifies decomposition; exact definite integral reduced by logarithm laws.",
+      "error_transform_checks": [
+        {
+          "option_id": "A",
+          "derived_error_value": "log(3)",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "-log(4/3)",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "log(3/2)",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 2
+    },
+    {
+      "question_id": "MATH-CH07-0001",
+      "method": "exact_triangle_angle_sum",
+      "computed_answer": "65",
+      "option_semantics": [
+        "19",
+        "115",
+        "65",
+        "245"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Euclidean triangle interior-angle total minus the two given angles.",
+      "error_transform_checks": [
+        {
+          "option_id": "B",
+          "derived_error_value": "115",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "D",
+          "derived_error_value": "245",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "19",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH07-0002",
+      "method": "symbolic_line_circle_tangency",
+      "computed_answer": "{-30, 20}",
+      "option_semantics": [
+        "{-130, 120}",
+        "{-10, 0}",
+        "{-30, 20}",
+        "{-20, 30}"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Distance criterion and an independent zero-discriminant substitution into circle.",
+      "error_transform_checks": [
+        {
+          "option_id": "B",
+          "derived_error_value": "{-10, 0}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "{-130, 120}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "D",
+          "derived_error_value": "{-20, 30}",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 1
+    },
+    {
+      "question_id": "MATH-CH08-0001",
+      "method": "symbolic_trigonometric_exact_value",
+      "computed_answer": "sqrt(2)/2",
+      "option_semantics": [
+        "1 - sqrt(2)/2",
+        "1",
+        "0",
+        "sqrt(2)/2"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Direct evaluation of original sine/cosine expression and double-angle identity.",
+      "error_transform_checks": [
+        {
+          "option_id": "B",
+          "derived_error_value": "1",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "1 - sqrt(2)/2",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "0",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH08-0002",
+      "method": "symbolic_interval_trigonometric_solution",
+      "computed_answer": "{pi/6, pi/2, 5*pi/6, 3*pi/2}",
+      "option_semantics": [
+        "{pi/6, pi/2, 7*pi/6, 3*pi/2}",
+        "{pi/2, 3*pi/2}",
+        "{pi/6, pi/2, 5*pi/6, 3*pi/2}",
+        "{pi/6, 5*pi/6}"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "solveset on [0,2pi); factor identity and direct substitution also checked.",
+      "error_transform_checks": [
+        {
+          "option_id": "D",
+          "derived_error_value": "{pi/6, 5*pi/6}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "{pi/2, 3*pi/2}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "{pi/6, pi/2, 7*pi/6, 3*pi/2}",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 1
+    },
+    {
+      "question_id": "MATH-CH09-0001",
+      "method": "exact_vector_cross_product",
+      "computed_answer": "Matrix([[6], [-3], [1]])",
+      "option_semantics": [
+        "Matrix([[-6], [3], [-1]])",
+        "Matrix([[0], [2], [0]])",
+        "Matrix([[6], [3], [1]])",
+        "Matrix([[6], [-3], [1]])"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "SymPy matrix cross product, with dot-product perpendicularity checks.",
+      "error_transform_checks": [
+        {
+          "option_id": "A",
+          "derived_error_value": "Matrix([[-6], [3], [-1]])",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "Matrix([[0], [2], [0]])",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "Matrix([[6], [3], [1]])",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 2
+    },
+    {
+      "question_id": "MATH-CH09-0002",
+      "method": "exact_vector_distance_and_minimisation",
+      "computed_answer": "sqrt(6)/2",
+      "option_semantics": [
+        "sqrt(6)/2",
+        "sqrt(3)",
+        "sqrt(2)",
+        "sqrt(2)/2"
+      ],
+      "option_correctness": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Cross-product distance agrees with global minimum of a positive quadratic.",
+      "error_transform_checks": [
+        {
+          "option_id": "B",
+          "derived_error_value": "sqrt(3)",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "sqrt(2)",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "D",
+          "derived_error_value": "sqrt(2)/2",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 2
+    },
+    {
+      "question_id": "MATH-CH10-0001",
+      "method": "exact_Bayes_probability",
+      "computed_answer": "9/58",
+      "option_semantics": [
+        "9/500",
+        "9/59",
+        "9/58",
+        "9/10"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Exact rational joint probability divided by exact total probability.",
+      "error_transform_checks": [
+        {
+          "option_id": "D",
+          "derived_error_value": "9/10",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "9/59",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "9/500",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH10-0002",
+      "method": "exact_binomial_enumeration",
+      "computed_answer": "8/27",
+      "option_semantics": [
+        "1/9",
+        "4/81",
+        "2/3",
+        "8/27"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Binomial formula agrees with enumeration of all 16 Bernoulli outcome sequences.",
+      "error_transform_checks": [
+        {
+          "option_id": "B",
+          "derived_error_value": "4/81",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "1/9",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "2/3",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 1
+    },
+    {
+      "question_id": "MATH-CH11-0001",
+      "method": "exact_confidence_margin_inequality",
+      "computed_answer": "691",
+      "option_semantics": [
+        "691",
+        "690",
+        "263",
+        "400"
+      ],
+      "option_correctness": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Known sigma cancels; compute exact lower bound and ceiling; test n and n-1 by squared positive inequalities.",
+      "error_transform_checks": [
+        {
+          "option_id": "D",
+          "derived_error_value": "400",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "690",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "263",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 2
+    },
+    {
+      "question_id": "MATH-CH11-0002",
+      "method": "author_semantic_review_only",
+      "computed_answer": "Long-run coverage P_theta(theta in C(X))=0.95 under valid model assumptions.",
+      "option_semantics": [
+        "exact_sample_mean_equality",
+        "procedure_coverage",
+        "individual_observation_coverage",
+        "posterior_fixed_parameter_probability"
+      ],
+      "option_correctness": null,
+      "exactly_one_correct": null,
+      "pairwise_distinct": null,
+      "calculation_details": "Author compared option meanings against the formal coverage definition and OpenStax formula review. This is not an automatic theorem check or independent human review.",
+      "error_transform_checks": [],
+      "auxiliary_assertions_passed": 0
+    },
+    {
+      "question_id": "MATH-CH12-0001",
+      "method": "symbolic_integer_solver_and_finite_residue_exhaustion",
+      "computed_answer": "C: parity forces both even; homogeneous halving preserves equation and strictly reduces positive sum.",
+      "option_semantics": [
+        "invalid_universal_evenness",
+        "invalid_difference_substitution",
+        "valid_infinite_descent",
+        "finite_examples_not_universal_proof"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Enumerated all 16 residue pairs modulo 4. Solutions: [(0, 0), (0, 2), (2, 0), (2, 2)]. SymPy diophantine returns only (0,0). Scaling polynomial residual=0. Argument-to-text mapping remains author reviewed.",
+      "error_transform_checks": [
+        {
+          "option_id": "A",
+          "counterexample": "a=1,b=2 makes a^2+b^2 odd",
+          "verified": true
+        },
+        {
+          "option_id": "B",
+          "invariance_residual": "-2*a*b + 4*b**2",
+          "verified": true
+        }
+      ],
+      "auxiliary_assertions_passed": 3
+    },
+    {
+      "question_id": "MATH-CH13-0001",
+      "method": "exhaustive_multiset_enumeration",
+      "computed_answer": "18",
+      "option_semantics": [
+        "30",
+        "18",
+        "12",
+        "36"
+      ],
+      "option_correctness": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Enumerate all unique permutations and reject adjacent A letters; compare block and gap derivations.",
+      "error_transform_checks": [
+        {
+          "option_id": "A",
+          "derived_error_value": "30",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "C",
+          "derived_error_value": "12",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "D",
+          "derived_error_value": "36",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 2
+    },
+    {
+      "question_id": "MATH-CH14-0001",
+      "method": "symbolic_complex_solution_set",
+      "computed_answer": "{-2*I, -sqrt(3) + I, sqrt(3) + I}",
+      "option_semantics": [
+        "{-8*I, -4*sqrt(3) + 4*I, 4*sqrt(3) + 4*I}",
+        "{2*I, -sqrt(3) - I, sqrt(3) - I}",
+        "{sqrt(3) + I}",
+        "{-2*I, -sqrt(3) + I, sqrt(3) + I}"
+      ],
+      "option_correctness": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "exactly_one_correct": true,
+      "pairwise_distinct": true,
+      "calculation_details": "Solve original cubic over complex numbers; compare exact rectangular root sets; degree and direct cubes establish completeness.",
+      "error_transform_checks": [
+        {
+          "option_id": "C",
+          "derived_error_value": "{sqrt(3) + I}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "A",
+          "derived_error_value": "{-8*I, -4*sqrt(3) + 4*I, 4*sqrt(3) + 4*I}",
+          "matches_documented_distractor": true
+        },
+        {
+          "option_id": "B",
+          "derived_error_value": "{2*I, -sqrt(3) - I, sqrt(3) - I}",
+          "matches_documented_distractor": true
+        }
+      ],
+      "auxiliary_assertions_passed": 2
+    }
+  ],
+  "render_checks": [
+    {
+      "question_id": "MATH-CH01-0001",
+      "math_segments_checked": 17,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH01-0002",
+      "math_segments_checked": 15,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH02-0001",
+      "math_segments_checked": 15,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH02-0002",
+      "math_segments_checked": 16,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH03-0001",
+      "math_segments_checked": 11,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH04-0001",
+      "math_segments_checked": 13,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH04-0002",
+      "math_segments_checked": 18,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH05-0001",
+      "math_segments_checked": 15,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH05-0002",
+      "math_segments_checked": 15,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH05-0003",
+      "math_segments_checked": 31,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH06-0001",
+      "math_segments_checked": 15,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH06-0002",
+      "math_segments_checked": 16,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH07-0001",
+      "math_segments_checked": 10,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH07-0002",
+      "math_segments_checked": 17,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH08-0001",
+      "math_segments_checked": 13,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH08-0002",
+      "math_segments_checked": 16,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH09-0001",
+      "math_segments_checked": 10,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH09-0002",
+      "math_segments_checked": 16,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH10-0001",
+      "math_segments_checked": 17,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH10-0002",
+      "math_segments_checked": 13,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH11-0001",
+      "math_segments_checked": 13,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH11-0002",
+      "math_segments_checked": 0,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH12-0001",
+      "math_segments_checked": 13,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH13-0001",
+      "math_segments_checked": 10,
+      "errors": []
+    },
+    {
+      "question_id": "MATH-CH14-0001",
+      "math_segments_checked": 15,
+      "errors": []
+    }
+  ],
+  "scope_caution": "Input-to-semantic-object mapping and prose explanation quality remain author reviewed; CAS checks are not independent expert or empirical validation."
+}

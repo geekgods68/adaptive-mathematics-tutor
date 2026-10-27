@@ -1,0 +1,52 @@
+{
+  "dataset_version": "rise-question-bank-v1",
+  "integrated_date": "2026-10-23",
+  "source": {
+    "origin": "External RISE Adaptive Mathematics Tutor generation pipeline (Python, run in a separate sandboxed environment under /home/claude/rise/, not part of this repository's build)",
+    "canonical_question_bank_source_path": "research-data/Question bank/chapter 14 - complex numbers/mathematics_question_bank_checkpoint.csv",
+    "canonical_question_bank_validation_source_path": "research-data/Question bank/chapter 14 - complex numbers/question_bank_validation_checkpoint.csv",
+    "curriculum_metadata_source_dir": "docs/perp_files/ (original Stage A/B pilot package, release 1.0.0-pilot, 2026-10-20)",
+    "note": "The chapter-14 checkpoint was selected because every earlier chapter folder's checkpoint CSV is a verified byte-identical subset of it (0 missing, 0 changed records at every step from chapter 1 through chapter 14) -- it is the single cumulative, complete dataset, not a chapter-specific one."
+  },
+  "question_count": 1840,
+  "questions_per_chapter": {
+    "CH01": 150, "CH02": 140, "CH03": 100, "CH04": 100, "CH05": 150,
+    "CH06": 140, "CH07": 150, "CH08": 150, "CH09": 120, "CH10": 140,
+    "CH11": 140, "CH12": 130, "CH13": 100, "CH14": 130
+  },
+  "concept_count": 109,
+  "misconception_count": 68,
+  "prerequisite_edge_count": 204,
+  "compatibility_verified": {
+    "all_question_concept_ids_present_in_taxonomy": true,
+    "all_question_misconception_ids_present_in_taxonomy": true,
+    "all_taxonomy_concepts_used_by_at_least_one_question": true,
+    "all_taxonomy_misconceptions_used_by_at_least_one_question": true,
+    "all_prerequisite_edges_reference_known_concepts": true,
+    "prerequisite_graph_acyclic": true,
+    "prerequisite_graph_self_dependencies": 0,
+    "prerequisite_graph_duplicate_edges": 0,
+    "verified_by": "ad hoc Python verification script run during integration (2026-10-23), not committed -- see docs/development-log.md's RISE integration entry for the exact checks performed"
+  },
+  "validation_summary_from_source": {
+    "schema_check": "1840/1840 pass",
+    "reference_integrity_check": "1840/1840 pass",
+    "concept_weight_check": "1840/1840 pass",
+    "option_structure_check": "1840/1840 pass",
+    "render_check_katex": "1840/1840 pass",
+    "mathematical_check": "1839/1840 pass, 1 not_automatically_verified (see docs/development-log.md for the specific question and what this means)",
+    "exactly_one_correct_check": "1840/1840 pass (in one of several valid pass states -- direct symbolic check or computed truth values)",
+    "equivalent_option_check": "1840/1840 pass (same caveat)",
+    "independent_human_review": "0/1840 -- not performed for any question",
+    "empirical_validation": "0/1840 -- not performed for any question",
+    "near_duplicate_screen": "1471/1840 clear, 344 flagged (all cross-family per the flags file, i.e. judged structurally different despite lexical similarity -- not reviewed independently), 25 in the original pilot audit bucket"
+  },
+  "files_in_this_directory": [
+    { "filename": "canonical-question-bank-v1.csv", "sha256": "42023d78ce1df2bc657b361d33854d85f595785e258266a4d04bf47b0aafda7d" },
+    { "filename": "canonical-question-bank-validation-v1.csv", "sha256": "5a06e1f00be16e899cd26daa162a467f6769555c94eeb92dbd995e28b558ed64" },
+    { "filename": "concept-taxonomy-v1.csv", "sha256": "06f168bd59c2336e6411f96defd72ad43448e9d71912ee4af10f477492cf9d11" },
+    { "filename": "misconception-taxonomy-v1.csv", "sha256": "c408ad0a81f2248bf8636e8093f4627bf845c864a1251001f7d731a3b714f4d4" },
+    { "filename": "prerequisite-edges-v1.csv", "sha256": "9e2d4d76e564329b44d504fe97704497f93b85417314e85d7033729227345bbf" }
+  ],
+  "reproducibility": "Re-running `npx tsx scripts/verifyRiseDataset.ts` against these five files recomputes every figure in this manifest from scratch; it does not depend on this file being accurate. The application loads questions from these CSVs at module-load time (src/domain/rise/) rather than from a generated/transcribed TypeScript copy, so there is exactly one place this data is authored."
+}

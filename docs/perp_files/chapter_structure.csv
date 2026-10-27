@@ -1,0 +1,15 @@
+chapter_id,chapter_name,display_order,concept_ids,planned_question_count,scope_note
+CH01,Algebra,1,"[""ALG01"",""ALG02"",""ALG03"",""ALG04"",""ALG05"",""ALG06"",""ALG07"",""ALG08"",""ALG09"",""ALG10"",""ALG11"",""ALG12""]",150,Partial-fraction decomposition lives in Algebra; its integration application lives in Integration.
+CH02,Functions,2,"[""FUN01"",""FUN02"",""FUN03"",""FUN04"",""FUN05"",""FUN06"",""FUN07"",""FUN08""]",140,"Mixed secondary/pre-university scope; the dependency graph, not chapter number, defines learning order."
+CH03,Exponents,3,"[""EXP01"",""EXP02"",""EXP03"",""EXP04"",""EXP05""]",100,"Mixed secondary/pre-university scope; the dependency graph, not chapter number, defines learning order."
+CH04,Logarithms,4,"[""LOG01"",""LOG02"",""LOG03"",""LOG04"",""LOG05""]",100,"Mixed secondary/pre-university scope; the dependency graph, not chapter number, defines learning order."
+CH05,Differentiation,5,"[""DIF01"",""DIF02"",""DIF03"",""DIF04"",""DIF05"",""DIF06"",""DIF07"",""DIF08"",""DIF09"",""DIF10""]",150,Limits and continuity are a calculus foundation hosted here; transcendental derivatives explicitly require trigonometry/logarithms.
+CH06,Integration,6,"[""INT01"",""INT02"",""INT03"",""INT04"",""INT05"",""INT06"",""INT07"",""INT08""]",140,"Mixed secondary/pre-university scope; the dependency graph, not chapter number, defines learning order."
+CH07,Geometry,7,"[""GEO01"",""GEO02"",""GEO03"",""GEO04"",""GEO05"",""GEO06"",""GEO07"",""GEO08"",""GEO09""]",150,"Mixed secondary/pre-university scope; the dependency graph, not chapter number, defines learning order."
+CH08,Trigonometry,8,"[""TRI01"",""TRI02"",""TRI03"",""TRI04"",""TRI05"",""TRI06"",""TRI07"",""TRI08""]",150,"Mixed secondary/pre-university scope; the dependency graph, not chapter number, defines learning order."
+CH09,Vectors,9,"[""VEC01"",""VEC02"",""VEC03"",""VEC04"",""VEC05"",""VEC06"",""VEC07""]",120,Scalar product means dot product; vector product means cross product in three dimensions.
+CH10,Probability,10,"[""PRO01"",""PRO02"",""PRO03"",""PRO04"",""PRO05"",""PRO06"",""PRO07"",""PRO08""]",140,"Normal distribution is continuous, not a discrete random variable."
+CH11,Statistics,11,"[""STA01"",""STA02"",""STA03"",""STA04"",""STA05"",""STA06"",""STA07"",""STA08""]",140,Inference is separate from probability distributions; regression does not establish causality.
+CH12,Mathematical Proofs and Logic,12,"[""PRF01"",""PRF02"",""PRF03"",""PRF04"",""PRF05"",""PRF06"",""PRF07"",""PRF08""]",130,"Proof is cross-cutting, not an end-of-course prerequisite for all chapters."
+CH13,Permutations and Combinations,13,"[""CNT01"",""CNT02"",""CNT03"",""CNT04"",""CNT05"",""CNT06""]",100,Counting is defined here and is referenced by discrete probability; chapter order is not learning order.
+CH14,Complex Numbers,14,"[""CPX01"",""CPX02"",""CPX03"",""CPX04"",""CPX05"",""CPX06"",""CPX07""]",130,Euler representation is an extension beyond elementary complex arithmetic; arguments use a specified branch.
