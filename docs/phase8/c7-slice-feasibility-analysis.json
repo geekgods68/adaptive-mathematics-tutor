@@ -1,0 +1,3134 @@
+{
+  "generatedAt": "2026-10-27T13:51:24.710Z",
+  "bankSummary": {
+    "totalConcepts": 109,
+    "totalQuestions": 1840,
+    "totalChapters": 14
+  },
+  "part1_perChapterDiagnosis": [
+    {
+      "chapterId": "CH01",
+      "conceptCount": 12,
+      "targetConceptIds": [
+        "ALG01",
+        "ALG02",
+        "ALG03",
+        "ALG04",
+        "ALG05",
+        "ALG06",
+        "ALG07",
+        "ALG08",
+        "ALG09",
+        "ALG10",
+        "ALG11",
+        "ALG12"
+      ],
+      "perConceptSC": {
+        "ALG01": 12,
+        "ALG02": 14,
+        "ALG03": 11,
+        "ALG04": 14,
+        "ALG05": 16,
+        "ALG06": 6,
+        "ALG07": 13,
+        "ALG08": 8,
+        "ALG09": 9,
+        "ALG10": 12,
+        "ALG11": 10,
+        "ALG12": 10
+      },
+      "perConceptAC": {
+        "ALG01": 12,
+        "ALG02": 18,
+        "ALG03": 12,
+        "ALG04": 19,
+        "ALG05": 20,
+        "ALG06": 11,
+        "ALG07": 21,
+        "ALG08": 12,
+        "ALG09": 12,
+        "ALG10": 12,
+        "ALG11": 12,
+        "ALG12": 16
+      },
+      "minSC": 6,
+      "medianSC": 11.5,
+      "maxSC": 16,
+      "minAC": 11,
+      "medianAC": 12,
+      "maxAC": 21,
+      "internalEdges": 15,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=0 outside [2,10]",
+            "targetsWithExternal=0 < 6",
+            "minSC(target)=6 < 16"
+          ],
+          "xSize": 0,
+          "qSliceSize": 135
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=0 outside [2,10]",
+            "targetsWithExternal=0 < 6",
+            "minSC(target)=6 < 16"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=0 < 1",
+            "targetsWithExternal=0 < 1",
+            "minSC(target)=6 < 16"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=0 < 1",
+            "targetsWithExternal=0 < 1",
+            "minSC(target)=10 < 16"
+          ],
+          "externalIds": [],
+          "qSliceSize": 150
+        }
+      }
+    },
+    {
+      "chapterId": "CH02",
+      "conceptCount": 8,
+      "targetConceptIds": [
+        "FUN01",
+        "FUN02",
+        "FUN03",
+        "FUN04",
+        "FUN05",
+        "FUN06",
+        "FUN07",
+        "FUN08"
+      ],
+      "perConceptSC": {
+        "FUN01": 12,
+        "FUN02": 16,
+        "FUN03": 19,
+        "FUN04": 14,
+        "FUN05": 14,
+        "FUN06": 16,
+        "FUN07": 14,
+        "FUN08": 10
+      },
+      "perConceptAC": {
+        "FUN01": 15,
+        "FUN02": 25,
+        "FUN03": 20,
+        "FUN04": 20,
+        "FUN05": 18,
+        "FUN06": 18,
+        "FUN07": 19,
+        "FUN08": 19
+      },
+      "minSC": 10,
+      "medianSC": 14,
+      "maxSC": 19,
+      "minAC": 15,
+      "medianAC": 19,
+      "maxAC": 25,
+      "internalEdges": 7,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16",
+            "minSC(external)=6 < 8"
+          ],
+          "xSize": 9,
+          "qSliceSize": 219
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16",
+            "minSC(external)=6 < 8"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16",
+            "minSC(external)=6 < 8"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=13 < 16"
+          ],
+          "externalIds": [
+            "ALG03",
+            "ALG05",
+            "ALG07",
+            "ALG11",
+            "ALG08",
+            "ALG06",
+            "ALG01",
+            "ALG02",
+            "ALG04"
+          ],
+          "qSliceSize": 250
+        }
+      }
+    },
+    {
+      "chapterId": "CH03",
+      "conceptCount": 5,
+      "targetConceptIds": [
+        "EXP01",
+        "EXP02",
+        "EXP03",
+        "EXP04",
+        "EXP05"
+      ],
+      "perConceptSC": {
+        "EXP01": 20,
+        "EXP02": 20,
+        "EXP03": 19,
+        "EXP04": 17,
+        "EXP05": 19
+      },
+      "perConceptAC": {
+        "EXP01": 20,
+        "EXP02": 20,
+        "EXP03": 23,
+        "EXP04": 21,
+        "EXP05": 20
+      },
+      "minSC": 17,
+      "medianSC": 19,
+      "maxSC": 20,
+      "minAC": 20,
+      "medianAC": 20,
+      "maxAC": 23,
+      "internalEdges": 4,
+      "eligibility": {
+        "base": {
+          "pass": true,
+          "failedCriteria": [],
+          "xSize": 6,
+          "qSliceSize": 176
+        },
+        "relaxA": {
+          "pass": true,
+          "failedCriteria": []
+        },
+        "relaxB": {
+          "pass": true,
+          "failedCriteria": []
+        },
+        "relaxC": {
+          "pass": true,
+          "failedCriteria": [],
+          "externalIds": [
+            "ALG01",
+            "ALG03",
+            "ALG02",
+            "ALG05",
+            "FUN02",
+            "FUN01"
+          ],
+          "qSliceSize": 183
+        }
+      }
+    },
+    {
+      "chapterId": "CH04",
+      "conceptCount": 5,
+      "targetConceptIds": [
+        "LOG01",
+        "LOG02",
+        "LOG03",
+        "LOG04",
+        "LOG05"
+      ],
+      "perConceptSC": {
+        "LOG01": 20,
+        "LOG02": 20,
+        "LOG03": 19,
+        "LOG04": 18,
+        "LOG05": 20
+      },
+      "perConceptAC": {
+        "LOG01": 22,
+        "LOG02": 20,
+        "LOG03": 20,
+        "LOG04": 21,
+        "LOG05": 20
+      },
+      "minSC": 18,
+      "medianSC": 20,
+      "maxSC": 20,
+      "minAC": 20,
+      "medianAC": 20,
+      "maxAC": 22,
+      "internalEdges": 4,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=16 outside [2,10]"
+          ],
+          "xSize": 16,
+          "qSliceSize": 334
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=16 outside [2,10]"
+          ]
+        },
+        "relaxB": {
+          "pass": true,
+          "failedCriteria": []
+        },
+        "relaxC": {
+          "pass": true,
+          "failedCriteria": [],
+          "externalIds": [
+            "EXP03",
+            "EXP04",
+            "ALG07",
+            "ALG11",
+            "FUN06",
+            "EXP05",
+            "ALG05",
+            "EXP02",
+            "FUN02",
+            "ALG04",
+            "ALG08",
+            "ALG02",
+            "ALG03",
+            "EXP01",
+            "FUN01",
+            "ALG01"
+          ],
+          "qSliceSize": 354
+        }
+      }
+    },
+    {
+      "chapterId": "CH05",
+      "conceptCount": 10,
+      "targetConceptIds": [
+        "DIF01",
+        "DIF02",
+        "DIF03",
+        "DIF04",
+        "DIF05",
+        "DIF06",
+        "DIF07",
+        "DIF08",
+        "DIF09",
+        "DIF10"
+      ],
+      "perConceptSC": {
+        "DIF01": 12,
+        "DIF02": 12,
+        "DIF03": 16,
+        "DIF04": 20,
+        "DIF05": 18,
+        "DIF06": 14,
+        "DIF07": 19,
+        "DIF08": 9,
+        "DIF09": 9,
+        "DIF10": 10
+      },
+      "perConceptAC": {
+        "DIF01": 14,
+        "DIF02": 12,
+        "DIF03": 16,
+        "DIF04": 20,
+        "DIF05": 28,
+        "DIF06": 16,
+        "DIF07": 20,
+        "DIF08": 12,
+        "DIF09": 10,
+        "DIF10": 12
+      },
+      "minSC": 9,
+      "medianSC": 13,
+      "maxSC": 20,
+      "minAC": 10,
+      "medianAC": 15,
+      "maxAC": 28,
+      "internalEdges": 11,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=27 outside [2,10]",
+            "minSC(target)=9 < 16",
+            "minSC(external)=6 < 8"
+          ],
+          "xSize": 27,
+          "qSliceSize": 570
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=27 outside [2,10]",
+            "minSC(target)=9 < 16",
+            "minSC(external)=6 < 8"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=9 < 16",
+            "minSC(external)=6 < 8"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ],
+          "externalIds": [
+            "ALG11",
+            "FUN08",
+            "ALG04",
+            "EXP02",
+            "FUN04",
+            "LOG01",
+            "TRI03",
+            "GEO05",
+            "GEO08",
+            "FUN03",
+            "ALG05",
+            "ALG06",
+            "FUN02",
+            "ALG03",
+            "ALG02",
+            "EXP01",
+            "FUN01",
+            "EXP03",
+            "EXP04",
+            "TRI01",
+            "TRI02",
+            "GEO03",
+            "GEO02",
+            "ALG07",
+            "ALG01",
+            "GEO04",
+            "GEO01"
+          ],
+          "qSliceSize": 603
+        }
+      }
+    },
+    {
+      "chapterId": "CH06",
+      "conceptCount": 8,
+      "targetConceptIds": [
+        "INT01",
+        "INT02",
+        "INT03",
+        "INT04",
+        "INT05",
+        "INT06",
+        "INT07",
+        "INT08"
+      ],
+      "perConceptSC": {
+        "INT01": 20,
+        "INT02": 20,
+        "INT03": 20,
+        "INT04": 18,
+        "INT05": 18,
+        "INT06": 17,
+        "INT07": 14,
+        "INT08": 12
+      },
+      "perConceptAC": {
+        "INT01": 20,
+        "INT02": 20,
+        "INT03": 20,
+        "INT04": 19,
+        "INT05": 18,
+        "INT06": 18,
+        "INT07": 14,
+        "INT08": 12
+      },
+      "minSC": 12,
+      "medianSC": 18,
+      "maxSC": 20,
+      "minAC": 12,
+      "medianAC": 18.5,
+      "maxAC": 20,
+      "internalEdges": 8,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=29 outside [2,10]",
+            "minSC(target)=12 < 16",
+            "minSC(external)=6 < 8"
+          ],
+          "xSize": 29,
+          "qSliceSize": 596
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=29 outside [2,10]",
+            "minSC(target)=12 < 16",
+            "minSC(external)=6 < 8"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16",
+            "minSC(external)=6 < 8"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ],
+          "externalIds": [
+            "DIF03",
+            "DIF05",
+            "DIF01",
+            "DIF04",
+            "ALG11",
+            "FUN08",
+            "GEO08",
+            "DIF02",
+            "EXP02",
+            "LOG01",
+            "TRI03",
+            "FUN04",
+            "ALG04",
+            "ALG05",
+            "ALG06",
+            "FUN02",
+            "ALG02",
+            "GEO02",
+            "GEO03",
+            "EXP01",
+            "EXP03",
+            "EXP04",
+            "TRI01",
+            "TRI02",
+            "FUN01",
+            "ALG03",
+            "ALG01",
+            "GEO01",
+            "GEO04"
+          ],
+          "qSliceSize": 615
+        }
+      }
+    },
+    {
+      "chapterId": "CH07",
+      "conceptCount": 9,
+      "targetConceptIds": [
+        "GEO01",
+        "GEO02",
+        "GEO03",
+        "GEO04",
+        "GEO05",
+        "GEO06",
+        "GEO07",
+        "GEO08",
+        "GEO09"
+      ],
+      "perConceptSC": {
+        "GEO01": 18,
+        "GEO02": 20,
+        "GEO03": 16,
+        "GEO04": 18,
+        "GEO05": 20,
+        "GEO06": 17,
+        "GEO07": 10,
+        "GEO08": 20,
+        "GEO09": 10
+      },
+      "perConceptAC": {
+        "GEO01": 18,
+        "GEO02": 20,
+        "GEO03": 16,
+        "GEO04": 18,
+        "GEO05": 22,
+        "GEO06": 18,
+        "GEO07": 10,
+        "GEO08": 20,
+        "GEO09": 10
+      },
+      "minSC": 10,
+      "medianSC": 18,
+      "maxSC": 20,
+      "minAC": 10,
+      "medianAC": 18,
+      "maxAC": 22,
+      "internalEdges": 12,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=11 outside [2,10]",
+            "minSC(target)=10 < 16"
+          ],
+          "xSize": 11,
+          "qSliceSize": 318
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=11 outside [2,10]",
+            "minSC(target)=10 < 16"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ],
+          "externalIds": [
+            "ALG01",
+            "ALG02",
+            "EXP02",
+            "ALG05",
+            "ALG08",
+            "PRF05",
+            "EXP01",
+            "ALG03",
+            "ALG04",
+            "PRF02",
+            "PRF01"
+          ],
+          "qSliceSize": 323
+        }
+      }
+    },
+    {
+      "chapterId": "CH08",
+      "conceptCount": 8,
+      "targetConceptIds": [
+        "TRI01",
+        "TRI02",
+        "TRI03",
+        "TRI04",
+        "TRI05",
+        "TRI06",
+        "TRI07",
+        "TRI08"
+      ],
+      "perConceptSC": {
+        "TRI01": 20,
+        "TRI02": 16,
+        "TRI03": 20,
+        "TRI04": 20,
+        "TRI05": 20,
+        "TRI06": 20,
+        "TRI07": 20,
+        "TRI08": 14
+      },
+      "perConceptAC": {
+        "TRI01": 20,
+        "TRI02": 16,
+        "TRI03": 20,
+        "TRI04": 20,
+        "TRI05": 20,
+        "TRI06": 20,
+        "TRI07": 20,
+        "TRI08": 14
+      },
+      "minSC": 14,
+      "medianSC": 20,
+      "maxSC": 20,
+      "minAC": 14,
+      "medianAC": 20,
+      "maxAC": 20,
+      "internalEdges": 8,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=17 outside [2,10]",
+            "minSC(target)=14 < 16"
+          ],
+          "xSize": 17,
+          "qSliceSize": 408
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=17 outside [2,10]",
+            "minSC(target)=14 < 16"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ],
+          "externalIds": [
+            "ALG02",
+            "GEO03",
+            "GEO04",
+            "GEO02",
+            "ALG04",
+            "ALG07",
+            "FUN06",
+            "FUN05",
+            "ALG01",
+            "EXP02",
+            "GEO01",
+            "ALG03",
+            "ALG05",
+            "ALG08",
+            "FUN02",
+            "EXP01",
+            "FUN01"
+          ],
+          "qSliceSize": 421
+        }
+      }
+    },
+    {
+      "chapterId": "CH09",
+      "conceptCount": 7,
+      "targetConceptIds": [
+        "VEC01",
+        "VEC02",
+        "VEC03",
+        "VEC04",
+        "VEC05",
+        "VEC06",
+        "VEC07"
+      ],
+      "perConceptSC": {
+        "VEC01": 18,
+        "VEC02": 18,
+        "VEC03": 20,
+        "VEC04": 14,
+        "VEC05": 18,
+        "VEC06": 20,
+        "VEC07": 12
+      },
+      "perConceptAC": {
+        "VEC01": 18,
+        "VEC02": 18,
+        "VEC03": 20,
+        "VEC04": 14,
+        "VEC05": 18,
+        "VEC06": 20,
+        "VEC07": 12
+      },
+      "minSC": 12,
+      "medianSC": 18,
+      "maxSC": 20,
+      "minAC": 12,
+      "medianAC": 18,
+      "maxAC": 20,
+      "internalEdges": 9,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=15 outside [2,10]",
+            "minSC(target)=12 < 16",
+            "minSC(external)=6 < 8"
+          ],
+          "xSize": 15,
+          "qSliceSize": 367
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=15 outside [2,10]",
+            "minSC(target)=12 < 16",
+            "minSC(external)=6 < 8"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16",
+            "minSC(external)=6 < 8"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ],
+          "externalIds": [
+            "ALG03",
+            "GEO05",
+            "GEO03",
+            "TRI03",
+            "ALG05",
+            "ALG06",
+            "ALG01",
+            "EXP02",
+            "TRI01",
+            "TRI02",
+            "ALG02",
+            "EXP01",
+            "GEO04",
+            "GEO01",
+            "GEO02"
+          ],
+          "qSliceSize": 372
+        }
+      }
+    },
+    {
+      "chapterId": "CH10",
+      "conceptCount": 8,
+      "targetConceptIds": [
+        "PRO01",
+        "PRO02",
+        "PRO03",
+        "PRO04",
+        "PRO05",
+        "PRO06",
+        "PRO07",
+        "PRO08"
+      ],
+      "perConceptSC": {
+        "PRO01": 18,
+        "PRO02": 20,
+        "PRO03": 16,
+        "PRO04": 18,
+        "PRO05": 18,
+        "PRO06": 18,
+        "PRO07": 18,
+        "PRO08": 14
+      },
+      "perConceptAC": {
+        "PRO01": 18,
+        "PRO02": 20,
+        "PRO03": 16,
+        "PRO04": 18,
+        "PRO05": 18,
+        "PRO06": 18,
+        "PRO07": 18,
+        "PRO08": 14
+      },
+      "minSC": 14,
+      "medianSC": 18,
+      "maxSC": 20,
+      "minAC": 14,
+      "medianAC": 18,
+      "maxAC": 20,
+      "internalEdges": 8,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ],
+          "xSize": 8,
+          "qSliceSize": 268
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ],
+          "externalIds": [
+            "ALG02",
+            "CNT01",
+            "CNT03",
+            "EXP02",
+            "ALG01",
+            "CNT02",
+            "EXP01",
+            "ALG03"
+          ],
+          "qSliceSize": 269
+        }
+      }
+    },
+    {
+      "chapterId": "CH11",
+      "conceptCount": 8,
+      "targetConceptIds": [
+        "STA01",
+        "STA02",
+        "STA03",
+        "STA04",
+        "STA05",
+        "STA06",
+        "STA07",
+        "STA08"
+      ],
+      "perConceptSC": {
+        "STA01": 16,
+        "STA02": 18,
+        "STA03": 20,
+        "STA04": 18,
+        "STA05": 18,
+        "STA06": 19,
+        "STA07": 18,
+        "STA08": 12
+      },
+      "perConceptAC": {
+        "STA01": 16,
+        "STA02": 18,
+        "STA03": 20,
+        "STA04": 18,
+        "STA05": 19,
+        "STA06": 20,
+        "STA07": 18,
+        "STA08": 12
+      },
+      "minSC": 12,
+      "medianSC": 18,
+      "maxSC": 20,
+      "minAC": 12,
+      "medianAC": 18,
+      "maxAC": 20,
+      "internalEdges": 9,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=18 outside [2,10]",
+            "minSC(target)=12 < 16"
+          ],
+          "xSize": 18,
+          "qSliceSize": 441
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=18 outside [2,10]",
+            "minSC(target)=12 < 16"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ],
+          "externalIds": [
+            "ALG02",
+            "EXP02",
+            "GEO05",
+            "PRO06",
+            "PRO08",
+            "PRO07",
+            "ALG01",
+            "EXP01",
+            "ALG05",
+            "GEO03",
+            "PRO05",
+            "PRO01",
+            "CNT03",
+            "PRO03",
+            "ALG03",
+            "CNT01",
+            "CNT02",
+            "PRO02"
+          ],
+          "qSliceSize": 445
+        }
+      }
+    },
+    {
+      "chapterId": "CH12",
+      "conceptCount": 8,
+      "targetConceptIds": [
+        "PRF01",
+        "PRF02",
+        "PRF03",
+        "PRF04",
+        "PRF05",
+        "PRF06",
+        "PRF07",
+        "PRF08"
+      ],
+      "perConceptSC": {
+        "PRF01": 14,
+        "PRF02": 20,
+        "PRF03": 18,
+        "PRF04": 14,
+        "PRF05": 20,
+        "PRF06": 16,
+        "PRF07": 18,
+        "PRF08": 10
+      },
+      "perConceptAC": {
+        "PRF01": 14,
+        "PRF02": 20,
+        "PRF03": 18,
+        "PRF04": 14,
+        "PRF05": 20,
+        "PRF06": 16,
+        "PRF07": 18,
+        "PRF08": 10
+      },
+      "minSC": 10,
+      "medianSC": 17,
+      "maxSC": 20,
+      "minAC": 10,
+      "medianAC": 17,
+      "maxAC": 20,
+      "internalEdges": 12,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ],
+          "xSize": 2,
+          "qSliceSize": 153
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ],
+          "externalIds": [
+            "ALG03",
+            "ALG01"
+          ],
+          "qSliceSize": 153
+        }
+      }
+    },
+    {
+      "chapterId": "CH13",
+      "conceptCount": 6,
+      "targetConceptIds": [
+        "CNT01",
+        "CNT02",
+        "CNT03",
+        "CNT04",
+        "CNT05",
+        "CNT06"
+      ],
+      "perConceptSC": {
+        "CNT01": 16,
+        "CNT02": 16,
+        "CNT03": 19,
+        "CNT04": 20,
+        "CNT05": 15,
+        "CNT06": 12
+      },
+      "perConceptAC": {
+        "CNT01": 16,
+        "CNT02": 16,
+        "CNT03": 20,
+        "CNT04": 21,
+        "CNT05": 17,
+        "CNT06": 12
+      },
+      "minSC": 12,
+      "medianSC": 16,
+      "maxSC": 20,
+      "minAC": 12,
+      "medianAC": 16.5,
+      "maxAC": 21,
+      "internalEdges": 6,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ],
+          "xSize": 6,
+          "qSliceSize": 187
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ],
+          "externalIds": [
+            "ALG01",
+            "ALG04",
+            "EXP01",
+            "PRO01",
+            "ALG03",
+            "ALG02"
+          ],
+          "qSliceSize": 190
+        }
+      }
+    },
+    {
+      "chapterId": "CH14",
+      "conceptCount": 7,
+      "targetConceptIds": [
+        "CPX01",
+        "CPX02",
+        "CPX03",
+        "CPX04",
+        "CPX05",
+        "CPX06",
+        "CPX07"
+      ],
+      "perConceptSC": {
+        "CPX01": 20,
+        "CPX02": 18,
+        "CPX03": 20,
+        "CPX04": 20,
+        "CPX05": 18,
+        "CPX06": 20,
+        "CPX07": 14
+      },
+      "perConceptAC": {
+        "CPX01": 20,
+        "CPX02": 18,
+        "CPX03": 20,
+        "CPX04": 20,
+        "CPX05": 18,
+        "CPX06": 20,
+        "CPX07": 14
+      },
+      "minSC": 14,
+      "medianSC": 20,
+      "maxSC": 20,
+      "minAC": 14,
+      "medianAC": 20,
+      "maxAC": 20,
+      "internalEdges": 7,
+      "eligibility": {
+        "base": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=20 outside [2,10]",
+            "minSC(target)=14 < 16"
+          ],
+          "xSize": 20,
+          "qSliceSize": 452
+        },
+        "relaxA": {
+          "pass": false,
+          "failedCriteria": [
+            "|X_c|=20 outside [2,10]",
+            "minSC(target)=14 < 16"
+          ]
+        },
+        "relaxB": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ]
+        },
+        "relaxC": {
+          "pass": false,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ],
+          "externalIds": [
+            "ALG04",
+            "ALG11",
+            "GEO05",
+            "TRI03",
+            "EXP04",
+            "EXP01",
+            "ALG10",
+            "ALG03",
+            "ALG05",
+            "GEO03",
+            "TRI01",
+            "TRI02",
+            "EXP02",
+            "FUN02",
+            "ALG01",
+            "ALG02",
+            "GEO04",
+            "FUN01",
+            "GEO01",
+            "GEO02"
+          ],
+          "qSliceSize": 457
+        }
+      }
+    }
+  ],
+  "part2A_originalDesign": {
+    "description": "Original C7.1 rule applied to whole chapters, relaxations (a)->(b)->(c) in order.",
+    "eligibleAtEachLevel": {
+      "none": [
+        "CH03"
+      ],
+      "a": [
+        "CH03"
+      ],
+      "b": [
+        "CH03",
+        "CH04"
+      ],
+      "c": [
+        "CH03",
+        "CH04"
+      ]
+    }
+  },
+  "part2B_conceptSubgraphs": [
+    {
+      "chapterId": "CH01",
+      "subsetSize": 1,
+      "eligible": false,
+      "reason": "fewer than 4 well-covered (SC>=16) concepts in this chapter",
+      "droppedConceptIds": [
+        "ALG01",
+        "ALG02",
+        "ALG03",
+        "ALG04",
+        "ALG06",
+        "ALG07",
+        "ALG08",
+        "ALG09",
+        "ALG10",
+        "ALG11",
+        "ALG12"
+      ]
+    },
+    {
+      "chapterId": "CH02",
+      "subsetSize": 3,
+      "eligible": false,
+      "reason": "fewer than 4 well-covered (SC>=16) concepts in this chapter",
+      "droppedConceptIds": [
+        "FUN01",
+        "FUN04",
+        "FUN05",
+        "FUN07",
+        "FUN08"
+      ]
+    },
+    {
+      "chapterId": "CH03",
+      "subsetConceptIds": [
+        "EXP01",
+        "EXP02",
+        "EXP03",
+        "EXP04",
+        "EXP05"
+      ],
+      "subsetSize": 5,
+      "droppedConceptIds": [],
+      "eligibleOriginalRange": true,
+      "eligibleWidenedTRange": true,
+      "failedCriteriaOriginal": [],
+      "failedCriteriaWidenedT": [],
+      "externalIds": [
+        "ALG01",
+        "ALG03",
+        "ALG02",
+        "ALG05",
+        "FUN02",
+        "FUN01"
+      ],
+      "qSliceSize": 176
+    },
+    {
+      "chapterId": "CH04",
+      "subsetConceptIds": [
+        "LOG01",
+        "LOG02",
+        "LOG03",
+        "LOG04",
+        "LOG05"
+      ],
+      "subsetSize": 5,
+      "droppedConceptIds": [],
+      "eligibleOriginalRange": false,
+      "eligibleWidenedTRange": false,
+      "failedCriteriaOriginal": [
+        "|X_c|=16 outside [2,10]"
+      ],
+      "failedCriteriaWidenedT": [
+        "|X_c|=16 outside [2,10]"
+      ],
+      "externalIds": [
+        "EXP03",
+        "EXP04",
+        "ALG07",
+        "ALG11",
+        "FUN06",
+        "EXP05",
+        "ALG05",
+        "EXP02",
+        "FUN02",
+        "ALG04",
+        "ALG08",
+        "ALG02",
+        "ALG03",
+        "EXP01",
+        "FUN01",
+        "ALG01"
+      ],
+      "qSliceSize": 334
+    },
+    {
+      "chapterId": "CH05",
+      "subsetConceptIds": [
+        "DIF03",
+        "DIF04",
+        "DIF05",
+        "DIF07"
+      ],
+      "subsetSize": 4,
+      "droppedConceptIds": [
+        "DIF01",
+        "DIF02",
+        "DIF06",
+        "DIF08",
+        "DIF09",
+        "DIF10"
+      ],
+      "eligibleOriginalRange": false,
+      "eligibleWidenedTRange": false,
+      "failedCriteriaOriginal": [
+        "|T_c|=4 outside [5,12]",
+        "|X_c|=25 outside [2,10]",
+        "minSC(external)=6 < 8"
+      ],
+      "failedCriteriaWidenedT": [
+        "|X_c|=25 outside [2,10]",
+        "minSC(external)=6 < 8"
+      ],
+      "externalIds": [
+        "DIF02",
+        "EXP02",
+        "FUN04",
+        "LOG01",
+        "TRI03",
+        "FUN08",
+        "ALG04",
+        "DIF01",
+        "ALG02",
+        "EXP01",
+        "FUN01",
+        "EXP03",
+        "EXP04",
+        "TRI01",
+        "TRI02",
+        "ALG06",
+        "FUN02",
+        "ALG03",
+        "ALG11",
+        "ALG01",
+        "ALG05",
+        "GEO03",
+        "GEO04",
+        "GEO01",
+        "GEO02"
+      ],
+      "qSliceSize": 456
+    },
+    {
+      "chapterId": "CH06",
+      "subsetConceptIds": [
+        "INT01",
+        "INT02",
+        "INT03",
+        "INT04",
+        "INT05",
+        "INT06"
+      ],
+      "subsetSize": 6,
+      "droppedConceptIds": [
+        "INT07",
+        "INT08"
+      ],
+      "eligibleOriginalRange": false,
+      "eligibleWidenedTRange": false,
+      "failedCriteriaOriginal": [
+        "|X_c|=28 outside [2,10]",
+        "minSC(external)=6 < 8"
+      ],
+      "failedCriteriaWidenedT": [
+        "|X_c|=28 outside [2,10]",
+        "minSC(external)=6 < 8"
+      ],
+      "externalIds": [
+        "DIF03",
+        "DIF05",
+        "DIF01",
+        "DIF04",
+        "ALG11",
+        "FUN08",
+        "DIF02",
+        "EXP02",
+        "LOG01",
+        "TRI03",
+        "FUN04",
+        "ALG04",
+        "ALG05",
+        "ALG06",
+        "FUN02",
+        "ALG02",
+        "EXP01",
+        "EXP03",
+        "EXP04",
+        "TRI01",
+        "TRI02",
+        "FUN01",
+        "ALG03",
+        "ALG01",
+        "GEO03",
+        "GEO04",
+        "GEO01",
+        "GEO02"
+      ],
+      "qSliceSize": 550
+    },
+    {
+      "chapterId": "CH07",
+      "subsetConceptIds": [
+        "GEO01",
+        "GEO02",
+        "GEO03",
+        "GEO04",
+        "GEO05",
+        "GEO06",
+        "GEO08"
+      ],
+      "subsetSize": 7,
+      "droppedConceptIds": [
+        "GEO07",
+        "GEO09"
+      ],
+      "eligibleOriginalRange": true,
+      "eligibleWidenedTRange": true,
+      "failedCriteriaOriginal": [],
+      "failedCriteriaWidenedT": [],
+      "externalIds": [
+        "ALG01",
+        "ALG02",
+        "EXP02",
+        "ALG05",
+        "ALG08",
+        "EXP01",
+        "ALG03",
+        "ALG04"
+      ],
+      "qSliceSize": 244
+    },
+    {
+      "chapterId": "CH08",
+      "subsetConceptIds": [
+        "TRI01",
+        "TRI02",
+        "TRI03",
+        "TRI04",
+        "TRI05",
+        "TRI06",
+        "TRI07"
+      ],
+      "subsetSize": 7,
+      "droppedConceptIds": [
+        "TRI08"
+      ],
+      "eligibleOriginalRange": false,
+      "eligibleWidenedTRange": false,
+      "failedCriteriaOriginal": [
+        "|X_c|=16 outside [2,10]"
+      ],
+      "failedCriteriaWidenedT": [
+        "|X_c|=16 outside [2,10]"
+      ],
+      "externalIds": [
+        "ALG02",
+        "GEO03",
+        "GEO04",
+        "GEO02",
+        "ALG04",
+        "ALG07",
+        "FUN06",
+        "ALG01",
+        "EXP02",
+        "GEO01",
+        "ALG03",
+        "ALG05",
+        "ALG08",
+        "FUN02",
+        "EXP01",
+        "FUN01"
+      ],
+      "qSliceSize": 380
+    },
+    {
+      "chapterId": "CH09",
+      "subsetConceptIds": [
+        "VEC01",
+        "VEC02",
+        "VEC03",
+        "VEC05",
+        "VEC06"
+      ],
+      "subsetSize": 5,
+      "droppedConceptIds": [
+        "VEC04",
+        "VEC07"
+      ],
+      "eligibleOriginalRange": false,
+      "eligibleWidenedTRange": false,
+      "failedCriteriaOriginal": [
+        "|X_c|=15 outside [2,10]",
+        "minSC(external)=6 < 8"
+      ],
+      "failedCriteriaWidenedT": [
+        "|X_c|=15 outside [2,10]",
+        "minSC(external)=6 < 8"
+      ],
+      "externalIds": [
+        "ALG03",
+        "GEO05",
+        "GEO03",
+        "TRI03",
+        "ALG05",
+        "ALG06",
+        "ALG01",
+        "EXP02",
+        "TRI01",
+        "TRI02",
+        "ALG02",
+        "EXP01",
+        "GEO04",
+        "GEO01",
+        "GEO02"
+      ],
+      "qSliceSize": 341
+    },
+    {
+      "chapterId": "CH10",
+      "subsetConceptIds": [
+        "PRO01",
+        "PRO02",
+        "PRO03",
+        "PRO04",
+        "PRO05",
+        "PRO06",
+        "PRO07"
+      ],
+      "subsetSize": 7,
+      "droppedConceptIds": [
+        "PRO08"
+      ],
+      "eligibleOriginalRange": true,
+      "eligibleWidenedTRange": true,
+      "failedCriteriaOriginal": [],
+      "failedCriteriaWidenedT": [],
+      "externalIds": [
+        "ALG02",
+        "CNT01",
+        "CNT03",
+        "ALG01",
+        "CNT02"
+      ],
+      "qSliceSize": 203
+    },
+    {
+      "chapterId": "CH11",
+      "subsetConceptIds": [
+        "STA01",
+        "STA02",
+        "STA03",
+        "STA04",
+        "STA05",
+        "STA06",
+        "STA07"
+      ],
+      "subsetSize": 7,
+      "droppedConceptIds": [
+        "STA08"
+      ],
+      "eligibleOriginalRange": false,
+      "eligibleWidenedTRange": false,
+      "failedCriteriaOriginal": [
+        "|X_c|=18 outside [2,10]"
+      ],
+      "failedCriteriaWidenedT": [
+        "|X_c|=18 outside [2,10]"
+      ],
+      "externalIds": [
+        "ALG02",
+        "EXP02",
+        "GEO05",
+        "PRO06",
+        "PRO08",
+        "PRO07",
+        "ALG01",
+        "EXP01",
+        "ALG05",
+        "GEO03",
+        "PRO05",
+        "PRO01",
+        "CNT03",
+        "PRO03",
+        "ALG03",
+        "CNT01",
+        "CNT02",
+        "PRO02"
+      ],
+      "qSliceSize": 429
+    },
+    {
+      "chapterId": "CH12",
+      "subsetConceptIds": [
+        "PRF02",
+        "PRF03",
+        "PRF05",
+        "PRF06",
+        "PRF07"
+      ],
+      "subsetSize": 5,
+      "droppedConceptIds": [
+        "PRF01",
+        "PRF04",
+        "PRF08"
+      ],
+      "eligibleOriginalRange": true,
+      "eligibleWidenedTRange": true,
+      "failedCriteriaOriginal": [],
+      "failedCriteriaWidenedT": [],
+      "externalIds": [
+        "PRF01",
+        "ALG03",
+        "ALG01"
+      ],
+      "qSliceSize": 129
+    },
+    {
+      "chapterId": "CH13",
+      "subsetConceptIds": [
+        "CNT01",
+        "CNT02",
+        "CNT03",
+        "CNT04"
+      ],
+      "subsetSize": 4,
+      "droppedConceptIds": [
+        "CNT05",
+        "CNT06"
+      ],
+      "eligibleOriginalRange": false,
+      "eligibleWidenedTRange": false,
+      "failedCriteriaOriginal": [
+        "|T_c|=4 outside [5,12]",
+        "|X_c|=1 outside [2,10]",
+        "|Q_slice|=83 < 120"
+      ],
+      "failedCriteriaWidenedT": [
+        "|X_c|=1 outside [2,10]",
+        "|Q_slice|=83 < 120"
+      ],
+      "externalIds": [
+        "ALG01"
+      ],
+      "qSliceSize": 83
+    },
+    {
+      "chapterId": "CH14",
+      "subsetConceptIds": [
+        "CPX01",
+        "CPX02",
+        "CPX03",
+        "CPX04",
+        "CPX05",
+        "CPX06"
+      ],
+      "subsetSize": 6,
+      "droppedConceptIds": [
+        "CPX07"
+      ],
+      "eligibleOriginalRange": false,
+      "eligibleWidenedTRange": false,
+      "failedCriteriaOriginal": [
+        "|X_c|=19 outside [2,10]"
+      ],
+      "failedCriteriaWidenedT": [
+        "|X_c|=19 outside [2,10]"
+      ],
+      "externalIds": [
+        "ALG04",
+        "ALG11",
+        "GEO05",
+        "TRI03",
+        "EXP04",
+        "EXP01",
+        "ALG03",
+        "ALG05",
+        "GEO03",
+        "TRI01",
+        "TRI02",
+        "EXP02",
+        "FUN02",
+        "ALG01",
+        "ALG02",
+        "GEO04",
+        "FUN01",
+        "GEO01",
+        "GEO02"
+      ],
+      "qSliceSize": 426
+    }
+  ],
+  "part2C_chapterGroupings": [
+    {
+      "group": [
+        "CH01",
+        "CH02"
+      ],
+      "targetCount": 20,
+      "internalEdges": 29,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=20 outside [5,12]",
+          "|X_c|=0 outside [2,10]",
+          "targetsWithExternal=0 < 10",
+          "minSC(target)=6 < 16"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=20 outside [4,16]",
+          "|X_c|=0 outside [2,10]",
+          "targetsWithExternal=0 < 10",
+          "minSC(target)=6 < 16"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=20 outside [4,16]",
+          "|X_c|=0 < 1",
+          "targetsWithExternal=0 < 1",
+          "minSC(target)=6 < 16"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=20 outside [4,16]",
+          "|X_c|=0 < 1",
+          "targetsWithExternal=0 < 1",
+          "minSC(target)=11 < 16"
+        ],
+        "qSliceSize": 290
+      },
+      "undercoveredConceptCount": 16,
+      "undercoveredConceptIds": [
+        "ALG01",
+        "ALG02",
+        "ALG03",
+        "ALG04",
+        "ALG06",
+        "ALG07",
+        "ALG08",
+        "ALG09",
+        "ALG10",
+        "ALG11",
+        "ALG12",
+        "FUN01",
+        "FUN04",
+        "FUN05",
+        "FUN07",
+        "FUN08"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH02",
+        "CH03"
+      ],
+      "targetCount": 13,
+      "internalEdges": 12,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=13 outside [5,12]",
+          "minSC(target)=10 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=10 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=10 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=14 < 16"
+        ],
+        "qSliceSize": 350
+      },
+      "undercoveredConceptCount": 5,
+      "undercoveredConceptIds": [
+        "FUN01",
+        "FUN04",
+        "FUN05",
+        "FUN07",
+        "FUN08"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH03",
+        "CH04"
+      ],
+      "targetCount": 10,
+      "internalEdges": 11,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|X_c|=11 outside [2,10]"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|X_c|=11 outside [2,10]"
+        ]
+      },
+      "relaxB": {
+        "pass": true,
+        "failedCriteria": []
+      },
+      "relaxC": {
+        "pass": true,
+        "failedCriteria": [],
+        "qSliceSize": 354
+      },
+      "undercoveredConceptCount": 0,
+      "undercoveredConceptIds": [],
+      "concealedUnderCoverage": false
+    },
+    {
+      "group": [
+        "CH04",
+        "CH05"
+      ],
+      "targetCount": 15,
+      "internalEdges": 16,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=15 outside [5,12]",
+          "|X_c|=29 outside [2,10]",
+          "minSC(target)=9 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|X_c|=29 outside [2,10]",
+          "minSC(target)=9 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=9 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=10 < 16"
+        ],
+        "qSliceSize": 732
+      },
+      "undercoveredConceptCount": 6,
+      "undercoveredConceptIds": [
+        "DIF01",
+        "DIF02",
+        "DIF06",
+        "DIF08",
+        "DIF09",
+        "DIF10"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH05",
+        "CH06"
+      ],
+      "targetCount": 18,
+      "internalEdges": 24,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=18 outside [5,12]",
+          "|X_c|=27 outside [2,10]",
+          "minSC(target)=9 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=18 outside [4,16]",
+          "|X_c|=27 outside [2,10]",
+          "minSC(target)=9 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=18 outside [4,16]",
+          "minSC(target)=9 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=18 outside [4,16]",
+          "minSC(target)=10 < 16"
+        ],
+        "qSliceSize": 743
+      },
+      "undercoveredConceptCount": 8,
+      "undercoveredConceptIds": [
+        "DIF01",
+        "DIF02",
+        "DIF06",
+        "DIF08",
+        "DIF09",
+        "DIF10",
+        "INT07",
+        "INT08"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH06",
+        "CH07"
+      ],
+      "targetCount": 17,
+      "internalEdges": 21,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=17 outside [5,12]",
+          "|X_c|=28 outside [2,10]",
+          "minSC(target)=10 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=17 outside [4,16]",
+          "|X_c|=28 outside [2,10]",
+          "minSC(target)=10 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=17 outside [4,16]",
+          "minSC(target)=10 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=17 outside [4,16]",
+          "minSC(target)=10 < 16"
+        ],
+        "qSliceSize": 737
+      },
+      "undercoveredConceptCount": 4,
+      "undercoveredConceptIds": [
+        "INT07",
+        "INT08",
+        "GEO07",
+        "GEO09"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH07",
+        "CH08"
+      ],
+      "targetCount": 17,
+      "internalEdges": 23,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=17 outside [5,12]",
+          "|X_c|=16 outside [2,10]",
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=17 outside [4,16]",
+          "|X_c|=16 outside [2,10]",
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=17 outside [4,16]",
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=17 outside [4,16]",
+          "minSC(target)=10 < 16"
+        ],
+        "qSliceSize": 553
+      },
+      "undercoveredConceptCount": 3,
+      "undercoveredConceptIds": [
+        "GEO07",
+        "GEO09",
+        "TRI08"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH08",
+        "CH09"
+      ],
+      "targetCount": 15,
+      "internalEdges": 18,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=15 outside [5,12]",
+          "|X_c|=19 outside [2,10]",
+          "minSC(target)=12 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|X_c|=19 outside [2,10]",
+          "minSC(target)=12 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=12 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=12 < 16"
+        ],
+        "qSliceSize": 572
+      },
+      "undercoveredConceptCount": 3,
+      "undercoveredConceptIds": [
+        "TRI08",
+        "VEC04",
+        "VEC07"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH09",
+        "CH10"
+      ],
+      "targetCount": 15,
+      "internalEdges": 17,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=15 outside [5,12]",
+          "|X_c|=18 outside [2,10]",
+          "minSC(target)=12 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|X_c|=18 outside [2,10]",
+          "minSC(target)=12 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=12 < 16",
+          "minSC(external)=6 < 8"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=12 < 16"
+        ],
+        "qSliceSize": 563
+      },
+      "undercoveredConceptCount": 3,
+      "undercoveredConceptIds": [
+        "VEC04",
+        "VEC07",
+        "PRO08"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH10",
+        "CH11"
+      ],
+      "targetCount": 16,
+      "internalEdges": 20,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=16 outside [5,12]",
+          "|X_c|=11 outside [2,10]",
+          "minSC(target)=12 < 16"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|X_c|=11 outside [2,10]",
+          "minSC(target)=12 < 16"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=12 < 16"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=12 < 16"
+        ],
+        "qSliceSize": 463
+      },
+      "undercoveredConceptCount": 2,
+      "undercoveredConceptIds": [
+        "PRO08",
+        "STA08"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH11",
+        "CH12"
+      ],
+      "targetCount": 16,
+      "internalEdges": 21,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=16 outside [5,12]",
+          "|X_c|=18 outside [2,10]",
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|X_c|=18 outside [2,10]",
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=10 < 16"
+        ],
+        "qSliceSize": 575
+      },
+      "undercoveredConceptCount": 4,
+      "undercoveredConceptIds": [
+        "STA08",
+        "PRF01",
+        "PRF04",
+        "PRF08"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH12",
+        "CH13"
+      ],
+      "targetCount": 14,
+      "internalEdges": 18,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=14 outside [5,12]",
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=10 < 16"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=10 < 16"
+        ],
+        "qSliceSize": 320
+      },
+      "undercoveredConceptCount": 5,
+      "undercoveredConceptIds": [
+        "PRF01",
+        "PRF04",
+        "PRF08",
+        "CNT05",
+        "CNT06"
+      ],
+      "concealedUnderCoverage": true
+    },
+    {
+      "group": [
+        "CH13",
+        "CH14"
+      ],
+      "targetCount": 13,
+      "internalEdges": 13,
+      "base": {
+        "pass": false,
+        "failedCriteria": [
+          "|T_c|=13 outside [5,12]",
+          "|X_c|=21 outside [2,10]",
+          "minSC(target)=12 < 16"
+        ]
+      },
+      "relaxA": {
+        "pass": false,
+        "failedCriteria": [
+          "|X_c|=21 outside [2,10]",
+          "minSC(target)=12 < 16"
+        ]
+      },
+      "relaxB": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=12 < 16"
+        ]
+      },
+      "relaxC": {
+        "pass": false,
+        "failedCriteria": [
+          "minSC(target)=12 < 16"
+        ],
+        "qSliceSize": 575
+      },
+      "undercoveredConceptCount": 3,
+      "undercoveredConceptIds": [
+        "CNT05",
+        "CNT06",
+        "CPX07"
+      ],
+      "concealedUnderCoverage": true
+    }
+  ],
+  "part2D_thresholdSensitivity": [
+    {
+      "scTargetThreshold": 16,
+      "scExternalThreshold": 8,
+      "eligibleChapterCount": 2,
+      "eligibleChapterIds": [
+        "CH03",
+        "CH04"
+      ],
+      "perChapter": [
+        {
+          "chapterId": "CH01",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "|X_c|=0 < 1",
+            "targetsWithExternal=0 < 1",
+            "minSC(target)=10 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH02",
+          "pass": false,
+          "minSCTarget": 13,
+          "failedCriteria": [
+            "minSC(target)=13 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH03",
+          "pass": true,
+          "minSCTarget": 20,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH04",
+          "pass": true,
+          "minSCTarget": 20,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH05",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH06",
+          "pass": false,
+          "minSCTarget": 12,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH07",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH08",
+          "pass": false,
+          "minSCTarget": 14,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH09",
+          "pass": false,
+          "minSCTarget": 12,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH10",
+          "pass": false,
+          "minSCTarget": 14,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH11",
+          "pass": false,
+          "minSCTarget": 12,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH12",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH13",
+          "pass": false,
+          "minSCTarget": 12,
+          "failedCriteria": [
+            "minSC(target)=12 < 16"
+          ]
+        },
+        {
+          "chapterId": "CH14",
+          "pass": false,
+          "minSCTarget": 14,
+          "failedCriteria": [
+            "minSC(target)=14 < 16"
+          ]
+        }
+      ],
+      "evidenceReductionVsBaseline": "16/16 = 100.0% of the original per-concept evidence floor retained (0 fewer guaranteed observations per concept)"
+    },
+    {
+      "scTargetThreshold": 14,
+      "scExternalThreshold": 7,
+      "eligibleChapterCount": 5,
+      "eligibleChapterIds": [
+        "CH03",
+        "CH04",
+        "CH08",
+        "CH10",
+        "CH14"
+      ],
+      "perChapter": [
+        {
+          "chapterId": "CH01",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "|X_c|=0 < 1",
+            "targetsWithExternal=0 < 1",
+            "minSC(target)=10 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH02",
+          "pass": false,
+          "minSCTarget": 13,
+          "failedCriteria": [
+            "minSC(target)=13 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH03",
+          "pass": true,
+          "minSCTarget": 20,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH04",
+          "pass": true,
+          "minSCTarget": 20,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH05",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH06",
+          "pass": false,
+          "minSCTarget": 12,
+          "failedCriteria": [
+            "minSC(target)=12 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH07",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH08",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH09",
+          "pass": false,
+          "minSCTarget": 12,
+          "failedCriteria": [
+            "minSC(target)=12 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH10",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH11",
+          "pass": false,
+          "minSCTarget": 12,
+          "failedCriteria": [
+            "minSC(target)=12 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH12",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH13",
+          "pass": false,
+          "minSCTarget": 12,
+          "failedCriteria": [
+            "minSC(target)=12 < 14"
+          ]
+        },
+        {
+          "chapterId": "CH14",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        }
+      ],
+      "evidenceReductionVsBaseline": "14/16 = 87.5% of the original per-concept evidence floor retained (2 fewer guaranteed observations per concept)"
+    },
+    {
+      "scTargetThreshold": 12,
+      "scExternalThreshold": 6,
+      "eligibleChapterCount": 10,
+      "eligibleChapterIds": [
+        "CH02",
+        "CH03",
+        "CH04",
+        "CH06",
+        "CH08",
+        "CH09",
+        "CH10",
+        "CH11",
+        "CH13",
+        "CH14"
+      ],
+      "perChapter": [
+        {
+          "chapterId": "CH01",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "|X_c|=0 < 1",
+            "targetsWithExternal=0 < 1",
+            "minSC(target)=10 < 12"
+          ]
+        },
+        {
+          "chapterId": "CH02",
+          "pass": true,
+          "minSCTarget": 13,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH03",
+          "pass": true,
+          "minSCTarget": 20,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH04",
+          "pass": true,
+          "minSCTarget": 20,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH05",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 12"
+          ]
+        },
+        {
+          "chapterId": "CH06",
+          "pass": true,
+          "minSCTarget": 12,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH07",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 12"
+          ]
+        },
+        {
+          "chapterId": "CH08",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH09",
+          "pass": true,
+          "minSCTarget": 12,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH10",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH11",
+          "pass": true,
+          "minSCTarget": 12,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH12",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "minSC(target)=10 < 12"
+          ]
+        },
+        {
+          "chapterId": "CH13",
+          "pass": true,
+          "minSCTarget": 12,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH14",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        }
+      ],
+      "evidenceReductionVsBaseline": "12/16 = 75.0% of the original per-concept evidence floor retained (4 fewer guaranteed observations per concept)"
+    },
+    {
+      "scTargetThreshold": 10,
+      "scExternalThreshold": 5,
+      "eligibleChapterCount": 13,
+      "eligibleChapterIds": [
+        "CH02",
+        "CH03",
+        "CH04",
+        "CH05",
+        "CH06",
+        "CH07",
+        "CH08",
+        "CH09",
+        "CH10",
+        "CH11",
+        "CH12",
+        "CH13",
+        "CH14"
+      ],
+      "perChapter": [
+        {
+          "chapterId": "CH01",
+          "pass": false,
+          "minSCTarget": 10,
+          "failedCriteria": [
+            "|X_c|=0 < 1",
+            "targetsWithExternal=0 < 1"
+          ]
+        },
+        {
+          "chapterId": "CH02",
+          "pass": true,
+          "minSCTarget": 13,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH03",
+          "pass": true,
+          "minSCTarget": 20,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH04",
+          "pass": true,
+          "minSCTarget": 20,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH05",
+          "pass": true,
+          "minSCTarget": 10,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH06",
+          "pass": true,
+          "minSCTarget": 12,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH07",
+          "pass": true,
+          "minSCTarget": 10,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH08",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH09",
+          "pass": true,
+          "minSCTarget": 12,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH10",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH11",
+          "pass": true,
+          "minSCTarget": 12,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH12",
+          "pass": true,
+          "minSCTarget": 10,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH13",
+          "pass": true,
+          "minSCTarget": 12,
+          "failedCriteria": []
+        },
+        {
+          "chapterId": "CH14",
+          "pass": true,
+          "minSCTarget": 14,
+          "failedCriteria": []
+        }
+      ],
+      "evidenceReductionVsBaseline": "10/16 = 62.5% of the original per-concept evidence floor retained (6 fewer guaranteed observations per concept)"
+    }
+  ],
+  "part2E_additionalQuestionsNeeded": {
+    "perChapter": [
+      {
+        "chapterId": "CH01",
+        "shortfallTargets": [
+          {
+            "conceptId": "ALG01",
+            "currentSC": 12,
+            "needed": 4
+          },
+          {
+            "conceptId": "ALG02",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "ALG03",
+            "currentSC": 11,
+            "needed": 5
+          },
+          {
+            "conceptId": "ALG04",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "ALG06",
+            "currentSC": 6,
+            "needed": 10
+          },
+          {
+            "conceptId": "ALG07",
+            "currentSC": 13,
+            "needed": 3
+          },
+          {
+            "conceptId": "ALG08",
+            "currentSC": 8,
+            "needed": 8
+          },
+          {
+            "conceptId": "ALG09",
+            "currentSC": 9,
+            "needed": 7
+          },
+          {
+            "conceptId": "ALG10",
+            "currentSC": 12,
+            "needed": 4
+          },
+          {
+            "conceptId": "ALG11",
+            "currentSC": 10,
+            "needed": 6
+          },
+          {
+            "conceptId": "ALG12",
+            "currentSC": 10,
+            "needed": 6
+          }
+        ],
+        "totalAdditionalNeeded": 57,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH02",
+        "shortfallTargets": [
+          {
+            "conceptId": "FUN01",
+            "currentSC": 12,
+            "needed": 4
+          },
+          {
+            "conceptId": "FUN04",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "FUN05",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "FUN07",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "FUN08",
+            "currentSC": 10,
+            "needed": 6
+          }
+        ],
+        "totalAdditionalNeeded": 16,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH03",
+        "shortfallTargets": [],
+        "totalAdditionalNeeded": 0,
+        "alreadyEligibleUnderC": true
+      },
+      {
+        "chapterId": "CH04",
+        "shortfallTargets": [],
+        "totalAdditionalNeeded": 0,
+        "alreadyEligibleUnderC": true
+      },
+      {
+        "chapterId": "CH05",
+        "shortfallTargets": [
+          {
+            "conceptId": "DIF01",
+            "currentSC": 12,
+            "needed": 4
+          },
+          {
+            "conceptId": "DIF02",
+            "currentSC": 12,
+            "needed": 4
+          },
+          {
+            "conceptId": "DIF06",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "DIF08",
+            "currentSC": 9,
+            "needed": 7
+          },
+          {
+            "conceptId": "DIF09",
+            "currentSC": 9,
+            "needed": 7
+          },
+          {
+            "conceptId": "DIF10",
+            "currentSC": 10,
+            "needed": 6
+          }
+        ],
+        "totalAdditionalNeeded": 30,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH06",
+        "shortfallTargets": [
+          {
+            "conceptId": "INT07",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "INT08",
+            "currentSC": 12,
+            "needed": 4
+          }
+        ],
+        "totalAdditionalNeeded": 6,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH07",
+        "shortfallTargets": [
+          {
+            "conceptId": "GEO07",
+            "currentSC": 10,
+            "needed": 6
+          },
+          {
+            "conceptId": "GEO09",
+            "currentSC": 10,
+            "needed": 6
+          }
+        ],
+        "totalAdditionalNeeded": 12,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH08",
+        "shortfallTargets": [
+          {
+            "conceptId": "TRI08",
+            "currentSC": 14,
+            "needed": 2
+          }
+        ],
+        "totalAdditionalNeeded": 2,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH09",
+        "shortfallTargets": [
+          {
+            "conceptId": "VEC04",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "VEC07",
+            "currentSC": 12,
+            "needed": 4
+          }
+        ],
+        "totalAdditionalNeeded": 6,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH10",
+        "shortfallTargets": [
+          {
+            "conceptId": "PRO08",
+            "currentSC": 14,
+            "needed": 2
+          }
+        ],
+        "totalAdditionalNeeded": 2,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH11",
+        "shortfallTargets": [
+          {
+            "conceptId": "STA08",
+            "currentSC": 12,
+            "needed": 4
+          }
+        ],
+        "totalAdditionalNeeded": 4,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH12",
+        "shortfallTargets": [
+          {
+            "conceptId": "PRF01",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "PRF04",
+            "currentSC": 14,
+            "needed": 2
+          },
+          {
+            "conceptId": "PRF08",
+            "currentSC": 10,
+            "needed": 6
+          }
+        ],
+        "totalAdditionalNeeded": 10,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH13",
+        "shortfallTargets": [
+          {
+            "conceptId": "CNT05",
+            "currentSC": 15,
+            "needed": 1
+          },
+          {
+            "conceptId": "CNT06",
+            "currentSC": 12,
+            "needed": 4
+          }
+        ],
+        "totalAdditionalNeeded": 5,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH14",
+        "shortfallTargets": [
+          {
+            "conceptId": "CPX07",
+            "currentSC": 14,
+            "needed": 2
+          }
+        ],
+        "totalAdditionalNeeded": 2,
+        "alreadyEligibleUnderC": false
+      }
+    ],
+    "cheapestPathTo3SlicesGivenCH03andCH04": [
+      {
+        "chapterId": "CH08",
+        "shortfallTargets": [
+          {
+            "conceptId": "TRI08",
+            "currentSC": 14,
+            "needed": 2
+          }
+        ],
+        "totalAdditionalNeeded": 2,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH10",
+        "shortfallTargets": [
+          {
+            "conceptId": "PRO08",
+            "currentSC": 14,
+            "needed": 2
+          }
+        ],
+        "totalAdditionalNeeded": 2,
+        "alreadyEligibleUnderC": false
+      },
+      {
+        "chapterId": "CH14",
+        "shortfallTargets": [
+          {
+            "conceptId": "CPX07",
+            "currentSC": 14,
+            "needed": 2
+          }
+        ],
+        "totalAdditionalNeeded": 2,
+        "alreadyEligibleUnderC": false
+      }
+    ]
+  }
+}

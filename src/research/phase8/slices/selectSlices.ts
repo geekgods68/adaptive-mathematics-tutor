@@ -113,7 +113,7 @@ function countEdgesFromExternal(targetIds: ReadonlySet<string>, externalIds: Rea
 
 interface ChapterStats {
   chapterId: string;
-  targetIds: string[];
+  targetIds: readonly string[];
   externalIds: string[];
   edgesInside: number;
   edgesFromExternal: number;
@@ -124,15 +124,21 @@ interface ChapterStats {
   qSliceSingleConceptOnly: Question[];
 }
 
-function computeChapterStats(
+/**
+ * Computes the full eligibility-relevant statistics for an ARBITRARY
+ * target-concept set (not necessarily "every concept in a chapter") --
+ * the shared core both the original whole-chapter rule and the
+ * Amendment A1 concept-subgraph rule (selectConceptSubgraphSlices)
+ * build on, so the eligibility/ranking/candidate logic is never
+ * duplicated between them.
+ */
+function computeTargetSetStats(
   chapterId: string,
-  concepts: readonly Concept[],
+  targetIds: readonly string[],
   questions: readonly Question[],
   byId: ReadonlyMap<string, Concept>,
   maxHops: number,
 ): ChapterStats {
-  const targets = concepts.filter((c) => c.chapterId === chapterId);
-  const targetIds = targets.map((c) => c.id);
   const targetIdSet = new Set(targetIds);
   const externalIdSet = externalPrereqsWithinHops(targetIdSet, byId, maxHops);
   const externalIds = [...externalIdSet];
@@ -179,45 +185,72 @@ const RELAXATION_ORDER: RelaxationLevel[] = ["none", "a", "b", "c"];
  * condition; (c) additionally switches item counting from single-concept
  * items to all items. The "at least 3 internal edges" sub-condition of
  * rule 1 is never listed as relaxed, so it applies at every level.
+ *
+ * Shared by the original whole-chapter rule (always scTargetThreshold=16,
+ * scExternalThreshold=8) and Amendment A1's concept-subgraph rule (same
+ * thresholds, always relax="none" -- the amendment preserves every
+ * original numeric threshold, see protocol/AMENDMENTS.md).
  */
-function isEligible(stats: ChapterStats, relax: RelaxationLevel): boolean {
+function evaluateEligibility(
+  stats: ChapterStats,
+  relax: RelaxationLevel,
+  scTargetThreshold: number,
+  scExternalThreshold: number,
+): { pass: boolean; failedCriteria: string[] } {
   const level = RELAXATION_ORDER.indexOf(relax);
   const tSize = stats.targetIds.length;
   const xSize = stats.externalIds.length;
+  const failedCriteria: string[] = [];
 
   const tRange = level >= 1 ? [4, 16] : [5, 12];
-  if (tSize < tRange[0] || tSize > tRange[1]) return false;
-  if (stats.edgesInside < 3) return false;
+  if (tSize < tRange[0] || tSize > tRange[1]) failedCriteria.push(`|T_c|=${tSize} outside [${tRange[0]},${tRange[1]}]`);
+  if (stats.edgesInside < 3) failedCriteria.push(`internal edges=${stats.edgesInside} < 3`);
 
+  const required = level >= 2 ? 1 : Math.ceil(tSize / 2);
   if (level >= 2) {
     // relaxation (b): |X_c| >= 1 and at least one target with an external prerequisite.
-    if (xSize < 1) return false;
-    if (stats.targetsWithExternal < 1) return false;
+    if (xSize < 1) failedCriteria.push(`|X_c|=${xSize} < 1`);
   } else {
-    if (xSize < 2 || xSize > 10) return false;
-    if (stats.targetsWithExternal < Math.ceil(tSize / 2)) return false;
+    if (xSize < 2 || xSize > 10) failedCriteria.push(`|X_c|=${xSize} outside [2,10]`);
   }
+  if (stats.targetsWithExternal < required) failedCriteria.push(`targetsWithExternal=${stats.targetsWithExternal} < ${required}`);
 
   const useAllItems = level >= 3;
   const qSlice = useAllItems ? stats.qSliceAllItems : stats.qSliceSingleConceptOnly;
+  let minTargetCoverage = Infinity;
   for (const id of stats.targetIds) {
     const count = useAllItems ? qSlice.filter((q) => id in effectiveConceptWeights(q)).length : (stats.scTargets.get(id) ?? 0);
-    if (count < 16) return false;
+    minTargetCoverage = Math.min(minTargetCoverage, count);
   }
+  if (minTargetCoverage < scTargetThreshold) failedCriteria.push(`minSC(target)=${minTargetCoverage} < ${scTargetThreshold}`);
+
+  let minExternalCoverage = stats.externalIds.length ? Infinity : null;
   for (const id of stats.externalIds) {
     const count = useAllItems ? qSlice.filter((q) => id in effectiveConceptWeights(q)).length : (stats.scExternal.get(id) ?? 0);
-    if (count < 8) return false;
+    minExternalCoverage = Math.min(minExternalCoverage ?? Infinity, count);
+  }
+  if (minExternalCoverage !== null && minExternalCoverage < scExternalThreshold) {
+    failedCriteria.push(`minSC(external)=${minExternalCoverage} < ${scExternalThreshold}`);
   }
 
-  if (qSlice.length < 120) return false;
-  return true;
+  if (qSlice.length < 120) failedCriteria.push(`|Q_slice|=${qSlice.length} < 120`);
+
+  return { pass: failedCriteria.length === 0, failedCriteria };
+}
+
+function isEligible(stats: ChapterStats, relax: RelaxationLevel, scTargetThreshold = 16, scExternalThreshold = 8): boolean {
+  return evaluateEligibility(stats, relax, scTargetThreshold, scExternalThreshold).pass;
+}
+
+function eligibilityFailureReasons(stats: ChapterStats, relax: RelaxationLevel, scTargetThreshold = 16, scExternalThreshold = 8): string[] {
+  return evaluateEligibility(stats, relax, scTargetThreshold, scExternalThreshold).failedCriteria;
 }
 
 function toCandidate(stats: ChapterStats, relax: RelaxationLevel): SliceCandidate {
   const singleConceptOnly = relax !== "c";
   return {
     chapterId: stats.chapterId,
-    targetConceptIds: stats.targetIds,
+    targetConceptIds: [...stats.targetIds],
     externalPrereqConceptIds: stats.externalIds,
     edgesInsideTargets: stats.edgesInside,
     edgesFromExternalIntoTargets: stats.edgesFromExternal,
@@ -228,6 +261,15 @@ function toCandidate(stats: ChapterStats, relax: RelaxationLevel): SliceCandidat
 
 const MAX_HOPS = 5;
 
+/** Ranks candidate target sets by (internal edges + edges from external into targets), descending; ties broken by chapterId ascending -- the protocol's own tie-break rule, reused by both the whole-chapter and concept-subgraph selection procedures. */
+function rankByEdgeScore(candidates: ChapterStats[]): ChapterStats[] {
+  return [...candidates].sort((a, b) => {
+    const scoreDiff = b.edgesInside + b.edgesFromExternal - (a.edgesInside + a.edgesFromExternal);
+    if (scoreDiff !== 0) return scoreDiff;
+    return a.chapterId.localeCompare(b.chapterId);
+  });
+}
+
 /**
  * Selects the top 3 eligible chapters as Track A/B's curriculum slices,
  * applying the protocol's relaxation order (a) -> (b) -> (c) only if
@@ -237,7 +279,10 @@ export function selectSlices(concepts: readonly Concept[], questions: readonly Q
   const byId = buildPrereqIndex(concepts);
   const chapterIds = [...new Set(concepts.map((c) => c.chapterId).filter((id): id is string => Boolean(id)))].sort();
 
-  const allStats = chapterIds.map((chapterId) => computeChapterStats(chapterId, concepts, questions, byId, MAX_HOPS));
+  const allStats = chapterIds.map((chapterId) => {
+    const targetIds = concepts.filter((c) => c.chapterId === chapterId).map((c) => c.id);
+    return computeTargetSetStats(chapterId, targetIds, questions, byId, MAX_HOPS);
+  });
   const itemCountsByChapter: Record<string, { tCount: number; xCount: number; qSliceSize: number }> = {};
   for (const stats of allStats) {
     itemCountsByChapter[stats.chapterId] = {
@@ -247,18 +292,10 @@ export function selectSlices(concepts: readonly Concept[], questions: readonly Q
     };
   }
 
-  function rank(eligible: ChapterStats[]): ChapterStats[] {
-    return [...eligible].sort((a, b) => {
-      const scoreDiff = b.edgesInside + b.edgesFromExternal - (a.edgesInside + a.edgesFromExternal);
-      if (scoreDiff !== 0) return scoreDiff;
-      return a.chapterId.localeCompare(b.chapterId);
-    });
-  }
-
   for (const relax of ["none", "a", "b", "c"] as const) {
     const eligible = allStats.filter((stats) => isEligible(stats, relax));
     if (eligible.length >= 3) {
-      const top3 = rank(eligible).slice(0, 3);
+      const top3 = rankByEdgeScore(eligible).slice(0, 3);
       return {
         slices: top3.map((stats) => toCandidate(stats, relax)),
         relaxationApplied: relax,
@@ -271,9 +308,117 @@ export function selectSlices(concepts: readonly Concept[], questions: readonly Q
   // Fewer than 3 qualify even after every relaxation (C13 stop condition).
   const bestEffort = allStats.filter((stats) => isEligible(stats, "c"));
   return {
-    slices: rank(bestEffort).map((stats) => toCandidate(stats, "c")),
+    slices: rankByEdgeScore(bestEffort).map((stats) => toCandidate(stats, "c")),
     relaxationApplied: "c",
     eligibleChapterCount: bestEffort.length,
     itemCountsByChapter,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Amendment A1 (protocol/AMENDMENTS.md): concept-subgraph slice selection.
+// Author-approved revision to C7.1/B5.1, replacing the whole-chapter rule
+// above for Tier 1. See AMENDMENTS.md for the full rationale; summary: the
+// real RISE bank/curriculum yields only 2 whole-chapter-eligible slices
+// (CH03, CH04) even after every relaxation in C7.1, below the 3 Track A/B
+// requires. Rather than relaxing any numeric threshold (SC(k) stays >= 16
+// for targets, >= 8 for external prerequisites; |T_c|, internal-edge,
+// |X_c|, and |Q_slice| requirements are all UNCHANGED from the original,
+// non-relaxed rule), this procedure narrows a chapter's candidate target
+// set to only its individually well-evidenced concepts before checking
+// eligibility -- "T_c = a chapter's sufficiently-evidenced concepts"
+// rather than "T_c = every concept in the chapter".
+// ---------------------------------------------------------------------------
+
+export interface ConceptSubgraphChapterDiagnostic {
+  chapterId: string;
+  fullChapterTargetIds: string[];
+  retainedTargetIds: string[];
+  droppedConceptIds: string[];
+  eligible: boolean;
+  failedCriteria: string[];
+  edgesInsideTargets: number;
+  edgesFromExternalIntoTargets: number;
+}
+
+export interface ConceptSubgraphSliceResult {
+  primarySlices: SliceCandidate[];
+  reserveSlice: SliceCandidate | null;
+  eligibleChapterCount: number;
+  /** Every chapter's outcome, eligible or not, for the audit trail (Amendment A1 point 5: "deterministic method ... based only on pre-experimental structural and coverage information"). */
+  perChapterDiagnostics: ConceptSubgraphChapterDiagnostic[];
+}
+
+/**
+ * Amendment A1's revised C7.1 procedure. For each chapter: drop any
+ * target concept whose single-concept-item coverage SC(k) falls below
+ * `scTargetThreshold` (default 16, UNCHANGED from the original
+ * protocol), then evaluate the ORIGINAL, non-relaxed eligibility rule
+ * (`|T_c|` in [5,12], >= 3 internal edges, `|X_c|` in [2,10], >=
+ * ceil(|T_c|/2) targets with an external prerequisite, `SC(external)
+ * >= scExternalThreshold` [default 8], `|Q_slice| >= 120`) against the
+ * RETAINED subset. Eligible chapters are ranked by the protocol's own
+ * tie-break rule (internal + external edges, descending; chapterId
+ * ascending); the top 3 are the primary slices, the 4th (if any) is
+ * the predefined reserve. Entirely deterministic: no randomness, no
+ * estimator, selection policy, or simulation result is consulted.
+ */
+export function selectConceptSubgraphSlices(
+  concepts: readonly Concept[],
+  questions: readonly Question[],
+  scTargetThreshold = 16,
+  scExternalThreshold = 8,
+): ConceptSubgraphSliceResult {
+  const byId = buildPrereqIndex(concepts);
+  const chapterIds = [...new Set(concepts.map((c) => c.chapterId).filter((id): id is string => Boolean(id)))].sort();
+
+  const scCache = new Map<string, number>();
+  function sc(conceptId: string): number {
+    const cached = scCache.get(conceptId);
+    if (cached !== undefined) return cached;
+    const count = questions.filter((q) => isSingleConcept(q, conceptId)).length;
+    scCache.set(conceptId, count);
+    return count;
+  }
+
+  const perChapterDiagnostics: ConceptSubgraphChapterDiagnostic[] = [];
+  const eligibleStats: ChapterStats[] = [];
+
+  for (const chapterId of chapterIds) {
+    const fullChapterTargetIds = concepts.filter((c) => c.chapterId === chapterId).map((c) => c.id);
+    const retainedTargetIds = fullChapterTargetIds.filter((id) => sc(id) >= scTargetThreshold);
+    const droppedConceptIds = fullChapterTargetIds.filter((id) => !retainedTargetIds.includes(id));
+
+    if (retainedTargetIds.length === 0) {
+      perChapterDiagnostics.push({
+        chapterId, fullChapterTargetIds, retainedTargetIds, droppedConceptIds,
+        eligible: false, failedCriteria: ["no concept in this chapter meets the coverage threshold"],
+        edgesInsideTargets: 0, edgesFromExternalIntoTargets: 0,
+      });
+      continue;
+    }
+
+    const stats = computeTargetSetStats(chapterId, retainedTargetIds, questions, byId, MAX_HOPS);
+    const eligible = isEligible(stats, "none", scTargetThreshold, scExternalThreshold);
+    const failedCriteria = eligibilityFailureReasons(stats, "none", scTargetThreshold, scExternalThreshold);
+
+    perChapterDiagnostics.push({
+      chapterId, fullChapterTargetIds, retainedTargetIds, droppedConceptIds,
+      eligible, failedCriteria,
+      edgesInsideTargets: stats.edgesInside, edgesFromExternalIntoTargets: stats.edgesFromExternal,
+    });
+
+    if (eligible) eligibleStats.push(stats);
+  }
+
+  const ranked = rankByEdgeScore(eligibleStats);
+  const primarySlices = ranked.slice(0, 3).map((stats) => toCandidate(stats, "none"));
+  const reserveSlice = ranked.length > 3 ? toCandidate(ranked[3], "none") : null;
+
+  return {
+    primarySlices,
+    reserveSlice,
+    eligibleChapterCount: eligibleStats.length,
+    perChapterDiagnostics,
   };
 }
