@@ -24,6 +24,8 @@ export interface ScheduleItem {
 export interface ScheduleIdentity {
   masterSeed: string;
   family: FamilyGroup;
+  /** Which family CELL this identity belongs to (e.g. "S4-ref") -- distinct from `family` for S4, which shares its RNG family-group across all cells (C4/B10.3); matches LearnerIdentity's "cell" field so a ScheduleIdentity can be used directly wherever a LearnerIdentity is required. */
+  cell: string;
   world: number;
   sliceId: string;
   split: Split;

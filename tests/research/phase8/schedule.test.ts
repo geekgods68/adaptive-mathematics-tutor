@@ -25,7 +25,7 @@ function question(id: string, conceptId: string, difficulty: 1 | 2 | 3 | 4 | 5):
 }
 
 function identity(learnerId: string): ScheduleIdentity {
-  return { masterSeed: "RISE-PHASE8-v2", family: "S1", world: 1, sliceId: "CH-TEST", split: "test", learnerId };
+  return { masterSeed: "RISE-PHASE8-v2", family: "S1", cell: "S1", world: 1, sliceId: "CH-TEST", split: "test", learnerId };
 }
 
 /** Builds `count` single-concept questions for `conceptId`, spread round-robin across levels 1-5. */
