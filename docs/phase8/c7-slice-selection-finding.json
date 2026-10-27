@@ -1,0 +1,90 @@
+{
+  "relaxationApplied": "c",
+  "eligibleChapterCount": 2,
+  "itemCountsByChapter": {
+    "CH01": {
+      "tCount": 12,
+      "xCount": 0,
+      "qSliceSize": 135
+    },
+    "CH02": {
+      "tCount": 8,
+      "xCount": 9,
+      "qSliceSize": 219
+    },
+    "CH03": {
+      "tCount": 5,
+      "xCount": 6,
+      "qSliceSize": 176
+    },
+    "CH04": {
+      "tCount": 5,
+      "xCount": 16,
+      "qSliceSize": 334
+    },
+    "CH05": {
+      "tCount": 10,
+      "xCount": 27,
+      "qSliceSize": 570
+    },
+    "CH06": {
+      "tCount": 8,
+      "xCount": 29,
+      "qSliceSize": 596
+    },
+    "CH07": {
+      "tCount": 9,
+      "xCount": 11,
+      "qSliceSize": 318
+    },
+    "CH08": {
+      "tCount": 8,
+      "xCount": 17,
+      "qSliceSize": 408
+    },
+    "CH09": {
+      "tCount": 7,
+      "xCount": 15,
+      "qSliceSize": 367
+    },
+    "CH10": {
+      "tCount": 8,
+      "xCount": 8,
+      "qSliceSize": 268
+    },
+    "CH11": {
+      "tCount": 8,
+      "xCount": 18,
+      "qSliceSize": 441
+    },
+    "CH12": {
+      "tCount": 8,
+      "xCount": 2,
+      "qSliceSize": 153
+    },
+    "CH13": {
+      "tCount": 6,
+      "xCount": 6,
+      "qSliceSize": 187
+    },
+    "CH14": {
+      "tCount": 7,
+      "xCount": 20,
+      "qSliceSize": 452
+    }
+  },
+  "slices": [
+    {
+      "chapterId": "CH03",
+      "targetCount": 5,
+      "externalCount": 6,
+      "qSliceSize": 183
+    },
+    {
+      "chapterId": "CH04",
+      "targetCount": 5,
+      "externalCount": 16,
+      "qSliceSize": 354
+    }
+  ]
+}
