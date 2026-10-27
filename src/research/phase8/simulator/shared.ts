@@ -177,6 +177,19 @@ export interface TruthRow {
   mastered: boolean;
 }
 
+/**
+ * The "response" stream draw (C4): keyed by the item's PRIMARY concept,
+ * at that concept's current o_k value (read BEFORE `learn()`'s
+ * unconditional increment). Every family's `*Respond` function takes
+ * this as an external `uResponse` parameter rather than deriving it
+ * itself, so the pure response-probability math stays independent of
+ * RNG-keying concerns; this is the one place that keying happens.
+ */
+export function responseUniform(id: LearnerIdentity, opp: ReadonlyMap<ConceptId, number>, primaryConceptId: ConceptId): number {
+  const index = opp.get(primaryConceptId) ?? 0;
+  return uniformAt(id.masterSeed, opportunityKey(id, "response", primaryConceptId, index));
+}
+
 export function sha256OfKey(masterSeed: string, key: DeriveKey): string {
   return derive(masterSeed, key).toString(16);
 }
