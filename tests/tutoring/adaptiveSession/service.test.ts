@@ -248,3 +248,120 @@ describe("Non-adaptive baseline preservation and store isolation", () => {
     expect(RISE_CONCEPTS.length).toBe(109);
   });
 });
+
+/**
+ * Regression coverage for the session-continuity fix (root cause: every
+ * new adaptive session cold-started with zero prior mastery AND zero
+ * presented-question history, so "Across All Topics" always opened on
+ * the exact same first question). These tests drive `service.ts`
+ * directly — the real Phase 3/4 engine, nothing mocked.
+ */
+describe("Session continuity — persistent mastery state and cross-session question history", () => {
+  function runQuestions(sessionId: string, count: number, correct: boolean): void {
+    let current = service.getSession(sessionId);
+    for (let i = 0; i < count; i++) {
+      if (current.experimentState.status === "terminated") return;
+      const question = service.getCurrentQuestion(current.id);
+      const optionId = correct ? question.correctOptionId : question.options.find((o) => !o.isCorrect)!.id;
+      service.submitAdaptiveAnswer(current.id, optionId);
+      const { session: advanced } = service.advanceAdaptiveSession(current.id);
+      current = advanced;
+    }
+  }
+
+  it("cold start: a brand-new session (no prior state) has an empty persisted-mastery snapshot before any response", () => {
+    const session = service.startAdaptiveSession("CH01");
+    expect(service.getPersistableMasteryStates(session.id)).toEqual({});
+  });
+
+  it("first-session persistence: after answering, getPersistableMasteryStates reflects real recorded evidence (not a rounded/aggregate approximation)", () => {
+    const session = service.startAdaptiveSession("CH01");
+    runQuestions(session.id, 3, true);
+    const persisted = service.getPersistableMasteryStates(session.id);
+    const conceptIds = Object.keys(persisted);
+    expect(conceptIds.length).toBeGreaterThan(0);
+    const anyConcept = persisted[conceptIds[0]];
+    expect(anyConcept.numObservations).toBeGreaterThan(0);
+    expect(anyConcept.correctCount + anyConcept.incorrectCount).toBe(anyConcept.numObservations);
+    // Full internal estimator state must round-trip the sanitized client view exactly for every
+    // field the client view carries (never a rounded percentage, per the "do not reconstruct from
+    // aggregate accuracy" requirement).
+    const latest = service.getSession(session.id);
+    const internal = latest.experimentState.estimatorStates[conceptIds[0]] as { mastery: number };
+    expect(anyConcept.mastery).toBe(internal.mastery);
+  });
+
+  it("returning-student continuation: a new session seeded with a prior session's persisted mastery starts from that REAL state, not a cold start", () => {
+    const first = service.startAdaptiveSession("CH01");
+    runQuestions(first.id, 4, true);
+    const priorStates = service.getPersistableMasteryStates(first.id);
+    expect(Object.keys(priorStates).length).toBeGreaterThan(0);
+
+    const second = service.startAdaptiveSession("CH01", undefined, priorStates);
+    for (const [conceptId, entry] of Object.entries(priorStates)) {
+      const seeded = second.experimentState.estimatorStates[conceptId] as { mastery: number; numObservations: number } | undefined;
+      expect(seeded).toBeDefined();
+      expect(seeded!.mastery).toBe(entry.mastery);
+      expect(seeded!.numObservations).toBe(entry.numObservations);
+    }
+  });
+
+  it("malformed or wrong-version prior state is rejected per-concept rather than corrupting the new session (falls back to cold start for that concept)", () => {
+    const bogusStates = { "not-a-real-concept": { garbage: true } };
+    const session = service.startAdaptiveSession("CH01", undefined, bogusStates);
+    expect(session.experimentState.estimatorStates["not-a-real-concept"]).toBeUndefined();
+    expect(session.experimentState.status).toBe("active");
+  });
+
+  it("question-history continuation: a second session excludes the first session's seen questions while an unseen candidate exists", () => {
+    const first = service.startAdaptiveSession("CH01");
+    const seenIds: string[] = [];
+    let current = first;
+    for (let i = 0; i < 5; i++) {
+      seenIds.push(current.experimentState.currentQuestionId!);
+      const question = service.getCurrentQuestion(current.id);
+      service.submitAdaptiveAnswer(current.id, question.correctOptionId);
+      const { session: advanced } = service.advanceAdaptiveSession(current.id);
+      current = advanced;
+      if (current.experimentState.status === "terminated") break;
+    }
+
+    const second = service.startAdaptiveSession("CH01", undefined, undefined, seenIds);
+    expect(seenIds).not.toContain(second.experimentState.currentQuestionId);
+  });
+
+  it("no duplicate mastery updates: a rejected duplicate submission leaves estimatorStates unchanged", () => {
+    const session = service.startAdaptiveSession("CH01");
+    const question = service.getCurrentQuestion(session.id);
+    const afterFirst = service.submitAdaptiveAnswer(session.id, question.correctOptionId);
+    const snapshotBefore = JSON.stringify(afterFirst.session.experimentState.estimatorStates);
+    expect(() => service.submitAdaptiveAnswer(session.id, question.correctOptionId)).toThrow();
+    const unchanged = service.getSession(session.id);
+    expect(JSON.stringify(unchanged.experimentState.estimatorStates)).toBe(snapshotBefore);
+  });
+
+  it("reload/persistence restoration: calling getPersistableMasteryStates repeatedly on the same session returns an identical snapshot", () => {
+    const session = service.startAdaptiveSession("CH01");
+    runQuestions(session.id, 2, true);
+    const a = service.getPersistableMasteryStates(session.id);
+    const b = service.getPersistableMasteryStates(session.id);
+    expect(a).toEqual(b);
+  });
+
+  it("deterministic selection: two independently-started sessions given identical prior mastery and identical (empty) question history choose the identical first question", () => {
+    const seed = service.startAdaptiveSession("CH01");
+    runQuestions(seed.id, 3, true);
+    const priorStates = service.getPersistableMasteryStates(seed.id);
+
+    const a = service.startAdaptiveSession("CH01", undefined, priorStates);
+    const b = service.startAdaptiveSession("CH01", undefined, priorStates);
+    expect(a.experimentState.currentQuestionId).toBe(b.experimentState.currentQuestionId);
+  });
+
+  it("omitting continuity inputs entirely is byte-for-byte the original cold-start behavior", () => {
+    const a = service.startAdaptiveSession("CH01");
+    const b = service.startAdaptiveSession("CH01");
+    expect(a.experimentState.currentQuestionId).toBe(b.experimentState.currentQuestionId);
+    expect(a.seenQuestionIdsOldestFirst).toEqual([]);
+  });
+});

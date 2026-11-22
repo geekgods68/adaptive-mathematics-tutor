@@ -1,0 +1,26 @@
+item_id,topic,status,source
+B01,C0 non-adaptive sequencing mechanics,VERIFIED-SOURCE,src/research/phase8/trackB/c0Slice.ts
+B02,Adaptive selector full decision logic + thresholds,VERIFIED-SOURCE,"src/tutoring/selection/adaptive/{config,targeting,candidateSelection,adaptiveSelectionPolicy}.ts"
+B03,C2-vs-C3 single-mechanism ablation claim,VERIFIED-SOURCE,src/tutoring/selection/adaptive/targeting.ts;candidateSelection.ts;adaptiveSelectionPolicy.ts
+B04,Multi-concept attribution weights,VERIFIED-SOURCE,src/domain/learner-model/updateMastery.ts;src/domain/questions/types.ts
+B05,S1-S4 generative equations,VERIFIED-SOURCE,"src/research/phase8/simulator/{s1,s2,s3,s4,shared}.ts"
+B06,S4-ref/GF/N/GW precise meaning + graph Jaccard,RECOMPUTED-EXISTING,data/b06_graph_comparison.csv
+B07,S1/S3 mastery threshold; S2/S4 binary truth,VERIFIED-SOURCE,"src/research/phase8/simulator/{s1,s2,s3,s4}.ts"
+B08,Pre-response prediction integrity (Track A),VERIFIED-SOURCE,src/research/phase8/trackA/runTrackA.ts;tests/research/phase8/runTrackA.test.ts
+B09,Pairing/seed/common-random-number design,VERIFIED-SOURCE,src/research/phase8/simulator/shared.ts;rng/derive.ts
+B10,Outcome-construction trace (all 6 metrics),VERIFIED-SOURCE,src/research/phase8/trackB/runTrackB.ts;metrics/threeMetrics.ts
+B11,"Full K(T), 6 families x 4 conditions",RECOMPUTED-EXISTING,data/track_b_recovered.csv
+B12,Full Track A endpoints incl. det-B,RECOMPUTED-EXISTING,data/track_a_recovered.csv
+B13,C1-vs-C2 numerical comparisons,RECOMPUTED-EXISTING,data/ablation_results.csv
+B14,C2-vs-C3 numerical comparisons,RECOMPUTED-EXISTING,data/ablation_results.csv
+B15,Manuscript attainment numbers vs artifacts,VERIFIED-ARTIFACT,data/world_level_results.csv
+B16,"Reproduce manuscript p-values (K(T), QTM)",RECOMPUTED-EXISTING,verification_scripts (Phase 2 pass) + this pass
+B17,Full run-accounting decomposition,VERIFIED-ARTIFACT,data/run_accounting.csv
+B18,Question-bank counts vs audit script,VERIFIED-ARTIFACT,npm run audit:rise-questions live output
+B19,Architecture leakage claims,VERIFIED-SOURCE,src/tutoring/adaptiveSession/publicViews.ts
+B20,Figures 2-4 plotted values,PARTIALLY-VERIFIED,research-output/phase8/final/figures/*.svg + stats json
+B21,Tables 1-4 cell audit,PARTIALLY-VERIFIED,docs/COMPLETE_RESEARCH_PAPER_EVIDENCE_DOSSIER.md
+B22,Pilot provenance consolidation,VERIFIED-ARTIFACT,git log; sha256 of pilot JSON; package.json
+B23,6 discussion mechanisms classification,PARTIALLY-VERIFIED,retrospective diagnostics_replay artifact
+B24,S1 negative-control structural guarantee,VERIFIED-SOURCE,src/research/phase8/simulator/s1.ts;config
+B25,Literature/reference audit,UNAVAILABLE,no local bibliography; requires external verification

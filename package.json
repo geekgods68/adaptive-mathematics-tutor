@@ -10,9 +10,13 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:restart": "playwright test --config=playwright.restart.config.ts",
     "audit:questions": "tsx scripts/audit-questions.ts",
+    "audit:rise-questions": "tsx scripts/audit-rise-questions.ts",
     "audit:session": "tsx scripts/audit-session.ts",
-    "research:cli": "tsx scripts/research-cli.ts"
+    "research:cli": "tsx scripts/research-cli.ts",
+    "verify:build-purity": "tsx scripts/verify-build-purity.ts"
   },
   "dependencies": {
     "@types/katex": "^0.16.8",
@@ -22,6 +26,8 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",

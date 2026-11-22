@@ -357,6 +357,100 @@ in this repo.
   scientific approval gate — no simulated learner, BKT/IRT, or
   evaluation metric is implemented; Phase 3/4's equations/thresholds and
   the question bank are untouched.
+- **Stage 1 experimental-validity remediation (2026-10-31):** fixed a
+  real architectural defect found by a read-only system audit
+  (`docs/system-audit/FINDINGS_REGISTER.md` Finding F-02): the live
+  `/practice` page's adaptive and non-adaptive modes drew from two
+  disjoint question banks (RISE vs. the original 161-question bank),
+  contradicting this project's own stated research design. Built a new
+  non-adaptive condition over the SAME canonical RISE bank
+  (`src/tutoring/nonAdaptiveRiseSession/`, Phase 5 condition `C0`,
+  previously registered but never wired into a live route) and switched
+  `/practice`'s non-adaptive mode to it. The legacy 161-question bank,
+  `src/tutoring/session/`, and the `/tutor` route are UNCHANGED and
+  remain fully functional — still the only way to run the original
+  35-question quadratics sequence; both bank's own test suites and
+  quality audits stayed green throughout. Added
+  `scripts/audit-rise-questions.ts` (`npm run audit:rise-questions`) — a
+  RISE-bank counterpart to `npm run audit:questions`, zero structural
+  errors on the real 1,840-question bank. See `docs/research-decisions.md`
+  RD-0010 and `docs/stage1-experimental-validity-report.md` for the full
+  account, invariants now tested, and residual limitations (notably: no
+  durable persistence yet, deferred to a future stage; RISE content
+  itself remains independently-unreviewed, unaffected by this work).
+- **Stage 2 research persistence (2026-11-02):** gave modern C0/C2
+  tutoring sessions and Phase 8 Track A/B runs durable, append-only
+  storage, closing audit Finding F-03 (both conditions previously used
+  in-memory Maps only — all session state and research-event history
+  was lost on every server restart). New `src/research/storage/`
+  (`db.ts`: a single `node:sqlite` `DatabaseSync` file,
+  `research-output/db/research.sqlite3` by default — chosen as the
+  simplest backend with zero new dependencies and a synchronous API
+  matching the existing synchronous session services, not for
+  multi-process use; `durableSessionStore.ts`: a drop-in SQLite-backed
+  replacement for both conditions' `store.ts` Map, keyed by
+  `(session_id, kind)`; `eventDerivation.ts`: derives typed, append-only
+  research events purely by diffing successive session states — no
+  service.ts call site changed; `completedSessionArtifacts.ts`: on
+  completion, builds and saves a real Phase 6 `ExperimentRunArtifact`
+  for every finished student session, reusing that machinery verbatim).
+  Phase 8 gained analogous per-run persistence
+  (`src/research/phase8/persistence.ts` — Track A's own versioned
+  envelope; Track B reuses the same `ExperimentRunArtifact` path via one
+  additive, opt-in `onRunComplete` hook added to `runTrackBSession`,
+  verified to leave its return value and computation byte-identical).
+  `scripts/research-cli.ts` gained `sessions`/`phase8`/`integrity`
+  subcommands over this new data, and `scripts/stage2-acceptance-demo.ts`
+  is a real, disposable-storage end-to-end demonstration (restart
+  recovery, replay, independent metric recomputation) safe to re-run.
+  The deterministic mastery formulas, adaptive-selection algorithms,
+  Track A/B simulation methodology, question bank, and the frozen
+  13,560-run Phase 8 pilot were not modified. See
+  `docs/stage2-research-persistence-report.md` for the full account,
+  what Groups A–L of its test plan actually verify, and residual
+  limitations (notably: single-writer-process only, no distributed
+  concurrency guarantee; several Part 10.3 integrity-validator bullets
+  are not individually implemented as named functions).
+- **Stage 3 UI integration (2026-11-02, PARTIALLY COMPLETE):** fixed two
+  real, concretely-scoped student-facing defects found by the October 29
+  audit and scoped by this stage, at the presentation/orchestration layer
+  only. (1) **F-04** (`SettingsClient.tsx`'s single "Clear all local
+  session history" button silently left `rise-student-mastery-state-v1`
+  and `rise-student-question-history-v1` untouched — a split-brain state
+  where History looked empty but the next adaptive session still
+  inherited old mastery): replaced with three distinct, explicitly
+  confirmed operations ("Clear session history" / "Reset adaptive
+  progress" / "Reset all student practice data"), each ending any active
+  session server-side first. (2) The adaptive explanation
+  `"Moving to a harder question after consistent success"`
+  (`src/tutoring/adaptiveSession/explanations.ts`) was an absolute check
+  (`evidenceCount >= 3 && difficulty >= 4`) with no reference to the
+  previous question, so it could fire with no actual difficulty change;
+  `explainSelection` now takes the previous real
+  `AdaptiveSelectionTrace.targetDifficulty.difficulty` (read from
+  `session.experimentState.selectionTraces.at(-2)` in `service.ts` — pure
+  orchestration-layer history, no change to the protected selection
+  algorithm itself) and only claims "harder"/"easier" when two real
+  recorded difficulty values actually differ. Also fixed a real,
+  backend-already-supported-but-UI-blocked gap: Non-Adaptive mode's topic
+  selector was disabled with a note claiming chapter scoping "is a
+  product-scope choice, not a technical limitation" — false, since
+  `startNonAdaptiveRiseSessionAction`/`buildRiseNonAdaptiveSequence` had
+  supported a `chapterId` since Stage 1; the selector is now enabled in
+  both modes. `/tutor` and `/adaptive-tutor` each gained a small,
+  explicitly-labeled compatibility banner pointing to `/practice`
+  (Part 4's "explicitly labeled compatibility page" option — neither
+  route was redirected, removed, or had its own client component
+  touched). Added real Playwright browser verification
+  (`playwright.config.ts`, `tests-e2e/`, `npm run test:e2e`) for a
+  narrowed slice of the full scenario list — first-time adaptive session
+  through Dashboard/History, non-adaptive mode with chapter selection,
+  and a math-rendering smoke check — all passing against a live `next
+  dev` server. See `docs/stage3-ui-integration-report.md` for the full
+  account and, explicitly, everything in the original 21-part Stage 3
+  scope this pass did NOT reach (most of Parts 6, 9, 10, 11, 13, 14, and
+  the Part 16 UI-vs-durable-record agreement test) — reported as
+  incomplete rather than claimed done.
 
 Things explicitly **not** to build in this repository: simulated-learner
 engines, Bayesian Knowledge Tracing/IRT/Elo or any other probabilistic
@@ -384,6 +478,9 @@ npm run test:watch
 npm run lint
 npm run typecheck        # tsc --noEmit
 npm run build
-npm run audit:questions  # live question-bank quality report
+npm run audit:questions  # live question-bank quality report (original 161-question bank)
+npm run audit:rise-questions  # live question-bank quality report (canonical RISE bank)
 npm run audit:session    # live study-sequence quality report
+npm run research:cli -- sessions list --kind=c0   # durable research-data CLI (Stage 2) -- see docs/stage2-research-persistence-report.md
+npm run test:e2e         # Playwright real-browser tests against a live `next dev` server (Stage 3) -- see docs/stage3-ui-integration-report.md
 ```

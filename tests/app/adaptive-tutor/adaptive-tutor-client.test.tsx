@@ -13,6 +13,8 @@ vi.mock("@/app/adaptive-tutor/actions", () => ({
   startAdaptiveSessionAction: vi.fn(),
   submitAdaptiveAnswerAction: vi.fn(),
   advanceAdaptiveSessionAction: vi.fn(),
+  resetAdaptiveSessionAction: vi.fn(),
+  getCurrentMasteryStateAction: vi.fn(),
 }));
 
 function activeState(overrides: Partial<Extract<AdaptiveQuestionStateResult, { status: "active" }>> = {}) {
@@ -47,12 +49,14 @@ function completedState(): Extract<AdaptiveQuestionStateResult, { status: "compl
     progress: [{ conceptId: "c1", conceptName: "Linear Equations", chapterId: "CH01", observed: true, evidenceLevel: "Practised", masteryBeforePercent: 50, masteryAfterPercent: 68 }],
     conceptsNeedingPractice: [],
   };
-  return { status: "completed" as const, sessionId: "s1", summary };
+  return { status: "completed" as const, sessionId: "s1", summary, persistableMasteryStates: {} };
 }
 
 beforeEach(() => {
   vi.clearAllMocks();
+  localStorage.clear();
   vi.mocked(actions.listChaptersAction).mockResolvedValue({ ok: true, data: { chapters: [{ chapterId: "CH01", title: "Algebra Foundations" }] } });
+  vi.mocked(actions.getCurrentMasteryStateAction).mockResolvedValue({ ok: true, data: { hasRecord: false } });
 });
 
 describe("AdaptiveTutorClient — setup", () => {
@@ -80,7 +84,7 @@ describe("AdaptiveTutorClient — setup", () => {
     await userEvent.selectOptions(await screen.findByLabelText(/choose a starting topic/i), "CH01");
     await userEvent.click(screen.getByRole("button", { name: "Start adaptive practice" }));
 
-    expect(actions.startAdaptiveSessionAction).toHaveBeenCalledWith("CH01");
+    expect(actions.startAdaptiveSessionAction).toHaveBeenCalledWith("CH01", {}, [], expect.any(String));
     expect(await screen.findByText("Question 1 of 20")).toBeInTheDocument();
     expect(screen.getByText(/starting with a question/i)).toBeInTheDocument();
   });
@@ -183,6 +187,41 @@ describe("AdaptiveTutorClient — completion", () => {
     vi.mocked(actions.resumeAdaptiveSessionAction).mockResolvedValue({ ok: true, data: state });
     render(<AdaptiveTutorClient />);
     expect(await screen.findByText(/may benefit from further practice/i)).toBeInTheDocument();
+  });
+
+  it("shows a Return to Home link pointing at the root route", async () => {
+    vi.mocked(actions.resumeAdaptiveSessionAction).mockResolvedValue({ ok: true, data: completedState() });
+    render(<AdaptiveTutorClient />);
+    const homeLink = await screen.findByRole("link", { name: "Return to Home" });
+    expect(homeLink).toHaveAttribute("href", "/");
+  });
+
+  it("shows a Review Results link that jumps to the results summary section on the same page", async () => {
+    vi.mocked(actions.resumeAdaptiveSessionAction).mockResolvedValue({ ok: true, data: completedState() });
+    render(<AdaptiveTutorClient />);
+    const reviewLink = await screen.findByRole("link", { name: "Review Results" });
+    expect(reviewLink).toHaveAttribute("href", "#results-summary");
+  });
+
+  it("Start New Assessment resets the session and returns to the start screen, without erasing the summary before the click", async () => {
+    vi.mocked(actions.resumeAdaptiveSessionAction).mockResolvedValue({ ok: true, data: completedState() });
+    vi.mocked(actions.resetAdaptiveSessionAction).mockResolvedValue({ ok: true, data: { status: "no_session" } });
+    render(<AdaptiveTutorClient />);
+
+    // The summary is fully visible before any navigation action is taken.
+    expect(await screen.findByText("Session complete")).toBeInTheDocument();
+    expect(screen.getByText("Linear Equations")).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole("button", { name: "Start New Assessment" }));
+    expect(actions.resetAdaptiveSessionAction).toHaveBeenCalledTimes(1);
+    expect(await screen.findByRole("button", { name: "Start adaptive practice" })).toBeInTheDocument();
+  });
+
+  it("does not call resetAdaptiveSessionAction merely from loading the completed screen (no accidental reset)", async () => {
+    vi.mocked(actions.resumeAdaptiveSessionAction).mockResolvedValue({ ok: true, data: completedState() });
+    render(<AdaptiveTutorClient />);
+    await screen.findByText("Session complete");
+    expect(actions.resetAdaptiveSessionAction).not.toHaveBeenCalled();
   });
 });
 

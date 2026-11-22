@@ -1,6 +1,7 @@
 import { generateId } from "@/lib/id";
 import { RISE_CONCEPTS, RISE_QUESTIONS } from "@/domain/rise";
 import type { Question } from "@/domain/questions/types";
+import type { ConceptMasteryState } from "@/domain/learner-model/types";
 import { gradeAnswer, type GradingResult } from "@/tutoring/grading/grade";
 import { EXPERIMENT_CONDITIONS } from "@/research/experiment/conditions";
 import { startExperimentSession, recordExperimentResponse, advanceExperimentSession } from "@/research/experiment/sessionEngine";
@@ -9,9 +10,17 @@ import type { AdaptiveSelectionConfig } from "@/tutoring/selection/adaptive/conf
 import type { AdaptiveSelectionTrace } from "@/tutoring/selection/adaptive/types";
 import { buildAdaptiveCurriculumOrder } from "@/tutoring/adaptiveSession/curriculum";
 import { adaptiveSessionStore } from "@/tutoring/adaptiveSession/store";
+import { persistCompletedSessionArtifact } from "@/research/storage/completedSessionArtifacts";
 import type { ActiveAdaptiveSession } from "@/tutoring/adaptiveSession/types";
 import { buildAdaptiveFeedback, toPublicAdaptiveQuestionView, type PublicAdaptiveFeedbackView, type PublicAdaptiveQuestionView } from "@/tutoring/adaptiveSession/publicViews";
 import { buildAdaptiveSessionSummary, type AdaptiveSessionSummary } from "@/tutoring/adaptiveSession/summary";
+import { buildExperimentProvenance, type ExperimentProvenance } from "@/research/experiment/provenance";
+import { createCrossSessionAwareSelectionAdapter } from "@/tutoring/adaptiveSession/studentSelectionAdapter";
+import {
+  reconstructMasteryStatesForSession,
+  sanitizeMasteryStatesForClient,
+  type PersistableConceptMasteryState,
+} from "@/tutoring/adaptiveSession/masteryStateTransfer";
 import {
   AdaptiveAnswerAlreadySubmittedError,
   AdaptiveInvalidOptionIdError,
@@ -39,16 +48,31 @@ export const ADAPTIVE_SESSION_MAX_QUESTIONS = 20;
  * than once at module scope so each session's config is an independent,
  * immutable snapshot — cheap, since `EXPERIMENT_CONDITIONS.C2.build()`
  * only constructs plain adapter objects, no I/O.
+ *
+ * `priorSeenQuestionIds` (oldest-first) wraps the REGISTERED C2 selection
+ * adapter with a student-facing-only cross-session preference layer
+ * (studentSelectionAdapter.ts) — `EXPERIMENT_CONDITIONS.C2.build()`
+ * itself is called completely unmodified, so Phase 8's own use of
+ * condition C2 is entirely unaffected; this wrapping happens only here,
+ * for this student-facing orchestration path.
  */
-function buildAdaptiveConfig(): ExperimentConfig {
-  return EXPERIMENT_CONDITIONS.C2.build();
+function buildAdaptiveConfig(priorSeenQuestionIds: readonly string[] = []): ExperimentConfig {
+  const base = EXPERIMENT_CONDITIONS.C2.build();
+  if (priorSeenQuestionIds.length === 0) return base;
+  return {
+    ...base,
+    selection: createCrossSessionAwareSelectionAdapter(base.selection, RISE_QUESTIONS, priorSeenQuestionIds),
+  };
 }
 
 function getAdaptiveSelectionConfig(config: ExperimentConfig): AdaptiveSelectionConfig {
   return config.selection.parameters as unknown as AdaptiveSelectionConfig;
 }
 
-function buildAdaptiveScenario(session: Pick<ActiveAdaptiveSession, "participantId" | "chapterId" | "startedAt">): ExperimentScenario {
+function buildAdaptiveScenario(
+  session: Pick<ActiveAdaptiveSession, "participantId" | "chapterId" | "startedAt">,
+  initialEstimatorStates?: Record<string, ConceptMasteryState>,
+): ExperimentScenario {
   const adaptiveConfig = getAdaptiveSelectionConfig(buildAdaptiveConfig());
   return {
     learnerId: session.participantId,
@@ -58,6 +82,7 @@ function buildAdaptiveScenario(session: Pick<ActiveAdaptiveSession, "participant
     maxQuestions: ADAPTIVE_SESSION_MAX_QUESTIONS,
     completionCheck: { masteryThreshold: adaptiveConfig.masteryProgressionThreshold, minEvidenceCount: adaptiveConfig.minEvidenceCount },
     startTimestamp: session.startedAt,
+    ...(initialEstimatorStates && Object.keys(initialEstimatorStates).length > 0 ? { initialEstimatorStates } : {}),
   };
 }
 
@@ -80,19 +105,103 @@ function latestSelectionTrace(session: ActiveAdaptiveSession): AdaptiveSelection
   return trace as AdaptiveSelectionTrace | undefined;
 }
 
-/** Starts a brand-new adaptive session for an optional chosen chapter (undefined walks every chapter). */
-export function startAdaptiveSession(chapterId?: string, participantId?: string): ActiveAdaptiveSession {
+/**
+ * The model version reconstructed persisted states are checked against.
+ * Read from a fresh, unwrapped condition-C2 build rather than hardcoded,
+ * so this never drifts from whatever estimator version C2 is actually
+ * configured with.
+ */
+function currentEstimatorModelVersion(): string {
+  return EXPERIMENT_CONDITIONS.C2.build().estimator.version;
+}
+
+/**
+ * Starts a brand-new adaptive session for an optional chosen chapter
+ * (undefined walks every chapter).
+ *
+ * `priorEstimatorStates` and `seenQuestionIdsOldestFirst` are the
+ * student-facing continuity seam: when supplied (from a prior completed
+ * session's persisted, client-safe state), the session starts from that
+ * real prior mastery state and prefers not to re-present already-seen
+ * questions — both via the Phase 5 `ExperimentScenario.initialEstimatorStates`
+ * integration point and the studentSelectionAdapter.ts preprocessing
+ * layer, never by modifying the protected mastery/selection algorithms
+ * themselves. Omitting both (or passing none) is a pure cold start,
+ * identical to this function's pre-existing behavior.
+ */
+export function startAdaptiveSession(
+  chapterId?: string,
+  participantId?: string,
+  priorEstimatorStates?: unknown,
+  seenQuestionIdsOldestFirst: readonly string[] = [],
+): ActiveAdaptiveSession {
   const startedAt = new Date().toISOString();
   const id = generateId("adaptive-session");
   const resolvedParticipantId = participantId ?? generateId("participant");
 
-  const config = buildAdaptiveConfig();
-  const scenario = buildAdaptiveScenario({ participantId: resolvedParticipantId, chapterId, startedAt });
+  const { states: initialEstimatorStates } = reconstructMasteryStatesForSession(
+    priorEstimatorStates,
+    resolvedParticipantId,
+    currentEstimatorModelVersion(),
+  );
+
+  const config = buildAdaptiveConfig(seenQuestionIdsOldestFirst);
+  const scenario = buildAdaptiveScenario({ participantId: resolvedParticipantId, chapterId, startedAt }, initialEstimatorStates);
   const experimentState = startExperimentSession(config, scenario, id);
 
-  const session: ActiveAdaptiveSession = { id, participantId: resolvedParticipantId, chapterId, startedAt, experimentState };
+  const session: ActiveAdaptiveSession = {
+    id,
+    participantId: resolvedParticipantId,
+    chapterId,
+    startedAt,
+    experimentState,
+    seenQuestionIdsOldestFirst,
+  };
   adaptiveSessionStore.save(session);
   return session;
+}
+
+/** The client-safe mastery-state snapshot for a session, suitable for persisting and later passing back into `startAdaptiveSession`'s `priorEstimatorStates`. Safe to call at any point in a session's lifetime, not just on completion. */
+export function getPersistableMasteryStates(sessionId: string): Record<string, PersistableConceptMasteryState> {
+  const session = requireSession(sessionId);
+  return sanitizeMasteryStatesForClient(session.experimentState.estimatorStates as Record<string, ConceptMasteryState>);
+}
+
+export interface AuthoritativeMasterySnapshot {
+  modelVersion: string;
+  /** Client-safe; suitable both for display (via buildProgressView) and for seeding the next session's `priorEstimatorStates`. */
+  persistableStates: Record<string, PersistableConceptMasteryState>;
+  fromSessionId: string;
+  fromCompletedAt: string;
+}
+
+/**
+ * Stage 3 Priority 2 (mastery-state duplication fix): the ONE
+ * server-authoritative source for "this participant's current estimated
+ * mastery" — Stage 2's own durable record of their most recently
+ * COMPLETED adaptive session, never a client-side-derived or
+ * independently-recomputed value. `undefined` means this participant id
+ * has no durably completed adaptive session yet (a genuinely new
+ * participant id, or one that has only ever done non-adaptive practice),
+ * which the caller should treat as "nothing authoritative exists yet" —
+ * never as "mastery is zero."
+ *
+ * `listCompleted` sorts ascending by `completedAt`, so `.at(-1)` is the
+ * most recent; `completedAt` is set by `advanceAdaptiveSession` at the
+ * exact moment `status` becomes `"terminated"`, so this can never pick up
+ * a still-active session's in-progress state.
+ */
+export function getAuthoritativeMasteryForParticipant(participantId: string): AuthoritativeMasterySnapshot | undefined {
+  const completed = adaptiveSessionStore.listCompleted({ participantId });
+  const latest = completed.at(-1);
+  if (!latest || !latest.completedAt) return undefined;
+  const states = latest.data.experimentState.estimatorStates as Record<string, ConceptMasteryState>;
+  return {
+    modelVersion: currentEstimatorModelVersion(),
+    persistableStates: sanitizeMasteryStatesForClient(states),
+    fromSessionId: latest.sessionId,
+    fromCompletedAt: latest.completedAt,
+  };
 }
 
 /** Read-only: safe to call repeatedly (e.g. on page refresh). */
@@ -115,7 +224,12 @@ export function getCurrentPublicQuestion(sessionId: string): PublicAdaptiveQuest
   if (!trace) {
     throw new Error(`Adaptive session "${sessionId}" has a current question but no selection trace — this should never happen.`);
   }
-  return toPublicAdaptiveQuestionView(question, trace);
+  // Stage 3: the immediately preceding REAL trace for this session (if any), so the student-facing
+  // explanation can compare two actual recorded difficulty values instead of judging the current
+  // question in isolation — see explanations.ts's doc comment for why this replaced an absolute check.
+  const traces = session.experimentState.selectionTraces;
+  const previousTrace = traces.length >= 2 ? (traces[traces.length - 2] as AdaptiveSelectionTrace) : undefined;
+  return toPublicAdaptiveQuestionView(question, trace, previousTrace?.targetDifficulty.difficulty);
 }
 
 export type SubmitAdaptiveAnswerResult = {
@@ -150,7 +264,7 @@ export function submitAdaptiveAnswer(sessionId: string, selectedOptionId: string
     throw new AdaptiveInvalidOptionIdError(questionId, selectedOptionId);
   }
 
-  const config = buildAdaptiveConfig();
+  const config = buildAdaptiveConfig(session.seenQuestionIdsOldestFirst);
   const scenario = buildAdaptiveScenario(session);
   const timestamp = new Date().toISOString();
 
@@ -190,7 +304,7 @@ export function advanceAdaptiveSession(sessionId: string): AdvanceAdaptiveResult
     throw new AdaptiveNoAnswerSubmittedError(sessionId, currentQuestionId ?? "unknown");
   }
 
-  const config = buildAdaptiveConfig();
+  const config = buildAdaptiveConfig(session.seenQuestionIdsOldestFirst);
   const scenario = buildAdaptiveScenario(session);
   const updatedState = advanceExperimentSession(config, scenario, session.experimentState);
 
@@ -200,6 +314,11 @@ export function advanceAdaptiveSession(sessionId: string): AdvanceAdaptiveResult
     completedAt: updatedState.status === "terminated" ? new Date().toISOString() : undefined,
   };
   adaptiveSessionStore.save(updatedSession);
+
+  // Stage 2 Layer C (docs/stage2-research-persistence-report.md): the instant this
+  // condition's session completes, turn it into an immutable Phase 6 artifact. A
+  // no-op for a still-active session (persistCompletedSessionArtifact checks status).
+  persistCompletedSessionArtifact("c2", config, scenario, updatedState);
 
   const nextQuestion = updatedState.currentQuestionId ? getQuestionOrThrow(updatedState.currentQuestionId) : null;
   return { session: updatedSession, nextQuestion };
@@ -214,4 +333,24 @@ export function getAdaptiveSessionSummary(sessionId: string): AdaptiveSessionSum
 /** Development-only: discard a session's state so a fresh one can be started. */
 export function resetAdaptiveSession(sessionId: string): void {
   adaptiveSessionStore.delete(sessionId);
+}
+
+/**
+ * Stage 1 Part 8 (shared research-data contract, docs/research-decisions.md
+ * RD-0010): the canonical `ExperimentProvenance` record for this session,
+ * via the SAME unmodified Phase 6 `buildExperimentProvenance` the
+ * non-adaptive-on-RISE condition now also exposes
+ * (`src/tutoring/nonAdaptiveRiseSession/service.ts`'s identically-named
+ * export) — both conditions' records share one schema, one bank-hash
+ * definition, and one curriculum-hash definition, so they can be compared
+ * directly without inventing or normalizing missing fields on either
+ * side. This does not persist anything (Stage 2's job) — it is a
+ * read-only snapshot of the live in-memory session, same lifetime as the
+ * session itself.
+ */
+export function getExperimentProvenance(sessionId: string): ExperimentProvenance {
+  const session = requireSession(sessionId);
+  const config = buildAdaptiveConfig(session.seenQuestionIdsOldestFirst);
+  const scenario = buildAdaptiveScenario(session);
+  return buildExperimentProvenance(config, scenario, session.experimentState);
 }

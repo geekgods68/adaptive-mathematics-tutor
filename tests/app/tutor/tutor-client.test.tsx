@@ -11,6 +11,7 @@ vi.mock("@/app/tutor/actions", () => ({
   startTutorSessionAction: vi.fn(),
   submitAnswerAction: vi.fn(),
   advanceSessionAction: vi.fn(),
+  resetTutorSessionAction: vi.fn(),
 }));
 
 function activeState(overrides: Partial<Extract<QuestionStateResult, { status: "active" }>> = {}) {
@@ -168,6 +169,40 @@ describe("TutorClient", () => {
     // Never render internal/diagnostic vocabulary.
     const body = document.body.textContent ?? "";
     expect(body).not.toMatch(/mastery|misconception|difficulty|non_adaptive|condition/i);
+  });
+
+  it("shows a Return to Home link pointing at the root route", async () => {
+    vi.mocked(actions.resumeSessionAction).mockResolvedValue({
+      ok: true,
+      data: { status: "completed", sessionId: "s1", summary: { totalQuestions: 35, correctAnswers: 20, accuracy: 20 / 35 } },
+    });
+    render(<TutorClient />);
+    const homeLink = await screen.findByRole("link", { name: "Return to Home" });
+    expect(homeLink).toHaveAttribute("href", "/");
+  });
+
+  it("Start New Assessment resets the session and returns to the start screen, without erasing the summary before the click", async () => {
+    vi.mocked(actions.resumeSessionAction).mockResolvedValue({
+      ok: true,
+      data: { status: "completed", sessionId: "s1", summary: { totalQuestions: 35, correctAnswers: 20, accuracy: 20 / 35 } },
+    });
+    vi.mocked(actions.resetTutorSessionAction).mockResolvedValue({ ok: true, data: { status: "no_session" } });
+    render(<TutorClient />);
+
+    expect(await screen.findByText("Session complete")).toBeInTheDocument();
+    await userEvent.click(screen.getByRole("button", { name: "Start New Assessment" }));
+    expect(actions.resetTutorSessionAction).toHaveBeenCalledTimes(1);
+    expect(await screen.findByRole("button", { name: "Start" })).toBeInTheDocument();
+  });
+
+  it("does not call resetTutorSessionAction merely from loading the completed screen (no accidental reset)", async () => {
+    vi.mocked(actions.resumeSessionAction).mockResolvedValue({
+      ok: true,
+      data: { status: "completed", sessionId: "s1", summary: { totalQuestions: 35, correctAnswers: 20, accuracy: 20 / 35 } },
+    });
+    render(<TutorClient />);
+    await screen.findByText("Session complete");
+    expect(actions.resetTutorSessionAction).not.toHaveBeenCalled();
   });
 
   it("shows an error message if the resume action fails, without a stack trace", async () => {

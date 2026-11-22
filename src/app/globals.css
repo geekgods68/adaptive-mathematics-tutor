@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Theme is resolved in JS (src/components/shell/ThemeScript.tsx, blocking,
+   runs before paint) to a `.dark` class on <html> -- from an explicit
+   localStorage choice if one exists, otherwise from prefers-color-scheme
+   at load time. All dark: utilities (existing and new) key off that class
+   rather than the media query directly, so a manual override in Settings
+   and the OS default agree everywhere, with no flash of the wrong theme. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,11 +20,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {

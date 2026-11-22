@@ -3,6 +3,16 @@
 This document defines the independent variable of the study precisely.
 Read it before changing anything under `src/tutoring/selection/`.
 
+**Stage 1 update (2026-10-31, docs/research-decisions.md RD-0010):**
+"Same question bank" (first row below) is now a tested invariant for the
+live product's modern comparison (`/practice`), not only a design intent
+— see `tests/tutoring/stage1/sharedQuestionBank.test.ts`. Everything else
+on this page — the policy-level contract for what the non-adaptive
+condition must never do — is unchanged and remains exactly as accurate as
+it always was; `NonAdaptiveSelectionPolicy`
+(`src/tutoring/selection/nonAdaptive/nonAdaptiveSelectionPolicy.ts`)
+itself was not modified by Stage 1 at all.
+
 ## Feature matrix
 
 | Feature                               | Adaptive | Non-Adaptive       |

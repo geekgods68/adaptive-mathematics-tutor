@@ -1,0 +1,727 @@
+{
+  "LABEL": "DETERMINISTIC REPLAY -- per-session selection/coverage/difficulty diagnostics recovered via the pre-existing onRunComplete hook; aggregated here, not a new experiment.",
+  "generatedAt": "2026-11-08T03:43:13.693Z",
+  "sourceCommit": "bde783ae9069f4a2457acae63414105067034456",
+  "pilotWorlds": 5,
+  "slicesUsed": [
+    "CH07",
+    "CH03",
+    "CH10"
+  ],
+  "trackBLearnersPerSlice": 50,
+  "budget": 60,
+  "masterSeed": "RISE-PHASE8-v2",
+  "summary": {
+    "S1": {
+      "C0": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {},
+        "meanCoverageFraction": 1,
+        "neverFullyCoveredCount": 0,
+        "difficultyTotals": {
+          "1": 10750,
+          "2": 10750,
+          "3": 9500,
+          "4": 8000,
+          "5": 6000
+        },
+        "meanDifficultyChangeAfterCorrect": 0.24299107749445173,
+        "meanDifficultyChangeAfterIncorrect": -0.18560281448739344,
+        "attainedCount": 0,
+        "censoredCount": 750,
+        "meanDivertedShare_attained": null,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": null,
+        "meanCoverageFraction_censored": 1,
+        "meanKT_attained": null,
+        "meanKT_censored": 0.3162856406474305
+      },
+      "C1": {
+        "n": 750,
+        "meanDivertedShare": 0.1411777777777773,
+        "meanBacktrackPrecision": 0.977484297891431,
+        "reasonTotals": {
+          "insufficient_evidence": 2808,
+          "progression": 24162,
+          "prerequisite_backtrack": 4844,
+          "remediation": 11638,
+          "diagnostic_probe": 1548
+        },
+        "meanCoverageFraction": 0.5759238095238117,
+        "neverFullyCoveredCount": 706,
+        "difficultyTotals": {
+          "1": 5481,
+          "2": 13935,
+          "3": 13721,
+          "4": 8109,
+          "5": 3754
+        },
+        "meanDifficultyChangeAfterCorrect": 0.3167973737005289,
+        "meanDifficultyChangeAfterIncorrect": -0.27618962272605074,
+        "attainedCount": 0,
+        "censoredCount": 750,
+        "meanDivertedShare_attained": null,
+        "meanDivertedShare_censored": 0.1411777777777773,
+        "meanCoverageFraction_attained": null,
+        "meanCoverageFraction_censored": 0.5759238095238117,
+        "meanKT_attained": null,
+        "meanKT_censored": 0.3162856406474305
+      },
+      "C2": {
+        "n": 750,
+        "meanDivertedShare": 0.14779999999999935,
+        "meanBacktrackPrecision": 0.9762695749440714,
+        "reasonTotals": {
+          "insufficient_evidence": 2877,
+          "progression": 24060,
+          "prerequisite_backtrack": 5029,
+          "remediation": 11369,
+          "diagnostic_probe": 1665
+        },
+        "meanCoverageFraction": 0.5763047619047639,
+        "neverFullyCoveredCount": 702,
+        "difficultyTotals": {
+          "1": 5513,
+          "2": 13957,
+          "3": 13680,
+          "4": 8111,
+          "5": 3739
+        },
+        "meanDifficultyChangeAfterCorrect": 0.29192745214491295,
+        "meanDifficultyChangeAfterIncorrect": -0.25177764858458923,
+        "attainedCount": 0,
+        "censoredCount": 750,
+        "meanDivertedShare_attained": null,
+        "meanDivertedShare_censored": 0.14779999999999935,
+        "meanCoverageFraction_attained": null,
+        "meanCoverageFraction_censored": 0.5763047619047639,
+        "meanKT_attained": null,
+        "meanKT_censored": 0.3162856406474305
+      },
+      "C3": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {
+          "insufficient_evidence": 2920,
+          "progression": 27760,
+          "remediation": 14320
+        },
+        "meanCoverageFraction": 0.716419047619044,
+        "neverFullyCoveredCount": 502,
+        "difficultyTotals": {
+          "1": 5767,
+          "2": 11923,
+          "3": 13790,
+          "4": 9080,
+          "5": 4440
+        },
+        "meanDifficultyChangeAfterCorrect": 0.3133293539648285,
+        "meanDifficultyChangeAfterIncorrect": -0.27488763294913443,
+        "attainedCount": 0,
+        "censoredCount": 750,
+        "meanDivertedShare_attained": null,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": null,
+        "meanCoverageFraction_censored": 0.716419047619044,
+        "meanKT_attained": null,
+        "meanKT_censored": 0.3162856406474305
+      }
+    },
+    "S2": {
+      "C0": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {},
+        "meanCoverageFraction": 1,
+        "neverFullyCoveredCount": 0,
+        "difficultyTotals": {
+          "1": 10750,
+          "2": 10750,
+          "3": 9500,
+          "4": 8000,
+          "5": 6000
+        },
+        "meanDifficultyChangeAfterCorrect": -0.07209360396675348,
+        "meanDifficultyChangeAfterIncorrect": 0.20170191774064253,
+        "attainedCount": 202,
+        "censoredCount": 548,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 1,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.7642335766423354
+      },
+      "C1": {
+        "n": 750,
+        "meanDivertedShare": 0.22348888888888857,
+        "meanBacktrackPrecision": 0.658646142021801,
+        "reasonTotals": {
+          "insufficient_evidence": 7504,
+          "prerequisite_backtrack": 7728,
+          "remediation": 5488,
+          "progression": 20803,
+          "diagnostic_probe": 3477
+        },
+        "meanCoverageFraction": 0.6585142857142879,
+        "neverFullyCoveredCount": 632,
+        "difficultyTotals": {
+          "1": 3287,
+          "2": 16312,
+          "3": 14012,
+          "4": 9048,
+          "5": 2341
+        },
+        "meanDifficultyChangeAfterCorrect": -0.007251503360452776,
+        "meanDifficultyChangeAfterIncorrect": 0.05193992490613267,
+        "attainedCount": 68,
+        "censoredCount": 682,
+        "meanDivertedShare_attained": 0.15465686274509804,
+        "meanDivertedShare_censored": 0.23035190615835746,
+        "meanCoverageFraction_attained": 0.9563025210084033,
+        "meanCoverageFraction_censored": 0.6288227901131147,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.614034352744032
+      },
+      "C2": {
+        "n": 750,
+        "meanDivertedShare": 0.2294222222222216,
+        "meanBacktrackPrecision": 0.6567934591868696,
+        "reasonTotals": {
+          "insufficient_evidence": 7406,
+          "prerequisite_backtrack": 7911,
+          "remediation": 5395,
+          "progression": 20674,
+          "diagnostic_probe": 3614
+        },
+        "meanCoverageFraction": 0.6519238095238116,
+        "neverFullyCoveredCount": 636,
+        "difficultyTotals": {
+          "1": 3470,
+          "2": 16331,
+          "3": 13904,
+          "4": 8911,
+          "5": 2384
+        },
+        "meanDifficultyChangeAfterCorrect": -0.01488095238095238,
+        "meanDifficultyChangeAfterIncorrect": 0.06533133657806064,
+        "attainedCount": 61,
+        "censoredCount": 689,
+        "meanDivertedShare_attained": 0.1524590163934426,
+        "meanDivertedShare_censored": 0.2362360909530717,
+        "meanCoverageFraction_attained": 0.9615925058548009,
+        "meanCoverageFraction_censored": 0.624507567903796,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.6124818577648784
+      },
+      "C3": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {
+          "insufficient_evidence": 8009,
+          "remediation": 8409,
+          "progression": 28582
+        },
+        "meanCoverageFraction": 0.7926857142857102,
+        "neverFullyCoveredCount": 451,
+        "difficultyTotals": {
+          "1": 4376,
+          "2": 13041,
+          "3": 13721,
+          "4": 10520,
+          "5": 3342
+        },
+        "meanDifficultyChangeAfterCorrect": 0.03537981269510926,
+        "meanDifficultyChangeAfterIncorrect": -0.02061000069161076,
+        "attainedCount": 174,
+        "censoredCount": 576,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 0.9779967159277506,
+        "meanCoverageFraction_censored": 0.7367063492063463,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.6698908730158744
+      }
+    },
+    "S3": {
+      "C0": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {},
+        "meanCoverageFraction": 1,
+        "neverFullyCoveredCount": 0,
+        "difficultyTotals": {
+          "1": 10750,
+          "2": 10750,
+          "3": 9500,
+          "4": 8000,
+          "5": 6000
+        },
+        "meanDifficultyChangeAfterCorrect": 0.19066716798262104,
+        "meanDifficultyChangeAfterIncorrect": -0.16314675331068773,
+        "attainedCount": 14,
+        "censoredCount": 736,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 1,
+        "meanKT_attained": 0.9325374197190649,
+        "meanKT_censored": 0.5257105641637793
+      },
+      "C1": {
+        "n": 750,
+        "meanDivertedShare": 0.1260888888888883,
+        "meanBacktrackPrecision": 0.9737444536278708,
+        "reasonTotals": {
+          "insufficient_evidence": 4008,
+          "prerequisite_backtrack": 5092,
+          "remediation": 6741,
+          "progression": 28475,
+          "diagnostic_probe": 684
+        },
+        "meanCoverageFraction": 0.6158476190476228,
+        "neverFullyCoveredCount": 678,
+        "difficultyTotals": {
+          "1": 4865,
+          "2": 14536,
+          "3": 13695,
+          "4": 8311,
+          "5": 3593
+        },
+        "meanDifficultyChangeAfterCorrect": 0.24252091032872983,
+        "meanDifficultyChangeAfterIncorrect": -0.29269344836883254,
+        "attainedCount": 5,
+        "censoredCount": 745,
+        "meanDivertedShare_attained": 0.06000000000000001,
+        "meanDivertedShare_censored": 0.12653243847874662,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 0.6132694151486134,
+        "meanKT_attained": 0.9413184162785401,
+        "meanKT_censored": 0.49354291135956396
+      },
+      "C2": {
+        "n": 750,
+        "meanDivertedShare": 0.13422222222222158,
+        "meanBacktrackPrecision": 0.9741355912490185,
+        "reasonTotals": {
+          "insufficient_evidence": 4129,
+          "prerequisite_backtrack": 5376,
+          "remediation": 6875,
+          "progression": 27857,
+          "diagnostic_probe": 763
+        },
+        "meanCoverageFraction": 0.6104761904761935,
+        "neverFullyCoveredCount": 683,
+        "difficultyTotals": {
+          "1": 4858,
+          "2": 14680,
+          "3": 13666,
+          "4": 8234,
+          "5": 3562
+        },
+        "meanDifficultyChangeAfterCorrect": 0.22314565531234148,
+        "meanDifficultyChangeAfterIncorrect": -0.26636593093818806,
+        "attainedCount": 5,
+        "censoredCount": 745,
+        "meanDivertedShare_attained": 0.06000000000000001,
+        "meanDivertedShare_censored": 0.13472035794183382,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 0.6078619367210001,
+        "meanKT_attained": 0.9418931105864556,
+        "meanKT_censored": 0.4924057393340465
+      },
+      "C3": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {
+          "insufficient_evidence": 4190,
+          "remediation": 8225,
+          "progression": 32585
+        },
+        "meanCoverageFraction": 0.7323047619047584,
+        "neverFullyCoveredCount": 490,
+        "difficultyTotals": {
+          "1": 5316,
+          "2": 12097,
+          "3": 13921,
+          "4": 9408,
+          "5": 4258
+        },
+        "meanDifficultyChangeAfterCorrect": 0.2370718082011095,
+        "meanDifficultyChangeAfterIncorrect": -0.29567476858117253,
+        "attainedCount": 9,
+        "censoredCount": 741,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 0.9841269841269842,
+        "meanCoverageFraction_censored": 0.7292461924040835,
+        "meanKT_attained": 0.933819931416266,
+        "meanKT_censored": 0.5184001039112422
+      }
+    },
+    "S4-GF": {
+      "C0": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {},
+        "meanCoverageFraction": 1,
+        "neverFullyCoveredCount": 0,
+        "difficultyTotals": {
+          "1": 10750,
+          "2": 10750,
+          "3": 9500,
+          "4": 8000,
+          "5": 6000
+        },
+        "meanDifficultyChangeAfterCorrect": 0.1967380876239207,
+        "meanDifficultyChangeAfterIncorrect": -0.06381268565437707,
+        "attainedCount": 13,
+        "censoredCount": 737,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 1,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.23884473735219977
+      },
+      "C1": {
+        "n": 750,
+        "meanDivertedShare": 0.24017777777777732,
+        "meanBacktrackPrecision": 0.6222856350250043,
+        "reasonTotals": {
+          "insufficient_evidence": 4428,
+          "progression": 18891,
+          "prerequisite_backtrack": 7283,
+          "remediation": 10392,
+          "diagnostic_probe": 4006
+        },
+        "meanCoverageFraction": 0.5443809523809554,
+        "neverFullyCoveredCount": 726,
+        "difficultyTotals": {
+          "1": 4615,
+          "2": 14909,
+          "3": 14399,
+          "4": 8046,
+          "5": 3031
+        },
+        "meanDifficultyChangeAfterCorrect": 0.10741322008862629,
+        "meanDifficultyChangeAfterIncorrect": -0.0710174444346055,
+        "attainedCount": 2,
+        "censoredCount": 748,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0.24081996434937564,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 0.5431627196333109,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.27521008403361247
+      },
+      "C2": {
+        "n": 750,
+        "meanDivertedShare": 0.2478888888888884,
+        "meanBacktrackPrecision": 0.6189134057163282,
+        "reasonTotals": {
+          "insufficient_evidence": 4373,
+          "progression": 18987,
+          "prerequisite_backtrack": 7522,
+          "remediation": 10013,
+          "diagnostic_probe": 4105
+        },
+        "meanCoverageFraction": 0.5409904761904792,
+        "neverFullyCoveredCount": 725,
+        "difficultyTotals": {
+          "1": 4749,
+          "2": 14910,
+          "3": 14339,
+          "4": 7975,
+          "5": 3027
+        },
+        "meanDifficultyChangeAfterCorrect": 0.10253217102532171,
+        "meanDifficultyChangeAfterIncorrect": -0.06575391023084762,
+        "attainedCount": 2,
+        "censoredCount": 748,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0.24855169340463412,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 0.5397631779984752,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.27387318563789037
+      },
+      "C3": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {
+          "insufficient_evidence": 4104,
+          "progression": 20837,
+          "remediation": 20059
+        },
+        "meanCoverageFraction": 0.7304761904761872,
+        "neverFullyCoveredCount": 504,
+        "difficultyTotals": {
+          "1": 5709,
+          "2": 12176,
+          "3": 13647,
+          "4": 9236,
+          "5": 4232
+        },
+        "meanDifficultyChangeAfterCorrect": 0.1577199185685203,
+        "meanDifficultyChangeAfterIncorrect": -0.10487023139462164,
+        "attainedCount": 4,
+        "censoredCount": 746,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 0.7290310225967029,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.26097280735350403
+      }
+    },
+    "S4-N": {
+      "C0": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {},
+        "meanCoverageFraction": 1,
+        "neverFullyCoveredCount": 0,
+        "difficultyTotals": {
+          "1": 10750,
+          "2": 10750,
+          "3": 9500,
+          "4": 8000,
+          "5": 6000
+        },
+        "meanDifficultyChangeAfterCorrect": -0.0012939777575715185,
+        "meanDifficultyChangeAfterIncorrect": 0.08220490546755238,
+        "attainedCount": 276,
+        "censoredCount": 474,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 1,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.8001205545509337
+      },
+      "C1": {
+        "n": 750,
+        "meanDivertedShare": 0.1936666666666663,
+        "meanBacktrackPrecision": 0.4994274666564445,
+        "reasonTotals": {
+          "insufficient_evidence": 7812,
+          "progression": 23312,
+          "prerequisite_backtrack": 7277,
+          "remediation": 4329,
+          "diagnostic_probe": 2270
+        },
+        "meanCoverageFraction": 0.687504761904763,
+        "neverFullyCoveredCount": 618,
+        "difficultyTotals": {
+          "1": 2939,
+          "2": 16316,
+          "3": 14251,
+          "4": 9246,
+          "5": 2248
+        },
+        "meanDifficultyChangeAfterCorrect": 0.04408580987994489,
+        "meanDifficultyChangeAfterIncorrect": -0.0507846556233653,
+        "attainedCount": 49,
+        "censoredCount": 701,
+        "meanDivertedShare_attained": 0.18095238095238092,
+        "meanDivertedShare_censored": 0.19455539705183017,
+        "meanCoverageFraction_attained": 0.9842565597667638,
+        "meanCoverageFraction_censored": 0.6667617689015699,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.6162217240676603
+      },
+      "C2": {
+        "n": 750,
+        "meanDivertedShare": 0.196044444444444,
+        "meanBacktrackPrecision": 0.4987252604743342,
+        "reasonTotals": {
+          "insufficient_evidence": 7818,
+          "progression": 23292,
+          "prerequisite_backtrack": 7362,
+          "remediation": 4254,
+          "diagnostic_probe": 2274
+        },
+        "meanCoverageFraction": 0.6852952380952391,
+        "neverFullyCoveredCount": 626,
+        "difficultyTotals": {
+          "1": 3010,
+          "2": 16400,
+          "3": 14183,
+          "4": 9139,
+          "5": 2268
+        },
+        "meanDifficultyChangeAfterCorrect": 0.03704068888450667,
+        "meanDifficultyChangeAfterIncorrect": -0.029947916666666668,
+        "attainedCount": 46,
+        "censoredCount": 704,
+        "meanDivertedShare_attained": 0.17572463768115937,
+        "meanDivertedShare_censored": 0.19737215909090855,
+        "meanCoverageFraction_attained": 0.9801242236024845,
+        "meanCoverageFraction_censored": 0.6660308441558451,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.615137987012989
+      },
+      "C3": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {
+          "insufficient_evidence": 8626,
+          "progression": 30233,
+          "remediation": 6141
+        },
+        "meanCoverageFraction": 0.8098285714285681,
+        "neverFullyCoveredCount": 457,
+        "difficultyTotals": {
+          "1": 3872,
+          "2": 13155,
+          "3": 14132,
+          "4": 10755,
+          "5": 3086
+        },
+        "meanDifficultyChangeAfterCorrect": 0.07321399244539334,
+        "meanDifficultyChangeAfterIncorrect": -0.11184353495110468,
+        "attainedCount": 159,
+        "censoredCount": 591,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 0.9901168014375562,
+        "meanCoverageFraction_censored": 0.7613246313753892,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.6829103214890022
+      }
+    },
+    "S4-GW": {
+      "C0": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {},
+        "meanCoverageFraction": 1,
+        "neverFullyCoveredCount": 0,
+        "difficultyTotals": {
+          "1": 10750,
+          "2": 10750,
+          "3": 9500,
+          "4": 8000,
+          "5": 6000
+        },
+        "meanDifficultyChangeAfterCorrect": 0.08539089736854673,
+        "meanDifficultyChangeAfterIncorrect": -0.023079232980138132,
+        "attainedCount": 12,
+        "censoredCount": 738,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 1,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.4836236933797919
+      },
+      "C1": {
+        "n": 750,
+        "meanDivertedShare": 0.2099555555555556,
+        "meanBacktrackPrecision": 0.45515054854851067,
+        "reasonTotals": {
+          "insufficient_evidence": 5968,
+          "progression": 20612,
+          "prerequisite_backtrack": 6819,
+          "remediation": 7341,
+          "diagnostic_probe": 4260
+        },
+        "meanCoverageFraction": 0.5729142857142878,
+        "neverFullyCoveredCount": 687,
+        "difficultyTotals": {
+          "1": 4078,
+          "2": 14942,
+          "3": 14546,
+          "4": 8584,
+          "5": 2850
+        },
+        "meanDifficultyChangeAfterCorrect": 0.04322713560444412,
+        "meanDifficultyChangeAfterIncorrect": -0.02618936020623389,
+        "attainedCount": 0,
+        "censoredCount": 750,
+        "meanDivertedShare_attained": null,
+        "meanDivertedShare_censored": 0.2099555555555556,
+        "meanCoverageFraction_attained": null,
+        "meanCoverageFraction_censored": 0.5729142857142878,
+        "meanKT_attained": null,
+        "meanKT_censored": 0.40678095238095097
+      },
+      "C2": {
+        "n": 750,
+        "meanDivertedShare": 0.21384444444444428,
+        "meanBacktrackPrecision": 0.4550229770806673,
+        "reasonTotals": {
+          "insufficient_evidence": 5976,
+          "progression": 20582,
+          "prerequisite_backtrack": 6954,
+          "remediation": 7213,
+          "diagnostic_probe": 4275
+        },
+        "meanCoverageFraction": 0.5713523809523834,
+        "neverFullyCoveredCount": 689,
+        "difficultyTotals": {
+          "1": 4153,
+          "2": 14987,
+          "3": 14476,
+          "4": 8514,
+          "5": 2870
+        },
+        "meanDifficultyChangeAfterCorrect": 0.03293104717050556,
+        "meanDifficultyChangeAfterIncorrect": -0.0076148078725398315,
+        "attainedCount": 1,
+        "censoredCount": 749,
+        "meanDivertedShare_attained": 0.1,
+        "meanDivertedShare_censored": 0.2139964396973741,
+        "meanCoverageFraction_attained": 1,
+        "meanCoverageFraction_censored": 0.5707800877360314,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.4043868014495505
+      },
+      "C3": {
+        "n": 750,
+        "meanDivertedShare": 0,
+        "meanBacktrackPrecision": null,
+        "reasonTotals": {
+          "insufficient_evidence": 6091,
+          "progression": 25680,
+          "remediation": 13229
+        },
+        "meanCoverageFraction": 0.7219428571428538,
+        "neverFullyCoveredCount": 511,
+        "difficultyTotals": {
+          "1": 5472,
+          "2": 12170,
+          "3": 13715,
+          "4": 9497,
+          "5": 4146
+        },
+        "meanDifficultyChangeAfterCorrect": 0.08462049818167598,
+        "meanDifficultyChangeAfterIncorrect": -0.0928950045510521,
+        "attainedCount": 10,
+        "censoredCount": 740,
+        "meanDivertedShare_attained": 0,
+        "meanDivertedShare_censored": 0,
+        "meanCoverageFraction_attained": 0.9857142857142858,
+        "meanCoverageFraction_censored": 0.7183783783783749,
+        "meanKT_attained": 1,
+        "meanKT_censored": 0.43509652509652397
+      }
+    }
+  },
+  "totalRuns": 18000,
+  "failureCount": 0,
+  "wallClockMs": 224156
+}

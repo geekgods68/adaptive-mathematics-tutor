@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
+import Link from "next/link";
 import {
   advanceSessionAction,
+  resetTutorSessionAction,
   resumeSessionAction,
   startTutorSessionAction,
   submitAnswerAction,
@@ -86,6 +88,15 @@ export default function TutorClient() {
     });
   }
 
+  /** Explicit, user-initiated reset from the completion screen only — never called automatically, so simply navigating away and back (e.g. via Home) never loses a completed session's results. */
+  function handleStartNew() {
+    if (isPending) return;
+    startTransition(async () => {
+      await resetTutorSessionAction();
+      setView({ kind: "start" });
+    });
+  }
+
   if (view.kind === "loading") {
     return <StatusMessage>Loading…</StatusMessage>;
   }
@@ -126,14 +137,33 @@ export default function TutorClient() {
   if (view.kind === "completed") {
     const { summary } = view.data;
     return (
-      <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">Session complete</h1>
-        <p className="text-lg text-zinc-700 dark:text-zinc-300">
-          You answered {summary.correctAnswers} of {summary.totalQuestions} questions correctly.
-        </p>
-        <p className="text-base text-zinc-500 dark:text-zinc-400">
-          Accuracy: {(summary.accuracy * 100).toFixed(1)}%
-        </p>
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">Session complete</h1>
+          <p className="text-lg text-zinc-700 dark:text-zinc-300">
+            You answered {summary.correctAnswers} of {summary.totalQuestions} questions correctly.
+          </p>
+          <p className="text-base text-zinc-500 dark:text-zinc-400">
+            Accuracy: {(summary.accuracy * 100).toFixed(1)}%
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/"
+            className="rounded-lg bg-black px-5 py-3 text-base font-medium text-white transition-colors hover:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black dark:bg-zinc-50 dark:text-black dark:hover:bg-zinc-200"
+          >
+            Return to Home
+          </Link>
+          <button
+            type="button"
+            onClick={handleStartNew}
+            disabled={isPending}
+            className="rounded-lg border border-zinc-300 px-5 py-3 text-base font-medium text-black transition-colors hover:border-black disabled:opacity-50 dark:border-zinc-700 dark:text-zinc-50 dark:hover:border-zinc-50"
+          >
+            {isPending ? "Starting…" : "Start New Assessment"}
+          </button>
+        </div>
       </div>
     );
   }

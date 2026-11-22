@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
+import Link from "next/link";
 import {
   advanceAdaptiveSessionAction,
   listChaptersAction,
+  resetAdaptiveSessionAction,
   resumeAdaptiveSessionAction,
   startAdaptiveSessionAction,
   submitAdaptiveAnswerAction,
@@ -12,6 +14,9 @@ import type { AdaptiveQuestionStateResult } from "@/app/adaptive-tutor/actionTyp
 import type { ChapterOption } from "@/tutoring/adaptiveSession/curriculum";
 import type { AdaptiveSessionSummary } from "@/tutoring/adaptiveSession/summary";
 import MathText from "@/components/MathText";
+import { getOrCreateParticipantId } from "@/lib/studentIdentity";
+import { resolveAuthoritativeMastery } from "@/lib/masteryAuthority";
+import { readSeenQuestionIds, recordSeenQuestionIds } from "@/lib/studentQuestionHistory";
 
 type ViewState =
   | { kind: "loading" }
@@ -46,13 +51,25 @@ export default function AdaptiveTutorClient() {
       setView({ kind: "completed", data });
       return;
     }
+    // Stage 3 (F-01 fix): share the SAME cross-session "already seen" tracking /practice uses,
+    // via the same shared src/lib/studentQuestionHistory.ts module — not a second implementation.
+    recordSeenQuestionIds([data.question.questionId]);
     setSelectedOptionId(null);
     setView({ kind: "question", data });
   }
 
   function handleStart() {
     startTransition(async () => {
-      const result = await startAdaptiveSessionAction(selectedChapterId);
+      // Stage 3 Priority 2/F-01: this route shares the exact same underlying session service and
+      // cookie as /practice's adaptive mode (@/app/adaptive-tutor/actions) — it must therefore also
+      // participate in the SAME single-authority mastery mechanism (src/lib/masteryAuthority.ts),
+      // using the SAME participant id (src/lib/studentIdentity.ts), rather than cold-starting every
+      // time and never contributing to or benefiting from a student's durable mastery record. This
+      // reuses the existing shared modules rather than duplicating the continuity implementation.
+      const participantId = getOrCreateParticipantId();
+      const mastery = await resolveAuthoritativeMastery();
+      const seenQuestionIds = readSeenQuestionIds();
+      const result = await startAdaptiveSessionAction(selectedChapterId, mastery.states, seenQuestionIds, participantId);
       if (!result.ok) {
         setView({ kind: "error", message: result.error });
         return;
@@ -84,6 +101,17 @@ export default function AdaptiveTutorClient() {
         return;
       }
       applyQuestionState(result.data);
+    });
+  }
+
+  /** Explicit, user-initiated reset from the completion screen only — never called automatically, so simply navigating away and back (e.g. via Home) never loses a completed session's results. */
+  function handleStartNew() {
+    if (isPending) return;
+    startTransition(async () => {
+      await resetAdaptiveSessionAction();
+      const chaptersResult = await listChaptersAction();
+      setSelectedChapterId(undefined);
+      setView({ kind: "start", chapters: chaptersResult.ok ? chaptersResult.data.chapters : [] });
     });
   }
 
@@ -139,7 +167,7 @@ export default function AdaptiveTutorClient() {
   }
 
   if (view.kind === "completed") {
-    return <CompletedView summary={view.data.summary} />;
+    return <CompletedView summary={view.data.summary} onStartNew={handleStartNew} isPending={isPending} />;
   }
 
   // view.kind === "question"
@@ -247,7 +275,15 @@ export default function AdaptiveTutorClient() {
   );
 }
 
-function CompletedView({ summary }: { summary: AdaptiveSessionSummary }) {
+function CompletedView({
+  summary,
+  onStartNew,
+  isPending,
+}: {
+  summary: AdaptiveSessionSummary;
+  onStartNew: () => void;
+  isPending: boolean;
+}) {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
@@ -258,7 +294,30 @@ function CompletedView({ summary }: { summary: AdaptiveSessionSummary }) {
         <p className="text-base text-zinc-500 dark:text-zinc-400">Accuracy: {(summary.accuracy * 100).toFixed(1)}%</p>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-wrap gap-3">
+        <Link
+          href="/"
+          className="rounded-lg bg-black px-5 py-3 text-base font-medium text-white transition-colors hover:bg-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black dark:bg-zinc-50 dark:text-black dark:hover:bg-zinc-200"
+        >
+          Return to Home
+        </Link>
+        <button
+          type="button"
+          onClick={onStartNew}
+          disabled={isPending}
+          className="rounded-lg border border-zinc-300 px-5 py-3 text-base font-medium text-black transition-colors hover:border-black disabled:opacity-50 dark:border-zinc-700 dark:text-zinc-50 dark:hover:border-zinc-50"
+        >
+          {isPending ? "Starting…" : "Start New Assessment"}
+        </button>
+        <a
+          href="#results-summary"
+          className="rounded-lg border border-zinc-300 px-5 py-3 text-base font-medium text-black transition-colors hover:border-black dark:border-zinc-700 dark:text-zinc-50 dark:hover:border-zinc-50"
+        >
+          Review Results
+        </a>
+      </div>
+
+      <div id="results-summary" className="flex flex-col gap-3 scroll-mt-4">
         <h2 className="text-lg font-semibold text-black dark:text-zinc-50">Estimated mastery by concept</h2>
         <p className="text-sm text-zinc-500 dark:text-zinc-400">
           These are model estimates produced by a deterministic formula, not empirically calibrated measurements of what you

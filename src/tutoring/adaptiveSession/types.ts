@@ -18,4 +18,14 @@ export interface ActiveAdaptiveSession {
   startedAt: string;
   completedAt?: string;
   experimentState: ExperimentSessionState;
+  /**
+   * Cross-session "already seen" question ids (oldest-first), supplied by
+   * the student-facing orchestration layer at session start and carried
+   * unchanged for the session's lifetime. Rebuilt into the same
+   * studentSelectionAdapter.ts wrapper on every `buildAdaptiveConfig()`
+   * call (start/submit/advance/summary) so the cross-session preference
+   * is consistent throughout. Never read or written by Phase 5's engine
+   * itself — purely a student-facing addition.
+   */
+  seenQuestionIdsOldestFirst: readonly string[];
 }

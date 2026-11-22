@@ -1,4 +1,4 @@
-import type { Question } from "@/domain/questions/types";
+import type { DifficultyLevel, Question } from "@/domain/questions/types";
 import type { GradingResult } from "@/tutoring/grading/grade";
 import { buildFeedback, type FeedbackPayload } from "@/tutoring/feedback/feedback";
 import { seededShuffle } from "@/tutoring/session/optionOrder";
@@ -30,13 +30,17 @@ export type PublicAdaptiveQuestionView = {
   selectionExplanation: string;
 };
 
-export function toPublicAdaptiveQuestionView(question: Question, trace: AdaptiveSelectionTrace): PublicAdaptiveQuestionView {
+export function toPublicAdaptiveQuestionView(
+  question: Question,
+  trace: AdaptiveSelectionTrace,
+  previousDifficulty?: DifficultyLevel | null,
+): PublicAdaptiveQuestionView {
   const displayOrder = seededShuffle(question.options, question.id);
   return {
     questionId: question.id,
     stem: question.stem,
     options: displayOrder.map((o) => ({ id: o.id, display: o.display })),
-    selectionExplanation: explainSelection(trace),
+    selectionExplanation: explainSelection(trace, previousDifficulty),
   };
 }
 

@@ -1,0 +1,295 @@
+provenance,track,family,condition,world,attempted,completed,failed,notes
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S1,n/a,1,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S1,n/a,2,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S1,n/a,3,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S1,n/a,4,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S1,n/a,5,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S2,n/a,1,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S2,n/a,2,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S2,n/a,3,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S2,n/a,4,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S2,n/a,5,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S3,n/a,1,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S3,n/a,2,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S3,n/a,3,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S3,n/a,4,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S3,n/a,5,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S4-ref,n/a,1,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S4-ref,n/a,2,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S4-ref,n/a,3,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S4-ref,n/a,4,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackA,S4-ref,n/a,5,3,3,0,context-level; per-context failures not separately itemized in stored report (global failureCount=0 for entire pilot)
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C0,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C0,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C0,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C0,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C0,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C2,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C2,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C2,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C2,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C2,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C3,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C3,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C3,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C3,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S1,C3,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C0,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C0,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C0,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C0,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C0,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C2,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C2,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C2,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C2,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C2,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C3,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C3,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C3,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C3,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S2,C3,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C0,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C0,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C0,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C0,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C0,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C2,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C2,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C2,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C2,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C2,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C3,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C3,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C3,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C3,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S3,C3,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C0,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C0,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C0,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C0,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C0,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C2,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C2,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C2,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C2,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C2,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C3,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C3,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C3,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C3,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GF,C3,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C0,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C0,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C0,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C0,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C0,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C2,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C2,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C2,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C2,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C2,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C3,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C3,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C3,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C3,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-N,C3,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C0,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C0,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C0,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C0,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C0,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C2,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C2,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C2,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C2,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C2,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C3,1,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C3,2,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C3,3,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C3,4,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-8C-PILOT-2026-10-27,TrackB,S4-GW,C3,5,150,150,0,"failureCount=0 is per-family-config total across all worlds/conditions, not separable by world/condition in the stored report"
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S1,n/a,1,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S1,n/a,2,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S1,n/a,3,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S1,n/a,4,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S1,n/a,5,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S2,n/a,1,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S2,n/a,2,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S2,n/a,3,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S2,n/a,4,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S2,n/a,5,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S3,n/a,1,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S3,n/a,2,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S3,n/a,3,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S3,n/a,4,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S3,n/a,5,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S4-ref,n/a,1,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S4-ref,n/a,2,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S4-ref,n/a,3,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S4-ref,n/a,4,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackA,S4-ref,n/a,5,3,3,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C0,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C0,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C0,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C0,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C0,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C2,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C2,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C2,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C2,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C2,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C3,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C3,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C3,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C3,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S1,C3,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C0,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C0,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C0,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C0,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C0,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C2,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C2,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C2,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C2,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C2,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C3,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C3,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C3,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C3,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S2,C3,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C0,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C0,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C0,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C0,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C0,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C2,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C2,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C2,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C2,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C2,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C3,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C3,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C3,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C3,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S3,C3,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C0,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C0,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C0,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C0,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C0,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C2,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C2,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C2,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C2,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C2,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C3,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C3,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C3,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C3,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GF,C3,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C0,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C0,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C0,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C0,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C0,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C2,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C2,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C2,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C2,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C2,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C3,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C3,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C3,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C3,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-N,C3,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C0,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C0,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C0,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C0,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C0,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C2,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C2,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C2,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C2,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C2,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C3,1,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C3,2,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C3,3,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C3,4,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+HISTORICAL-THREE-METRIC-PILOT-2026-11-04,TrackB,S4-GW,C3,5,150,150,0,SAME worlds/slices as 8C-Pilot -- not independent
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S1,C1,1,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S1,C1,2,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S1,C1,3,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S1,C1,4,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S1,C1,5,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S2,C1,1,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S2,C1,2,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S2,C1,3,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S2,C1,4,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S2,C1,5,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S3,C1,1,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S3,C1,2,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S3,C1,3,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S3,C1,4,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S3,C1,5,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GF,C1,1,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GF,C1,2,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GF,C1,3,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GF,C1,4,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GF,C1,5,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-N,C1,1,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-N,C1,2,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-N,C1,3,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-N,C1,4,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-N,C1,5,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GW,C1,1,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GW,C1,2,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GW,C1,3,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GW,C1,4,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-EXPLORATORY-COMPLETION-2026-11-08-NOT-CONFIRMATORY,TrackB,S4-GW,C1,5,150,150,0,Single retrospective fill-in of the missing C1 cell; reuses the SAME masterSeed/worlds/slices as both historical pilots
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S1,n/a,1,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S1,n/a,2,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S1,n/a,3,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S1,n/a,4,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S1,n/a,5,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S2,n/a,1,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S2,n/a,2,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S2,n/a,3,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S2,n/a,4,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S2,n/a,5,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S3,n/a,1,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S3,n/a,2,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S3,n/a,3,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S3,n/a,4,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S3,n/a,5,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S4-ref,n/a,1,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S4-ref,n/a,2,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S4-ref,n/a,3,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S4-ref,n/a,4,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DETERMINISTIC-REPLAY-2026-11-08,TrackA,S4-ref,n/a,5,3,3,0,"Deterministic replay of 8C-Pilot's own Track-A contexts, retaining det-b rows"
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S1,C0,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S1,C1,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S1,C2,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S1,C3,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S2,C0,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S2,C1,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S2,C2,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S2,C3,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S3,C0,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S3,C1,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S3,C2,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S3,C3,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-GF,C0,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-GF,C1,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-GF,C2,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-GF,C3,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-N,C0,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-N,C1,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-N,C2,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-N,C3,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-GW,C0,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-GW,C1,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-GW,C2,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)
+RETROSPECTIVE-DIAGNOSTICS-REPLAY-2026-11-08,TrackB,S4-GW,C3,pooled(1-5),750,750,0,Deterministic replay via pre-existing onRunComplete hook; pooled across worlds in the stored summary (per-world not separately retained in this artifact)

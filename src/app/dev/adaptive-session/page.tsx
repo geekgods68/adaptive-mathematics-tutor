@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import * as adaptiveSessionService from "@/tutoring/adaptiveSession/service";
 import { AdaptiveSessionError } from "@/tutoring/adaptiveSession/errors";
 import DevAdaptiveSessionClient from "@/app/dev/adaptive-session/dev-adaptive-session-client";
+import NavHeader from "@/components/NavHeader";
 
 export default async function DevAdaptiveSessionPage() {
   const cookieStore = await cookies();
@@ -47,8 +48,9 @@ export default async function DevAdaptiveSessionPage() {
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-full bg-zinc-50 px-6 py-10 font-mono text-sm dark:bg-black">
-      <div className="mx-auto max-w-4xl">
+    <div className="min-h-full bg-zinc-50 font-mono text-sm dark:bg-black">
+      <NavHeader current="dev-adaptive-session" />
+      <div className="mx-auto max-w-4xl px-6 py-10">
         <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-amber-600 dark:text-amber-400">
           Development/researcher-only diagnostic view — not part of the student tutor. Shows the complete numerical decision
           traces (Phase 3 mastery updates, Phase 4 selection decisions) behind the simplified explanations shown at

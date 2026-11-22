@@ -27,14 +27,26 @@ describe("explainSelection — every reason maps to a distinct, honest, plain-la
     expect(explainSelection(trace({ reason: "insufficient_evidence" }))).toMatch(/see where you're at/);
   });
 
-  it("progression with low evidence/difficulty reads as ordinary continuation", () => {
-    const result = explainSelection(trace({ reason: "progression" }, { evidenceCount: 1, difficulty: 2 }));
+  it("progression with no previous difficulty on record (e.g. the first question) never claims a difficulty change", () => {
+    const result = explainSelection(trace({ reason: "progression" }, { evidenceCount: 5, difficulty: 4 }));
     expect(result).toMatch(/continuing to practise/i);
   });
 
-  it("progression with strong evidence and high difficulty reads as 'moving to a harder question'", () => {
-    const result = explainSelection(trace({ reason: "progression" }, { evidenceCount: 5, difficulty: 4 }));
+  it("progression where current difficulty EQUALS the previous recorded difficulty never claims 'harder' (Stage 3 fix — F-0x absolute-state bug)", () => {
+    const result = explainSelection(trace({ reason: "progression" }, { evidenceCount: 5, difficulty: 4 }), 4);
+    expect(result).toMatch(/continuing to practise/i);
+    expect(result).not.toMatch(/harder/i);
+  });
+
+  it("progression where current difficulty is strictly GREATER than the previous recorded difficulty reads as 'moving to a harder question'", () => {
+    const result = explainSelection(trace({ reason: "progression" }, { evidenceCount: 5, difficulty: 4 }), 2);
     expect(result).toMatch(/harder question after consistent success/i);
+  });
+
+  it("progression where current difficulty is strictly LESS than the previous recorded difficulty reads as 'moving to an easier question', never 'harder'", () => {
+    const result = explainSelection(trace({ reason: "progression" }, { evidenceCount: 5, difficulty: 2 }), 4);
+    expect(result).toMatch(/easier question/i);
+    expect(result).not.toMatch(/harder/i);
   });
 
   it("remediation", () => {

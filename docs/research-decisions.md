@@ -1214,3 +1214,174 @@ Full suite: **686/686 tests**, typecheck clean, lint clean, both audits
 and the production build unchanged. Phase 5/6 remain fully headless and
 functional; this phase stops at the scientific approval gate — Phase 8B
 (the actual simulator/BKT/metrics/protocol) is not started.
+
+---
+
+### RD-0010
+
+**Date:** 2026-10-31
+
+**Decision:** "Stage 1" — remediated Finding F-02 from the October 29,
+2026 read-only system audit (`docs/system-audit/FINDINGS_REGISTER.md`):
+the live `/practice` page's adaptive and non-adaptive modes drew from two
+disjoint question banks (RISE for adaptive, the original 161-question
+quadratics bank for non-adaptive via the legacy `/tutor` engine),
+contradicting `docs/research-design.md`'s own stated requirement that the
+two conditions share a question bank, with selection policy as the one
+deliberate difference. Built a new non-adaptive condition that runs over
+the SAME canonical RISE bank, wired `/practice`'s non-adaptive mode to
+it, and left the legacy bank/engine/route (`src/domain/questions/`,
+`src/tutoring/session/`, `/tutor`) completely untouched as an explicitly
+preserved legacy artifact.
+
+**Why RISE is now the canonical bank for the live comparison, not the
+original 161-question bank:** the adaptive condition had already moved
+to RISE for sound, independently-documented reasons (RD-0001: the
+original bank's own tests assert tight size ranges that RISE's scale
+would break; RD-0002: RISE is externally pre-validated for referential
+integrity). Moving the adaptive condition BACK to the 161-question bank
+was rejected — it would have discarded RD-0001/RD-0002's reasoning and
+shrunk the live product's curriculum coverage from 14 chapters back to
+quadratics only, a regression Stage 1's brief explicitly did not ask for
+("The existing 1,840-question... dataset is the primary curriculum for
+future development"). Moving the non-adaptive condition TO RISE was the
+only direction that both resolved the confound and matched the explicit
+Stage 1 decision ("RISE_QUESTIONS... canonical question bank").
+
+**How the fix was built — reusing, not replacing, existing tested code:**
+- `src/tutoring/nonAdaptiveRiseSession/` (new): a non-adaptive session
+  engine parallel to `src/tutoring/adaptiveSession/`, built on three
+  pieces of ALREADY-EXISTING, UNMODIFIED infrastructure: the Phase 5
+  session engine (`startExperimentSession`/`recordExperimentResponse`/
+  `advanceExperimentSession`), the ALREADY-REGISTERED condition `C0`
+  (`EXPERIMENT_CONDITIONS.C0` — null estimator + `NonAdaptiveSelectionPolicy`,
+  present since Phase 5/RD-0006 but never previously wired into a live
+  product route), and the legacy condition's own bank-agnostic
+  `gradeAnswer`/`toPublicQuestionView`/`toPublicFeedbackView`
+  (`src/tutoring/session/publicViews.ts`) — these were already generic
+  over `Question`, and RISE questions ARE `Question` objects (RD-0001),
+  so zero changes were needed to use them against the new bank.
+- `src/tutoring/selection/nonAdaptive/riseSequence.ts` (new): the one
+  genuinely new algorithm — a deterministic, concept-balanced
+  predetermined-sequence builder for RISE, feeding the EXISTING,
+  UNMODIFIED `NonAdaptiveSelectionPolicy` via its existing
+  `predeterminedSequence` field. `NonAdaptiveSelectionPolicy` itself
+  needed no change at all: it was already bank-agnostic (an index into a
+  caller-supplied `string[]`), so the new, larger bank required a new
+  sequence BUILDER, not a new selection POLICY. Modeled on the existing
+  hand-authored `NON_ADAPTIVE_STUDY_SEQUENCE`'s own design goals
+  (concept-balanced, difficulty-varied-but-controlled) and structurally
+  similar to Phase 8's own `c0Slice.ts` (confirming this shape of
+  sequence-builder was already an established, working pattern for a
+  non-adaptive RISE condition) — but implemented independently, using
+  this codebase's existing `seededShuffle` utility
+  (`src/tutoring/session/optionOrder.ts`) rather than Phase 8's
+  research-only RNG internals, to avoid coupling the live product to
+  Phase 8 infrastructure.
+- `src/domain/rise/curriculum.ts` (new): `buildAdaptiveCurriculumOrder`/
+  `listAvailableChapters`/`CHAPTER_TITLES` relocated here, unchanged, from
+  `src/tutoring/adaptiveSession/curriculum.ts` (which now re-exports them)
+  — the "shared question-bank access layer" the Stage 1 brief asked for,
+  so the non-adaptive condition's sequence builder does not import from a
+  module named for the other condition. No behavior changed; every
+  existing import of the old path still resolves identically.
+- `getExperimentProvenance` (new, additive export on BOTH
+  `adaptiveSession/service.ts` and the new `nonAdaptiveRiseSession/service.ts`):
+  both now expose the SAME canonical `ExperimentProvenance` record shape
+  (already defined, unmodified, in `src/research/experiment/provenance.ts`
+  since Phase 6/RD-0007) for a live session — the "shared research-data
+  contract" the Stage 1 brief's Part 8 asked for, scoped deliberately to
+  an INTERFACE guarantee (both conditions produce a directly-comparable
+  record, verified by `questionBankVersion.contentHash` equality in
+  `tests/tutoring/stage1/sharedQuestionBank.test.ts`), not durable
+  persistence — persistence remains explicitly Stage 2's job (see
+  "Stage 2 readiness" in `docs/stage1-experimental-validity-report.md`).
+- `src/research/experiment/conditionRegistry.ts` (new, additive): a
+  documented, programmatically-validated metadata table over the
+  EXISTING, UNMODIFIED `EXPERIMENT_CONDITIONS` registry
+  (`conditions.ts`) — `validateConditionRegistry()` cross-checks the
+  metadata against what each condition's real `build()` output actually
+  produces, so the two can never silently drift apart.
+- `scripts/audit-rise-questions.ts` (new): a RISE-bank counterpart to
+  `scripts/audit-questions.ts` (Finding F-10), reusing the SAME generic
+  validators the original script uses (`validateDomainModel`,
+  `validateQuestionBank`, `computeBankStatistics`,
+  `findDuplicateStemGroups`/`findDuplicateOptionSetGroups`,
+  `findConceptGraphCycles`) plus two new RISE-specific checks
+  (`conceptWeights` internal consistency; question/concept chapter
+  consistency). Run against the real bank: **zero structural errors**.
+  Per-question mathematical re-derivation (the original bank's
+  `tests/helpers/quadratics.ts` pattern) is NOT ported to RISE's broader
+  domain in Stage 1 — recorded as an explicit residual limitation, not
+  silently skipped.
+
+**What was deliberately NOT done (Part 9 preservation list, all
+verified still true after this work):** `src/domain/learner-model/`,
+`src/tutoring/selection/adaptive/`, `src/research/phase8/`,
+`data/question-bank/*.csv`, `conditions.ts`'s `EXPERIMENT_CONDITIONS`
+object, Phase 6's `provenance.ts`/hashing functions, and the already-
+tested session-continuity fix in `src/app/practice/PracticeClient.tsx`
+were not modified in any way that changes their behavior (only additive
+imports/wiring were added to `PracticeClient.tsx`, `DashboardClient.tsx`,
+and `adaptiveSession/service.ts`'s own new `getExperimentProvenance`
+export — every PRE-EXISTING exported function in that file keeps its
+exact prior signature and behavior). The legacy `/tutor` route,
+`src/tutoring/session/`, and `src/domain/questions/` (the original
+161-question bank) were not touched at all. No protocol approval gate
+was created or bypassed; no confirmatory Phase 8 run was executed.
+
+**Phase 8 compatibility (Part 6.3 of the Stage 1 brief):** verified, not
+assumed — `src/research/phase8/pipeline/pilot.ts` (the only currently-
+executed Phase 8 orchestrator) already passes `RISE_QUESTIONS`/
+`RISE_CONCEPTS` into BOTH Track A and Track B for every condition
+including `C0` (via `src/research/phase8/trackB/c0Slice.ts`, which
+explicitly documents reusing the unmodified
+`createNonAdaptiveSelectionAdapter`). Phase 8 was never affected by the
+F-02 confound — it already ran its non-adaptive control over the same
+bank as its adaptive conditions, before Stage 1 existed. F-02 was
+strictly a LIVE-PRODUCT-level defect (the two real tutoring routes), not
+a Phase 8 methodology defect.
+
+**Alternatives considered:** (a) Generalize
+`src/tutoring/adaptiveSession/service.ts` itself to branch on condition
+id internally — rejected: that file was the most recently and heavily
+tested file in the repository (the session-continuity fix), and adding a
+second condition's control flow into it would have increased regression
+risk for no benefit over a small, separate, parallel module reusing the
+same underlying Phase 5 engine. (b) Reuse `src/tutoring/session/service.ts`
+(the legacy bespoke, pre-Phase-5 engine) for the new RISE-based
+non-adaptive condition instead of going through Phase 5 — rejected: it
+predates Phase 5 and has its own bespoke `ActiveTutorSession` state shape
+with no `ExperimentProvenance`-equivalent, which would have reintroduced
+exactly the "two non-interoperable logging schemas" half of Finding F-02
+even after fixing the bank half. (c) Enable chapter selection in the
+non-adaptive mode's UI, now that the backend supports it — deferred: the
+Stage 1 brief (Part 5.1) explicitly reserves broader UI consolidation for
+Stage 3; the dropdown's disabled-for-non-adaptive state was kept, with
+its explanatory copy corrected to describe this as a product-scope
+choice rather than (as it previously, now-inaccurately, said) a technical
+limitation. (d) Hand-author a RISE-scale predetermined sequence the way
+the original 161-question bank's sequence was hand-authored — rejected
+as impractical at 1,840 questions/109 concepts and not responsive to
+arbitrary chapter selection; a deterministic programmatic builder was
+chosen instead and documented as a new, explicit design decision (no
+existing protocol document specified a RISE-scale non-adaptive policy).
+
+**Consequences:** `/practice`'s non-adaptive mode now presents different
+question content and a shorter default session (20 questions, matching
+the adaptive condition, versus the legacy bank's fixed 35) than before
+this change — a real, user-visible behavior change, not merely internal
+refactoring. The legacy `/tutor` route is unaffected and remains the only
+way to experience the original 35-question quadratics sequence. A new
+session cookie (`nonAdaptiveRiseSessionId`) was introduced, distinct from
+both `tutorSessionId` and `adaptiveTutorSessionId` — no session record
+from any condition can be confused with another's.
+
+**Status:** Implemented and tested. See
+[`stage1-experimental-validity-report.md`](stage1-experimental-validity-report.md)
+for the full verification run, completion-criteria checklist, and
+residual limitations (notably: no durable persistence yet — Stage 2;
+RISE content itself remains independently-unreviewed per its own
+disclosed metadata — unaffected by Stage 1; the non-adaptive UI's topic
+scope is still "Across All Topics" only, by deliberate Stage-3 deferral,
+not a backend limitation).

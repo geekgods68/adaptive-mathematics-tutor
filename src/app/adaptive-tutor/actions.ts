@@ -6,7 +6,7 @@ import { AdaptiveSessionError } from "@/tutoring/adaptiveSession/errors";
 import { buildAdaptiveFeedback } from "@/tutoring/adaptiveSession/publicViews";
 import { listAvailableChapters } from "@/tutoring/adaptiveSession/curriculum";
 import { gradeAnswer } from "@/tutoring/grading/grade";
-import type { AdaptiveActionResult, AdaptiveQuestionStateResult, AdaptiveResumeResult, ChaptersResult } from "@/app/adaptive-tutor/actionTypes";
+import type { AdaptiveActionResult, AdaptiveQuestionStateResult, AdaptiveResumeResult, ChaptersResult, CurrentMasteryStateResult } from "@/app/adaptive-tutor/actionTypes";
 
 /**
  * Thin transport layer only — identical responsibility split to
@@ -26,7 +26,12 @@ function buildQuestionState(sessionId: string): AdaptiveQuestionStateResult {
   const session = adaptiveSessionService.getSession(sessionId);
 
   if (session.experimentState.status === "terminated") {
-    return { status: "completed", sessionId, summary: adaptiveSessionService.getAdaptiveSessionSummary(sessionId) };
+    return {
+      status: "completed",
+      sessionId,
+      summary: adaptiveSessionService.getAdaptiveSessionSummary(sessionId),
+      persistableMasteryStates: adaptiveSessionService.getPersistableMasteryStates(sessionId),
+    };
   }
 
   const question = adaptiveSessionService.getCurrentQuestion(sessionId);
@@ -76,13 +81,65 @@ export async function listChaptersAction(): Promise<AdaptiveActionResult<Chapter
   }
 }
 
-/** Starts a brand-new adaptive session for the chosen chapter (or every chapter, if omitted) and remembers it in a cookie. */
-export async function startAdaptiveSessionAction(chapterId?: string): Promise<AdaptiveActionResult<AdaptiveQuestionStateResult>> {
+/** Exposes the UI-level session-length constant (service.ts's own doc comment: "NOT a Phase 3/4 model parameter") to client components that can't import service.ts directly (it transitively pulls in the RISE data loader, which uses `fs` and is server-only). */
+export async function getMaxQuestionsAction(): Promise<AdaptiveActionResult<{ maxQuestions: number }>> {
+  return { ok: true, data: { maxQuestions: adaptiveSessionService.ADAPTIVE_SESSION_MAX_QUESTIONS } };
+}
+
+/**
+ * Starts a brand-new adaptive session for the chosen chapter (or every
+ * chapter, if omitted) and remembers it in a cookie.
+ *
+ * `priorEstimatorStates` and `seenQuestionIdsOldestFirst` are optional,
+ * client-supplied continuity inputs — a student's own persisted mastery
+ * snapshot (from a prior session's `persistableMasteryStates`) and
+ * previously-encountered question ids. Omitting both is a pure cold
+ * start, unchanged from this action's original behavior. Untrusted
+ * client input either way: validated defensively in
+ * `reconstructMasteryStatesForSession` (service.ts), never trusted as-is.
+ */
+export async function startAdaptiveSessionAction(
+  chapterId?: string,
+  priorEstimatorStates?: unknown,
+  seenQuestionIdsOldestFirst?: readonly string[],
+  participantId?: string,
+): Promise<AdaptiveActionResult<AdaptiveQuestionStateResult>> {
   try {
-    const session = adaptiveSessionService.startAdaptiveSession(chapterId);
+    const session = adaptiveSessionService.startAdaptiveSession(chapterId, participantId, priorEstimatorStates, seenQuestionIdsOldestFirst ?? []);
     const cookieStore = await cookies();
     cookieStore.set(SESSION_COOKIE, session.id, { path: "/", httpOnly: true, sameSite: "lax" });
     return { ok: true, data: buildQuestionState(session.id) };
+  } catch (err) {
+    return { ok: false, error: errorMessage(err) };
+  }
+}
+
+/**
+ * Stage 3 Priority 2 — the authoritative-mastery lookup. `participantId`
+ * is a client-generated, PSEUDONYMOUS, per-browser identifier
+ * (`src/lib/studentIdentity.ts`) — not an authenticated account; see that
+ * module's doc comment for why this does not introduce a real
+ * multi-user identity system. Server-side, this only ever reads this
+ * one participant's OWN durably completed sessions
+ * (`adaptiveSessionStore.listCompleted({ participantId })` filters by
+ * exact match) — it cannot be used to enumerate or read another
+ * participant's data, since nothing here lists participants or accepts
+ * any filter other than the id the caller already holds.
+ */
+export async function getCurrentMasteryStateAction(participantId: string): Promise<AdaptiveActionResult<CurrentMasteryStateResult>> {
+  try {
+    const snapshot = adaptiveSessionService.getAuthoritativeMasteryForParticipant(participantId);
+    if (!snapshot) return { ok: true, data: { hasRecord: false } };
+    return {
+      ok: true,
+      data: {
+        hasRecord: true,
+        modelVersion: snapshot.modelVersion,
+        persistableStates: snapshot.persistableStates,
+        fromSessionId: snapshot.fromSessionId,
+        fromCompletedAt: snapshot.fromCompletedAt,
+      },
+    };
   } catch (err) {
     return { ok: false, error: errorMessage(err) };
   }

@@ -1,29 +1,14 @@
+import { createDurableSessionStore } from "@/research/storage/durableSessionStore";
 import type { ActiveAdaptiveSession } from "@/tutoring/adaptiveSession/types";
 
 /**
- * Server-process-lifetime in-memory storage — the same deliberate
- * prototype choice as `src/tutoring/session/store.ts` (see
- * docs/research-logging.md, "Persistence"), kept as a SEPARATE store
- * instance so the adaptive and non-adaptive conditions never share
- * session state even incidentally (see CLAUDE.md "Shared
- * infrastructure": the two conditions' session stores being distinct
- * objects is part of what keeps "which policy a session uses" the only
- * real difference between them, not an accident of a shared map).
+ * Stage 2 (docs/stage2-research-persistence-report.md): durable,
+ * SQLite-backed storage for condition C2 sessions -- replaces the
+ * previous server-process-lifetime in-memory Map. Kept as its OWN
+ * `kind: "c2"` partition (not sharing rows with `"c0"`) so the adaptive
+ * and non-adaptive conditions never share session state even
+ * incidentally (see CLAUDE.md "Shared infrastructure") -- the same
+ * isolation property the old in-memory store documented, now enforced
+ * by a `kind` column instead of a separate Map instance.
  */
-class AdaptiveSessionStore {
-  private sessions = new Map<string, ActiveAdaptiveSession>();
-
-  get(sessionId: string): ActiveAdaptiveSession | undefined {
-    return this.sessions.get(sessionId);
-  }
-
-  save(session: ActiveAdaptiveSession): void {
-    this.sessions.set(session.id, session);
-  }
-
-  delete(sessionId: string): void {
-    this.sessions.delete(sessionId);
-  }
-}
-
-export const adaptiveSessionStore = new AdaptiveSessionStore();
+export const adaptiveSessionStore = createDurableSessionStore<ActiveAdaptiveSession>("c2");

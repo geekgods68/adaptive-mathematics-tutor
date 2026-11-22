@@ -53,3 +53,9 @@ next-env.d.ts
 # the same reasoning already applied to /research-data/ above (see
 # docs/research-decisions.md RD-0007).
 /research-output/
+
+# Stage 3: Playwright real-browser test output (tests-e2e/, npm run test:e2e).
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

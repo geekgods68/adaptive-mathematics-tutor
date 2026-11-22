@@ -86,11 +86,23 @@ export interface RunTrackBSessionOptions {
   simulatorConfig: SimulatorConfig;
   budget: number;
   s4Setup?: S4Setup;
+  /**
+   * Stage 2 (docs/stage2-research-persistence-report.md Part 9) instrumentation-only
+   * hook: invoked once, after every computation below has already finished, with the
+   * exact `(config, scenario, finalState)` the real Phase 5 engine produced for this
+   * run. Fires unconditionally (success or any termination reason) and purely
+   * observationally -- it cannot affect `TrackBSessionResult`, the simulated
+   * learner's draws, or any value returned by this function; it exists only so a
+   * caller can persist a durable per-run record without this module re-deriving
+   * `config`/`scenario` itself (which would risk drifting from what actually ran).
+   * Omitting it changes nothing about this function's existing behavior.
+   */
+  onRunComplete?: (config: ExperimentConfig, scenario: ExperimentScenario, finalState: ReturnType<typeof runExperimentToCompletion>) => void;
 }
 
 /** Runs one simulated learner through one Track B condition, returning the C8.4/C8.5 outcome row. */
 export function runTrackBSession(options: RunTrackBSessionOptions): TrackBSessionResult {
-  const { conditionId, identity, family, slice, concepts, allQuestions, simulatorConfig, budget, s4Setup } = options;
+  const { conditionId, identity, family, slice, concepts, allQuestions, simulatorConfig, budget, s4Setup, onRunComplete } = options;
 
   const pool = trackBQuestionPool(slice, allQuestions);
   const curriculumOrder = curriculumOrderOf(slice.targetConceptIds, concepts);
@@ -139,6 +151,7 @@ export function runTrackBSession(options: RunTrackBSessionOptions): TrackBSessio
 
   const runId = `${conditionId}-w${identity.world}-${identity.sliceId}-${identity.learnerId}`;
   const finalState = runExperimentToCompletion(config, scenario, runId, provideResponse);
+  onRunComplete?.(config, scenario, finalState);
 
   // kT/kX: truth of T_c / X_c at the end of the session (whatever step it ended on -- intention-to-treat, B6.1).
   const endTruthT = slice.targetConceptIds.map((c) => simulatedLearner.truth(c));

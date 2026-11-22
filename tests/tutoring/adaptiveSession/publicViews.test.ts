@@ -68,6 +68,12 @@ describe("toPublicAdaptiveQuestionView — research-metadata boundary (CLAUDE.md
     expect(view1.options.map((o) => o.id)).toEqual(view2.options.map((o) => o.id));
   });
 
+  it("accepts an optional previousDifficulty (Stage 3 before/after comparison) without leaking it as raw difficulty metadata", () => {
+    const view = toPublicAdaptiveQuestionView(sampleQuestions[0], fakeTrace({ targetDifficulty: { difficulty: 4, reason: "r", masteryUsed: 0.5, evidenceCount: 5 } }), 2);
+    expect(view.selectionExplanation).toMatch(/harder question/i);
+    expect(JSON.stringify(view)).not.toMatch(/"difficulty"/);
+  });
+
   it("includes every real option with only id and display, nothing else", () => {
     const question = sampleQuestions[0];
     const view = toPublicAdaptiveQuestionView(question, fakeTrace());
