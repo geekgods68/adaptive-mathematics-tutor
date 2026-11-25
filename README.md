@@ -1,148 +1,172 @@
-# Non-Adaptive Mathematics Tutor
+# Adaptive Mathematics Tutor
 
-RISE research prototype — the **non-adaptive condition** of a study
-comparing adaptive and non-adaptive mathematics tutoring for Grade 9–10
-students, in the domain of quadratic equations and functions. The
-adaptive condition is developed separately, in a sibling
-`adaptive-math-tutor` repository, sharing this repository's domain-model
-shape.
+A transparent adaptive mathematics tutoring system that models learner knowledge, identifies conceptual weaknesses, and dynamically selects questions based on individual mastery and prerequisite relationships.
 
-See [`docs/research-design.md`](docs/research-design.md) for the study
-design, [`docs/experimental-conditions.md`](docs/experimental-conditions.md)
-for the precise, testable boundary between conditions, and
-[`docs/architecture.md`](docs/architecture.md) for the system architecture.
-[`CLAUDE.md`](CLAUDE.md) has binding guidance for AI coding agents working
-in this repository — read it before making changes.
+Developed as part of an independent research project under the mentorship of a UC Berkeley PhD researcher, the system investigates the relationship between mastery estimation, instructional sequencing, and the definition of mastery in adaptive learning environments.
 
-## Current phase
+## Overview
 
-**Phase 3 — complete, usable non-adaptive tutor.** Phase 0 established the
-domain model and deterministic grading; Phase 1 built the curriculum
-model (35 concepts, 5-level difficulty framework, 35 misconceptions);
-Phase 2 authored the 161-question production bank. Phase 3 wires all of
-it into an actual student-facing tutoring session at
-[`/tutor`](http://localhost:3000/tutor): start → question → submit →
-deterministic grading → feedback → worked solution → Continue → repeat
-through a fixed 35-question sequence
-([`docs/non-adaptive-sequence.md`](docs/non-adaptive-sequence.md)) →
-completion summary. Every step is logged as a `ResearchEvent`
-([`docs/research-logging.md`](docs/research-logging.md)), sessions
-survive page refresh, and a full JSON export is available from the
-development-only [`/dev/session`](http://localhost:3000/dev/session)
-view ([`docs/session-data-schema.md`](docs/session-data-schema.md)). See
-[`docs/tutor-flow.md`](docs/tutor-flow.md) for exactly how the pieces fit
-together, start to finish.
+Conventional mathematics practice platforms often present learners with predetermined sequences of questions, regardless of their existing knowledge or conceptual weaknesses. This project explores an alternative approach in which instructional decisions are informed by a continuously updated representation of learner knowledge.
 
-**The core experimental guarantee — the sequence of questions a student
-sees never depends on their performance — is enforced structurally (not
-just by convention) and demonstrated by an end-to-end test comparing an
-always-correct student against an always-incorrect student.** See
-[`docs/non-adaptive-sequence.md`](docs/non-adaptive-sequence.md#performance-independence--the-guarantee-precisely).
+The system uses deterministic mathematical rules to estimate concept-level mastery and a directed prerequisite graph to inform question selection. Unlike black-box approaches, each instructional decision can be examined and traced to its underlying logic.
 
-## Try it
+## Key Features
 
-```bash
-npm install
-npm run dev
-```
+- **Adaptive question selection:** Dynamically selects questions based on estimated mastery, prerequisite knowledge, difficulty and response history.
+- **Deterministic learner modelling:** Updates concept-level mastery estimates using interpretable mathematical rules.
+- **Prerequisite graph:** Represents dependencies between mathematical concepts through a directed graph.
+- **Structured question bank:** Contains 1,840 multiple-choice questions across five difficulty levels.
+- **Targeted remediation:** Identifies conceptual weaknesses and revisits foundational concepts when necessary.
+- **Diagnostic backtracking:** Investigates prerequisite knowledge following repeated incorrect responses.
+- **Experimental configurations:** Supports controlled comparisons between adaptive and non-adaptive instructional strategies.
+- **Synthetic learner simulation:** Evaluates system behaviour under different computational models of learning.
+- **Research infrastructure:** Supports experimental logging, data exports, automated testing and reproducibility checks.
 
-Open <http://localhost:3000/tutor> and complete a session (or stop partway
-— refresh to confirm it resumes where you left off). Open
-<http://localhost:3000/dev/session> in the same browser to see the raw
-session state, response log, event log, and a JSON export/reset — this is
-a development-only diagnostic view, not part of the student experience.
+## Question Bank
 
-## Commands
+| Component | Quantity |
+|---|---:|
+| Multiple-choice questions | 1,840 |
+| Mathematics chapters | 14 |
+| Mathematical concepts | 109 |
+| Prerequisite relationships | 204 |
+| Difficulty levels | 5 |
+| Multi-concept questions | 64 |
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the Next.js dev server |
-| `npm run build` | Production build |
-| `npm start` | Run the production build |
-| `npm run lint` | ESLint |
-| `npm run typecheck` | `tsc --noEmit` |
-| `npm test` | Run the test suite once (Vitest) |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run audit:questions` | Live question-bank quality report (counts, coverage, integrity errors) |
-| `npm run audit:session` | Live study-sequence quality report (length, difficulty/strand composition, integrity errors) |
+Each question is associated with structured metadata that informs mastery estimation and instructional sequencing.
 
-## Project structure
+## System Architecture
+
+The system consists of six interconnected components:
+
+1. **Curriculum Model:** Organises mathematical concepts and their prerequisite relationships.
+2. **Question Bank:** Stores questions and associated instructional metadata.
+3. **Learner Model:** Maintains evolving concept-level mastery estimates.
+4. **Mastery Estimator:** Updates estimates following learner responses.
+5. **Selection Engine:** Determines the next instructional question.
+6. **Evaluation Framework:** Records experimental outcomes and evaluates alternative configurations.
+
+The instructional cycle operates as follows:
 
 ```text
-src/
-  app/
-    page.tsx              Research-status landing page (dev-facing counts, not the tutor)
-    tutor/                 The student-facing tutor
-      page.tsx              Thin Server Component
-      tutor-client.tsx       Client Component: all UI state (start/question/feedback/completion)
-      actions.ts             Server Actions (thin transport layer only)
-    dev/session/            Development-only diagnostic view (session state, event log, export, reset)
-  domain/
-    questions/
-      types.ts              Question, AnswerOption (+ questionFamily)
-      index.ts               Combined production QUESTIONS export (161 questions)
-      bank/                   One file per curriculum strand
-      validateQuestionBank.ts Phase 2 production quality gates
-      bankStatistics.ts      Coverage stats + duplicate detection
-    concepts/               Concept (+ strand) + 35-concept data.ts
-    misconceptions/          Misconception (+ errorPattern) + 35-entry data.ts
-    curriculum/              Difficulty framework, curriculum order, graph
-                            queries and validators
-    student/                StudentModel, ConceptMastery (architecture only)
-    sessions/                ExperimentalCondition, TutorSession
-    validateDomainModel.ts       Cross-entity referential-integrity checks
-  tutoring/
-    grading/                Deterministic MCQ grading (gradeAnswer)
-    selection/
-      nonAdaptive/            NonAdaptiveSelectionPolicy (implemented);
-                              NON_ADAPTIVE_STUDY_SEQUENCE (the 35-question
-                              sequence the running tutor uses);
-                              CANDIDATE_NON_ADAPTIVE_SEQUENCE (Phase 2
-                              coverage check, superseded); the original
-                              5-question Phase 0 demo sequence
-      adaptive/                AdaptiveSelectionPolicy (skeleton only)
-    feedback/                Feedback/explanation formatting
-    session/                 THE SESSION SERVICE — all business rules live here
-      types.ts                 ActiveTutorSession, TutorResponse
-      service.ts                startSession/getCurrentQuestion/submitAnswer/
-                                advanceSession/getStudentFacingSummary/
-                                getResearchSummary/exportSession/resetSession
-      store.ts                  In-memory session store + shared research-event logger
-      publicViews.ts            Strips research metadata before anything reaches the client
-      optionOrder.ts            Deterministic seeded option shuffle (see docs/tutor-flow.md)
-      summary.ts                Pure summary computation (student-facing + research)
-      errors.ts                 Typed errors for every invalid transition
-  research/
-    events/                  ResearchEvent discriminated union
-    logging/                 ResearchEventLogger (in-memory implementation)
-  lib/                     Small shared helpers (id generation)
-
-scripts/
-  audit-questions.ts        npm run audit:questions
-  audit-session.ts          npm run audit:session
-
-tests/
-  helpers/quadratics.ts     Shared numeric verification helpers
-  domain/questionBank/      Bank integrity, coverage, duplicate-detection, math-verification
-  tutoring/session/          Session lifecycle, performance-independence, logging,
-                            summary, study-sequence, option-order tests
-  app/tutor/                 Component tests for the tutor UI (mocked Server Actions)
-
-docs/                      Research design, architecture, curriculum, difficulty,
-                           misconception taxonomy, question-bank, tutor-flow,
-                           non-adaptive-sequence, research-logging, and
-                           session-data-schema docs
+Learner Response
+       |
+       v
+Mastery Estimation
+       |
+       v
+Concept-Level Knowledge State
+       |
+       v
+Prerequisite and Response Analysis
+       |
+       v
+Adaptive Question Selection
+       |
+       v
+Next Question
 ```
 
-## Not yet built
+## Mathematical Model
 
-Deliberately out of scope for this repository (see [`CLAUDE.md`](CLAUDE.md)
-for the full list and why):
+Each concept is associated with a mastery estimate between 0 and 1. These estimates are updated following learner interactions using deterministic rules that account for response correctness, question difficulty and, where applicable, hint usage.
 
-- Persistent research-event storage (a real database — see
-  [`docs/research-logging.md`](docs/research-logging.md), "Persistence")
-- Adaptive mastery updates or adaptive sequencing (developed in the
-  sibling `adaptive-math-tutor` repository)
-- Authentication, participant recruitment/consent flows, teacher
-  dashboards, pre/post testing, production deployment, a statistical
-  analysis pipeline
+The primary estimator applies bounded mastery updates, while alternative configurations allow the effects of different estimation rules and prerequisite-aware sequencing policies to be examined independently.
+
+The deterministic approach prioritises interpretability, computational efficiency and traceability.
+
+## Experimental Framework
+
+Four instructional configurations are evaluated:
+
+| Configuration | Description |
+|---|---|
+| C0 | Non-adaptive instructional sequencing |
+| C1 | Adaptive sequencing using deterministic estimator A |
+| C2 | Adaptive sequencing using deterministic estimator B with prerequisite awareness |
+| C3 | Adaptive sequencing using deterministic estimator B without prerequisite awareness |
+
+Bayesian Knowledge Tracing (BKT) is also used as a comparative mastery estimation method.
+
+### Synthetic Learner Models
+
+The evaluation framework simulates four families of learners:
+
+- S1: Stationary learners
+- S2: Bayesian Knowledge Tracing-generated learners
+- S3: Practice-driven learners
+- S4: Prerequisite-gated learners
+
+These models represent different assumptions about how mathematical knowledge develops during instructional practice.
+
+### Evaluation Metrics
+
+- **Brier Score:** Measures the accuracy of response probability predictions.
+- **Latent Mastery RMSE:** Measures discrepancies between estimated and simulated underlying mastery.
+- **Final Average Mastery:** Measures overall knowledge attainment at the end of practice.
+- **Full-Mastery Attainment:** Measures the proportion of learners satisfying the defined mastery criterion across the curriculum.
+- **Questions to Mastery:** Explores the number of instructional questions required to satisfy the mastery criterion.
+
+## Research
+
+**Mastery Estimation, Question Sequencing, and the Definition of Mastery: An Exploratory Simulation Study of a Transparent Adaptive Mathematics Tutor**
+
+The accompanying research investigates how different mastery estimation and instructional sequencing methods perform under alternative simulated learning conditions.
+
+Two pilot experiments, each comprising 13,560 simulation runs, were conducted to examine system behaviour.
+
+The exploratory findings indicate that:
+
+- The relative performance of deterministic and probabilistic mastery estimators depends on the underlying learner model.
+- Improvements in average mastery do not necessarily translate into higher full-mastery attainment.
+- Changing the operational definition of mastery can reverse comparative conclusions about adaptive and non-adaptive instructional strategies.
+- Prerequisite-aware instructional policies introduce trade-offs between targeted remediation and curriculum-wide attainment.
+
+These findings highlight the importance of explicitly defining educational outcomes when designing and evaluating adaptive learning systems.
+
+## Research Contributions
+
+This project contributes:
+
+- An interpretable deterministic mastery estimation framework.
+- A structured mathematics question bank and prerequisite graph.
+- A configurable adaptive instructional sequencing engine.
+- A computational framework for evaluating tutoring strategies across heterogeneous learner models.
+- An exploratory investigation into the sensitivity of adaptive learning evaluations to mastery definitions.
+
+## Limitations
+
+The experimental evaluation uses synthetic learners rather than human participants. Consequently, the findings describe computational behaviour under specified modelling assumptions and do not establish real-world educational effectiveness.
+
+Further research is required to evaluate the system with human learners, examine alternative curriculum structures and validate the underlying learning assumptions.
+
+## Future Development
+
+Potential extensions include:
+
+- Empirical evaluation with mathematics students.
+- Personalised misconception diagnosis.
+- Hybrid deterministic and probabilistic learner models.
+- More sophisticated instructional optimisation policies.
+- Dynamic curriculum and prerequisite graph construction.
+- Integration with conversational tutoring interfaces.
+- Expansion across additional mathematical curricula.
+
+## Research Interests
+
+This project sits at the intersection of:
+
+- Educational technology
+- Artificial intelligence in education
+- Computational modelling
+- Knowledge tracing
+- Adaptive learning
+- Mathematical optimisation
+- Learning analytics
+- Human-computer interaction
+
+## Acknowledgements
+
+This project was developed through the RISE research programme under the mentorship of a UC Berkeley PhD researcher.
+
+The system was developed to explore how transparent computational methods can support personalised mathematics education and contribute to a better understanding of adaptive instructional systems.
